@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <!-- Login (default) -->
+    <!-- Login -->
     <div id="login-screen" class="login-screen">
       <div class="login-card">
         <h1>GET A JOB</h1>
@@ -27,34 +27,20 @@
         <form id="login-form" autocomplete="on">
           <label>
             Username
-            <input
-              type="text"
-              name="username"
-              required
-              autocomplete="username"
-              placeholder="drJobless"
-            />
+            <input type="text" name="username" required autocomplete="username" placeholder="drJobless" />
           </label>
           <label>
             Password
-            <input
-              type="password"
-              name="password"
-              required
-              autocomplete="current-password"
-              placeholder="••••••••"
-            />
+            <input type="password" name="password" required autocomplete="current-password" placeholder="••••••••" />
           </label>
           <p id="login-error" class="login-error" hidden></p>
           <button type="submit" class="btn btn-primary btn-block">Sign in</button>
         </form>
-        <p class="login-foot">
-          Progress syncs per account on this device (phone ↔ same browser).
-        </p>
+        <p class="login-foot">Progress saved per account on this device.</p>
       </div>
     </div>
 
-    <!-- Main app -->
+    <!-- App -->
     <div id="app-shell" class="app-shell hidden">
       <header class="app-header">
         <div class="header-top">
@@ -69,33 +55,43 @@
         </div>
         <div class="progress-bar" id="progress-bar">
           <span><strong id="stat-applied">0</strong> applied</span>
+          <span><strong id="stat-week-applied">0</strong> this week</span>
           <span><strong id="stat-called">0</strong> called</span>
           <span><strong id="stat-interview">0</strong> interviews</span>
         </div>
         <p class="meta">
-          Salem, OR · Pay high → low ·
-          <span id="verified-date">—</span>
+          <span id="total-jobs">—</span> jobs · Sorted by match · Verified <span id="verified-date">—</span>
         </p>
       </header>
 
-      <!-- Jobs view -->
-      <div class="view view-active" id="view-jobs" data-view="jobs">
+      <nav class="bottom-nav" aria-label="Main navigation">
+        <button type="button" class="nav-btn nav-active" data-nav="today"><span class="nav-icon">⭐</span>Today</button>
+        <button type="button" class="nav-btn" data-nav="jobs"><span class="nav-icon">📋</span>Jobs</button>
+        <button type="button" class="nav-btn" data-nav="map"><span class="nav-icon">🗺</span>Map</button>
+        <button type="button" class="nav-btn" data-nav="tracker"><span class="nav-icon">✓</span>Tracker</button>
+        <button type="button" class="nav-btn" data-nav="tips"><span class="nav-icon">💡</span>Tips</button>
+      </nav>
+
+      <!-- TODAY view -->
+      <div class="view view-active" id="view-today" data-view="today">
+        <div class="today-panel">
+          <h2>Today's 5</h2>
+          <p class="today-sub">Auto-picked from follow-ups + high-match jobs.</p>
+          <div id="today-list" class="today-list"></div>
+        </div>
+      </div>
+
+      <!-- JOBS view -->
+      <div class="view" id="view-jobs" data-view="jobs">
         <div class="toolbar">
-          <input
-            type="search"
-            id="search"
-            placeholder="Search jobs…"
-            aria-label="Search jobs"
-          />
-          <button
-            type="button"
-            class="btn btn-secondary mobile-only"
-            id="toggle-filters"
-            aria-expanded="false"
-          >
-            Filters
-          </button>
+          <input type="search" id="search" placeholder="Search title, employer, tag…" aria-label="Search" />
+          <button type="button" class="btn btn-secondary mobile-only" id="toggle-filters" aria-expanded="false">Filters</button>
           <div class="toolbar-filters" id="toolbar-filters">
+            <select id="sort-mode" aria-label="Sort">
+              <option value="match">Sort: Match</option>
+              <option value="pay">Sort: Pay</option>
+              <option value="distance">Sort: Distance</option>
+            </select>
             <select id="category-filter" aria-label="Category">
               <option value="all">All categories</option>
               <option value="security">Security</option>
@@ -105,19 +101,35 @@
               <option value="state">State</option>
               <option value="city">City</option>
               <option value="county">County</option>
+              <option value="federal">Federal/USPS</option>
               <option value="warehouse">Warehouse</option>
               <option value="manufacturing">Manufacturing</option>
+              <option value="driver">Driver</option>
               <option value="retail">Retail</option>
               <option value="healthcare">Healthcare</option>
               <option value="education">Education</option>
+              <option value="hospitality">Hospitality</option>
+              <option value="trades">Trades</option>
+              <option value="office">Office/Admin</option>
+              <option value="finance">Finance</option>
+              <option value="staffing">Staffing</option>
+              <option value="nonprofit">Nonprofit</option>
+              <option value="automotive">Automotive</option>
               <option value="general">General</option>
+            </select>
+            <select id="tier-filter" aria-label="Match tier">
+              <option value="all">All tiers</option>
+              <option value="high">High match</option>
+              <option value="medium">Medium</option>
+              <option value="bridge">Bridge</option>
+              <option value="stretch">Stretch</option>
             </select>
             <select id="status-filter" aria-label="Your progress">
               <option value="all">All progress</option>
-              <option value="not_applied">Not applied yet</option>
+              <option value="not_applied">Not applied</option>
               <option value="applied">Applied</option>
-              <option value="need_followup">Need follow-up call</option>
-              <option value="interview">Has interview</option>
+              <option value="need_followup">Need follow-up</option>
+              <option value="interview">Interview</option>
             </select>
             <div class="chip-group">
               <span class="chip" data-filter="securityOnly">Security</span>
@@ -125,11 +137,13 @@
               <span class="chip" data-filter="hasContact">Has contact</span>
               <span class="chip" data-filter="priorityOnly">Call today ★</span>
               <span class="chip" data-filter="openOnly">Listed open</span>
+              <span class="chip" data-filter="bookmarkedOnly">★ Bookmarks</span>
             </div>
+            <button type="button" class="btn btn-ghost" id="clear-filters-btn">Clear</button>
+            <button type="button" class="btn btn-ghost" id="print-btn">Print</button>
           </div>
           <span class="stats" id="job-count">Loading…</span>
         </div>
-
         <main class="layout layout-desktop">
           <section class="panel-list" id="job-list" aria-label="Job listings">
             <div class="empty-state">Loading jobs…</div>
@@ -140,12 +154,12 @@
         </main>
       </div>
 
-      <!-- Map-only view (mobile tab) -->
+      <!-- MAP view (mobile tab) -->
       <div class="view" id="view-map" data-view="map">
         <div id="map-mobile" class="map-full"></div>
       </div>
 
-      <!-- Tracker dashboard -->
+      <!-- TRACKER view -->
       <div class="view" id="view-tracker" data-view="tracker">
         <div class="tracker-panel">
           <h2>Your hunt</h2>
@@ -153,79 +167,57 @@
           <div class="tracker-cards" id="tracker-summary"></div>
           <h3>Need follow-up</h3>
           <ul class="tracker-list" id="tracker-followup"></ul>
+          <h3>Bookmarked</h3>
+          <ul class="tracker-list" id="tracker-bookmarks"></ul>
           <h3>Applied</h3>
           <ul class="tracker-list" id="tracker-applied"></ul>
         </div>
       </div>
 
-      <!-- Tips / playbook -->
+      <!-- TIPS view -->
       <div class="view" id="view-tips" data-view="tips">
         <section class="playbook">
           <h2>No replies? Do this.</h2>
           <details open>
             <summary>48-hour follow-up script</summary>
             <ul>
-              <li>
-                Call the store or HR line. Say: “I applied online for [role] on [date].
-                I have 16 years of security experience and an active Oregon DPSST license.
-                Who should I speak with about next steps?”
-              </li>
-              <li>Ask for a name and email. Follow up same day.</li>
-              <li>Government jobs: call HR — portals often need a nudge.</li>
-              <li>
-                DOC:
-                <a href="mailto:odocjobs@doc.oregon.gov">odocjobs@doc.oregon.gov</a>
-                for NTN REACT voucher.
-              </li>
+              <li>Call the listed phone. Say: "I applied online for [role] on [date]. I have 16 years of security experience and an active Oregon DPSST license. Who should I speak with about next steps?"</li>
+              <li>Ask for a name and email. Send a follow-up the same day.</li>
+              <li>Government jobs: call HR — portals often need a human nudge.</li>
+              <li>DOC: <a href="mailto:odocjobs@doc.oregon.gov">odocjobs@doc.oregon.gov</a> for NTN REACT voucher.</li>
             </ul>
           </details>
           <details>
-            <summary>Top priorities this week</summary>
+            <summary>This week's quick wins</summary>
             <ul>
-              <li>Oregon DOC Correctional Officer — ~$68k–94k/yr</li>
-              <li>Marion County Deputy Sheriff — up to ~$48/hr</li>
-              <li>OSH Mental Health Security Technician — ~$53k–67k/yr</li>
-              <li>Wright Security — 503-428-6323</li>
-              <li>WinCo LP south — 503-362-2620</li>
-              <li>Salem Health — 503-561-5200</li>
-              <li>Gensco — 503-585-1743</li>
+              <li>Walk into <strong>Express Employment</strong> (503-399-1200) and <strong>Adecco</strong> (503-588-8367) — one visit = many leads</li>
+              <li>Call <strong>Wright Security</strong> 503-428-6323</li>
+              <li>Call <strong>WinCo south Salem</strong> 503-362-2620, ask for LP manager</li>
+              <li>Call <strong>Salem Health careers</strong> 503-561-5200 (security + tech roles)</li>
+              <li>Apply with <strong>Loomis</strong>, <strong>Garda</strong>, <strong>Brinks</strong> (armed DPSST roles)</li>
+              <li>Apply <strong>Willamette University Campus Safety</strong> — open until filled</li>
+              <li>Email <strong>WVCCcareers@cityofsalem.net</strong> for 911 call taker next round</li>
             </ul>
           </details>
           <details>
-            <summary>Resume one-liner</summary>
+            <summary>Resume one-liner (paste at top)</summary>
             <ul>
-              <li>
-                <em
-                  >Security professional with 16 years of experience in patrol, access
-                  control, incident documentation, and de-escalation. Active Oregon DPSST
-                  certification. Reliable, Salem-area based.</em
-                >
-              </li>
+              <li><em>Security professional with 16 years of experience in patrol, access control, incident documentation, investigations, and de-escalation. Active Oregon DPSST certification (armed). Reliable, Salem-area based, immediately available.</em></li>
             </ul>
           </details>
-          <h2>Local resources</h2>
+          <details>
+            <summary>License & test resources</summary>
+            <ul>
+              <li><a href="https://www.oregon.gov/dpsst/" target="_blank" rel="noopener">DPSST</a> — verify or renew security license</li>
+              <li><a href="https://nationaltestingnetwork.com/publicsafetyjobs/" target="_blank" rel="noopener">NTN REACT</a> — for DOC + Sheriff. Get free voucher from odocjobs@doc.oregon.gov</li>
+              <li><a href="https://worksourceoregon.org/" target="_blank" rel="noopener">WorkSource Oregon</a> — free resume help, workshops</li>
+            </ul>
+          </details>
+          <h2 style="margin-top:1.25rem">Local resources</h2>
           <div class="resources-grid" id="resources"></div>
         </section>
       </div>
 
-      <nav class="bottom-nav" aria-label="Main navigation">
-        <button type="button" class="nav-btn nav-active" data-nav="jobs">
-          <span class="nav-icon">📋</span>
-          Jobs
-        </button>
-        <button type="button" class="nav-btn" data-nav="map">
-          <span class="nav-icon">🗺</span>
-          Map
-        </button>
-        <button type="button" class="nav-btn" data-nav="tracker">
-          <span class="nav-icon">✓</span>
-          Tracker
-        </button>
-        <button type="button" class="nav-btn" data-nav="tips">
-          <span class="nav-icon">💡</span>
-          Tips
-        </button>
-      </nav>
     </div>
 
     <script
