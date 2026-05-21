@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f1419" />
+    <title>Live Feed — GET A JOB</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/live.css" />
+  </head>
+  <body>
+    <div id="login-screen" class="login-screen">
+      <div class="login-card">
+        <h1>GET A JOB</h1>
+        <p class="login-sub">Live Feed</p>
+        <p class="login-hint">Same login as the main board</p>
+        <form id="login-form" autocomplete="on">
+          <label>Username <input type="text" name="username" required /></label>
+          <label>Password <input type="password" name="password" required /></label>
+          <p id="login-error" class="login-error" hidden></p>
+          <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+        </form>
+        <p class="login-foot"><a href="index.html">← Back to main board</a></p>
+      </div>
+    </div>
+
+    <div id="live-shell" class="live-shell hidden">
+      <header class="app-header live-header">
+        <div class="header-top">
+          <div>
+            <h1>Live Feed</h1>
+            <p class="subtitle">Fresh listings · last 14 days only</p>
+          </div>
+          <div class="header-actions">
+            <a href="index.html" class="btn btn-secondary">Main board</a>
+            <span class="user-pill" id="user-label">—</span>
+            <button type="button" class="btn btn-ghost" id="logout-btn">Log out</button>
+          </div>
+        </div>
+        <p class="meta live-meta">
+          <span id="live-fetched">Not fetched yet</span>
+          <span id="live-count">0 jobs</span>
+          <span id="live-sources" class="muted"></span>
+        </p>
+      </header>
+
+      <div class="live-toolbar">
+        <input type="search" id="live-search" placeholder="Search title, employer…" />
+        <select id="live-filter">
+          <option value="all">All live jobs</option>
+          <option value="security">Security & LP</option>
+          <option value="high-pay">High pay ($18+)</option>
+          <option value="entry">Entry-friendly</option>
+          <option value="high-match">High match (70+)</option>
+        </select>
+        <select id="live-sort">
+          <option value="match">Sort: Match</option>
+          <option value="date">Sort: Newest</option>
+          <option value="pay">Sort: Pay</option>
+        </select>
+        <button type="button" class="btn btn-ghost" id="live-refresh-btn" title="Reload JSON from server">Reload</button>
+      </div>
+
+      <div id="live-setup-banner" class="info-banner live-setup hidden"></div>
+      <div id="live-list" class="live-list"></div>
+    </div>
+
+    <script src="config.js"></script>
+    <script>window.GAJ_CONFIG = window.GAJ_CONFIG || null;</script>
+    <script src="js/auth.js"></script>
+    <script src="js/tracker.js"></script>
+    <script src="js/live-aggregator.js"></script>
+  </body>
+</html>

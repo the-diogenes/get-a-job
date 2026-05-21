@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f1419" />
+    <title>GET A JOB — Inbox (John)</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/comms.css" />
+    <style>
+      .inbox-page {
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+      }
+      .inbox-page-header {
+        padding: 1rem;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .inbox-page-main {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      @media (min-width: 900px) {
+        .inbox-page-main {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .inbox-pane {
+        padding: 1rem;
+        border-bottom: 1px solid var(--border);
+        overflow-y: auto;
+        max-height: calc(100dvh - 4rem);
+      }
+      @media (min-width: 900px) {
+        .inbox-pane {
+          border-bottom: none;
+          border-right: 1px solid var(--border);
+        }
+        .inbox-pane:last-child {
+          border-right: none;
+        }
+      }
+      .inbox-pane h2 {
+        margin: 0 0 0.75rem;
+        font-size: 1.1rem;
+      }
+      #inbox-chat-log {
+        min-height: 240px;
+        max-height: 50vh;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="login-screen" class="login-screen">
+      <div class="login-card">
+        <h1>Inbox</h1>
+        <p class="login-sub">John’s console — sign in as <strong>master</strong></p>
+        <form id="login-form" autocomplete="on">
+          <label>
+            Username
+            <input type="text" name="username" required autocomplete="username" />
+          </label>
+          <label>
+            Password
+            <input type="password" name="password" required autocomplete="current-password" />
+          </label>
+          <p id="login-error" class="login-error" hidden></p>
+          <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+        </form>
+        <p class="login-foot"><a href="index.html">← Back to job board</a></p>
+      </div>
+    </div>
+
+    <div id="inbox-app" class="inbox-page hidden">
+      <header class="inbox-page-header">
+        <div>
+          <h1 style="margin:0;font-size:1.25rem">GET A JOB — Inbox</h1>
+          <p class="comms-sub" style="margin:0.25rem 0 0">Reply to Jack’s board posts and live chats</p>
+        </div>
+        <div>
+          <a href="index.html" class="btn btn-secondary">Job board</a>
+          <button type="button" class="btn btn-ghost" id="logout-btn">Log out</button>
+        </div>
+      </header>
+      <main class="inbox-page-main">
+        <section class="inbox-pane">
+          <h2>Board from Jack</h2>
+          <div id="inbox-board-list"></div>
+        </section>
+        <section class="inbox-pane">
+          <h2>Talk to Jack — live</h2>
+          <div class="inbox-layout chat-split">
+            <div id="inbox-chat-sessions"></div>
+            <div>
+              <div id="inbox-chat-log" class="chat-log" aria-live="polite"></div>
+              <form id="inbox-chat-form" class="chat-form-bar" style="border-radius:0 0 10px 10px">
+                <textarea rows="2" placeholder="Reply to Jack…" required></textarea>
+                <button type="submit" class="btn btn-primary">Send</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="config.js"></script>
+    <script>
+      window.GAJ_CONFIG = window.GAJ_CONFIG || null;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/comms.js"></script>
+    <script src="js/comms-ui.js"></script>
+    <script>
+      (function () {
+        const MASTER = "master";
+
+        function showInbox() {
+          document.getElementById("login-screen").classList.add("hidden");
+          document.getElementById("inbox-app").classList.remove("hidden");
+        }
+
+        GAJAuth.requireAuth(async function (userId) {
+          if (userId !== MASTER) {
+            alert("This page is for master (John) only. Jack uses Board + Talk to Jack on the main site.");
+            GAJAuth.logout();
+            GAJAuth.showLogin();
+            return;
+          }
+          showInbox();
+          if (window.GAJCommsUI) {
+            GAJCommsUI.init();
+            await GAJCommsUI.renderInboxBoard();
+            await GAJCommsUI.loadInboxChats();
+            GAJCommsUI.refreshUnreadBadges();
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

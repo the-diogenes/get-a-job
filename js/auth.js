@@ -114,6 +114,9 @@
       if (errEl) errEl.hidden = true;
       form.password.value = "";
       showApp({ id: result.user, displayName: result.displayName });
+      document.dispatchEvent(
+        new CustomEvent("gaj-auth-ready", { detail: { userId: result.user } })
+      );
       if (onSuccess) onSuccess(result.user);
       playWelcome(result.user);
     });
@@ -130,6 +133,9 @@
     const user = currentUser();
     if (user) {
       showApp(user);
+      document.dispatchEvent(
+        new CustomEvent("gaj-auth-ready", { detail: { userId: user.id } })
+      );
       onReady(user.id);
     } else {
       showLogin();

@@ -90,7 +90,10 @@
   }
 
   function freshness(job) {
-    const days = daysSince(job.posted) ?? daysSince(job.verified_on);
+    if (!job.posted) {
+      return { label: "Curated — verify live", cls: "fresh-stale" };
+    }
+    const days = daysSince(job.posted);
     if (days == null) return { label: "Verify before applying", cls: "fresh-unknown" };
     if (days <= FRESHNESS_FRESH_DAYS) return { label: `Fresh · ${days}d`, cls: "fresh-fresh" };
     if (days <= FRESHNESS_STALE_DAYS) return { label: `${days}d old`, cls: "fresh-aging" };
@@ -773,6 +776,9 @@
     }
     if (name === "tracker") renderTrackerView();
     if (name === "today") renderTodayView();
+    if (global.GAJCommsUI && global.GAJCommsUI.onViewShown) {
+      global.GAJCommsUI.onViewShown(name);
+    }
   }
 
   // ---------- UI bindings ----------
@@ -867,13 +873,36 @@
     if (totalEl) totalEl.textContent = allJobs.length;
   }
 
+  function bindSyncStatus() {
+    const el = document.getElementById("sync-status");
+    if (!el) return;
+    const labels = {
+      local: "Saved on this device only",
+      loading: "Syncing…",
+      synced: "Synced across devices",
+      error: "Sync error — saved locally",
+      offline: "Offline — using local copy",
+    };
+    GAJTracker.onSyncStatus((status) => {
+      el.textContent = labels[status] || status;
+      el.className = "sync-status sync-" + status;
+      el.title =
+        status === "local"
+          ? "Add config.js with Supabase credentials to sync phone + PC"
+          : labels[status];
+    });
+  }
+
   async function startApp(userId) {
     currentUserId = userId;
     try {
+      bindSyncStatus();
+      await GAJTracker.initForUser(userId);
       await loadData();
       ensureMobileMap();
       renderResources();
       bindUI();
+      if (global.GAJCommsUI) global.GAJCommsUI.init();
       renderList();
       syncMobileHeaderHeight();
       syncNavHeight();
@@ -898,6 +927,7 @@
   window.GAJ = {
     onLogout: () => {
       currentUserId = null;
+      GAJTracker.clearActiveUser();
       if (map) {
         map.remove();
         map = null;

@@ -16,6 +16,7 @@
       crossorigin=""
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/comms.css" />
   </head>
   <body>
     <!-- Login -->
@@ -36,7 +37,7 @@
           <p id="login-error" class="login-error" hidden></p>
           <button type="submit" class="btn btn-primary btn-block">Sign in</button>
         </form>
-        <p class="login-foot">Progress saved per account on this device.</p>
+        <p class="login-foot">Progress saves to your account (cloud sync when configured).</p>
       </div>
     </div>
 
@@ -67,6 +68,8 @@
             <p class="subtitle">Get to it, boy!</p>
           </div>
           <div class="header-actions">
+            <a href="live.html" class="btn btn-secondary live-link-btn">Live feed</a>
+            <a href="inbox.html" class="btn btn-secondary inbox-header-link" id="inbox-desktop-link" data-nav-master hidden>Inbox</a>
             <span class="user-pill" id="user-label">—</span>
             <button type="button" class="btn btn-ghost" id="logout-btn">Log out</button>
           </div>
@@ -79,6 +82,7 @@
         </div>
         <p class="meta">
           <span id="total-jobs">—</span> jobs · Sorted by match · Verified <span id="verified-date">—</span>
+          <span id="sync-status" class="sync-status sync-local" title="Progress sync status">Saved on this device only</span>
         </p>
       </header>
 
@@ -87,6 +91,9 @@
         <button type="button" class="nav-btn" data-nav="jobs"><span class="nav-icon">📋</span>Jobs</button>
         <button type="button" class="nav-btn" data-nav="map"><span class="nav-icon">🗺</span>Map</button>
         <button type="button" class="nav-btn" data-nav="tracker"><span class="nav-icon">✓</span>Tracker</button>
+        <button type="button" class="nav-btn" data-nav-jack data-nav="board"><span class="nav-icon">📌</span>Board<span class="nav-badge" data-badge="board" hidden></span></button>
+        <button type="button" class="nav-btn" data-nav-jack data-nav="chat"><span class="nav-icon">💬</span>Jack<span class="nav-badge" data-badge="chat" hidden></span></button>
+        <button type="button" class="nav-btn" data-nav-master data-nav="inbox"><span class="nav-icon">📥</span>Inbox<span class="nav-badge" data-badge="inbox" hidden></span></button>
         <button type="button" class="nav-btn" data-nav="tips"><span class="nav-icon">💡</span>Tips</button>
       </nav>
 
@@ -96,8 +103,9 @@
           <h2>Today's 5</h2>
           <p class="today-sub">Auto-picked from follow-ups + high-match jobs.</p>
           <div class="info-banner">
-            <strong>Heads up:</strong> this is a hand-curated board, not a live feed.
-            Each card shows when it was verified and a <em>Verify live</em> button that opens an Indeed search to confirm the role is still open before you spend time applying.
+            <strong>Curated board</strong> — some older picks may be closed.
+            Use <a href="live.html"><strong>Live feed</strong></a> for auto-fetched jobs from the last 14 days only.
+            On any card, <em>Verify live</em> double-checks before you apply.
           </div>
           <div id="today-list" class="today-list"></div>
         </div>
@@ -185,7 +193,7 @@
       <div class="view" id="view-tracker" data-view="tracker">
         <div class="tracker-panel">
           <h2>Your hunt</h2>
-          <p class="tracker-sub">Saved on this device for your account.</p>
+          <p class="tracker-sub">Tied to your login — syncs across phone and PC when cloud sync is enabled.</p>
           <div class="tracker-cards" id="tracker-summary"></div>
           <h3>Need follow-up</h3>
           <ul class="tracker-list" id="tracker-followup"></ul>
@@ -193,6 +201,59 @@
           <ul class="tracker-list" id="tracker-bookmarks"></ul>
           <h3>Applied</h3>
           <ul class="tracker-list" id="tracker-applied"></ul>
+        </div>
+      </div>
+
+      <!-- BOARD (Jack posts notes for John) -->
+      <div class="view" id="view-board" data-view="board">
+        <div class="comms-panel">
+          <h2>Message board</h2>
+          <p class="comms-sub">Leave Jack a note about jobs, paperwork, or life stuff. He sees replies in his thread.</p>
+          <div id="board-thread-list"></div>
+          <form id="board-post-form" class="comms-form">
+            <textarea rows="3" placeholder="Post to the board…" required></textarea>
+            <button type="submit" class="btn btn-primary">Post</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- TALK TO JACK live chat (Jack side) -->
+      <div class="view" id="view-chat" data-view="chat">
+        <div class="comms-panel">
+          <div class="talk-brand">
+            <span class="live-dot" aria-hidden="true"></span>
+            <h2>Talk to Jack</h2>
+          </div>
+          <p class="comms-sub">Live support (sort of). First message pings John’s email. Keep this tab open for replies.</p>
+          <p id="chat-status-jack" class="chat-status">Connecting…</p>
+          <div class="chat-wrap">
+            <div id="chat-log-jack" class="chat-log" aria-live="polite"></div>
+            <form id="chat-form-jack" class="chat-form-bar">
+              <textarea rows="1" placeholder="Type a message…" required></textarea>
+              <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- INBOX (John / master) -->
+      <div class="view" id="view-inbox" data-view="inbox">
+        <div class="comms-panel">
+          <h2>Inbox</h2>
+          <p class="comms-sub">Board notes from Jack + live chat sessions. <a href="inbox.html">Open full console</a> on desktop.</p>
+          <h3>Board</h3>
+          <div id="inbox-board-list"></div>
+          <h3>Live chat</h3>
+          <div class="inbox-layout chat-split">
+            <div id="inbox-chat-sessions"></div>
+            <div>
+              <div id="inbox-chat-log" class="chat-log" style="min-height:200px;border-radius:10px"></div>
+              <form id="inbox-chat-form" class="chat-form-bar" style="border-radius:0 0 10px 10px">
+                <textarea rows="1" placeholder="Reply to Jack…" required></textarea>
+                <button type="submit" class="btn btn-primary">Send</button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -252,12 +313,21 @@
 
     </div>
 
+    <script src="config.js"></script>
+    <script>
+      window.GAJ_CONFIG = window.GAJ_CONFIG || null;
+    </script>
     <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/auth.js"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/comms.js"></script>
+    <script src="js/comms-ui.js"></script>
     <script src="js/tracker.js"></script>
     <script src="js/app.js"></script>
   </body>
