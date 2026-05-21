@@ -86,7 +86,9 @@ After your first successful `git push`, Windows usually **remembers** your login
    .\push.ps1 "Describe what you changed"
    ```
 
-Never put a `ghp_...` token in scripts, `.env`, or this repo.
+Copy `.env.example` to `.env` and put your token there. **`.env` is gitignored** — never commit it.
+
+`push.ps1` reads `GITHUB_TOKEN` from `.env` so you are not prompted every time.
 
 ## Updating jobs (batch 2: +50 more)
 

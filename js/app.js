@@ -435,14 +435,32 @@
     }
   }
 
-  function initMap(elId, layerRef) {
+  function setupMapScrollBehavior(m, containerEl) {
+    m.scrollWheelZoom.disable();
+    containerEl.classList.add("map-zoom-off");
+    containerEl.addEventListener("click", () => {
+      m.scrollWheelZoom.enable();
+      containerEl.classList.add("map-zoom-on");
+      containerEl.classList.remove("map-zoom-off");
+    });
+    containerEl.addEventListener("mouseleave", () => {
+      m.scrollWheelZoom.disable();
+      containerEl.classList.remove("map-zoom-on");
+      containerEl.classList.add("map-zoom-off");
+    });
+    L.DomEvent.disableScrollPropagation(m.getContainer());
+    L.DomEvent.disableClickPropagation(m.getContainer());
+  }
+
+  function initMap(elId) {
     const el = document.getElementById(elId);
     if (!el) return null;
-    const m = L.map(el, { scrollWheelZoom: true }).setView([44.92, -123.03], 11);
+    const m = L.map(el, { scrollWheelZoom: false }).setView([44.92, -123.03], 11);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap",
       maxZoom: 18,
     }).addTo(m);
+    setupMapScrollBehavior(m, el);
     const layer = L.layerGroup().addTo(m);
     if (elId === "map") {
       map = m;
