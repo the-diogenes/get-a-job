@@ -14,6 +14,8 @@
   --radius: 12px;
   --font: "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --nav-h: 64px;
+  --nav-total: calc(var(--nav-h) + env(safe-area-inset-bottom, 0px));
+  --mobile-header-h: 9rem; /* sticky header + progress + meta */
   --touch: 44px;
 }
 
@@ -66,7 +68,7 @@ body {
 .app-shell {
   display: flex; flex-direction: column;
   min-height: 100dvh;
-  padding-bottom: var(--nav-h);
+  padding-bottom: var(--nav-total);
 }
 .app-header {
   background: linear-gradient(135deg, #1a3354 0%, #0b0f14 80%);
@@ -93,11 +95,13 @@ body {
 .view-active { display: flex; }
 .bottom-nav {
   position: fixed; bottom: 0; left: 0; right: 0;
-  height: var(--nav-h);
+  min-height: var(--nav-h);
+  height: var(--nav-total);
   background: var(--surface);
   border-top: 1px solid var(--surface2);
-  display: flex; z-index: 200;
+  display: flex; z-index: 1200;
   padding-bottom: env(safe-area-inset-bottom, 0);
+  box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.45);
 }
 .nav-btn {
   flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -189,7 +193,7 @@ body {
   font-size: 0.7rem; padding: 0.25rem 0.55rem;
   border-radius: 4px; pointer-events: none; z-index: 1000;
 }
-#view-map .map-full { flex: 1; min-height: calc(100dvh - var(--nav-h) - 120px); width: 100%; }
+#view-map .map-full { flex: 1; min-height: 280px; width: 100%; }
 
 /* ===== Job cards ===== */
 .job-card {
@@ -385,6 +389,29 @@ body {
     padding: 0.65rem 0.85rem 1rem;
   }
   .panel-map { display: none; }
+
+  /* Map tab: fit between sticky header and fixed bottom nav (no overlap) */
+  #view-map.view-active {
+    display: flex;
+    flex-direction: column;
+    flex: none;
+    height: calc(100dvh - var(--mobile-header-h) - var(--nav-total));
+    max-height: calc(100dvh - var(--mobile-header-h) - var(--nav-total));
+    min-height: 0;
+    overflow: hidden;
+  }
+  #view-map .map-full,
+  #map-mobile {
+    flex: 1;
+    min-height: 0 !important;
+    height: 100% !important;
+    max-height: 100%;
+    width: 100%;
+  }
+  /* Keep Leaflet attribution above nav edge */
+  #map-mobile .leaflet-bottom {
+    bottom: 0.5rem !important;
+  }
 
   .header-top h1 { font-size: 1.1rem; }
   .actions .btn { flex: 1 1 calc(50% - 0.25rem); }
