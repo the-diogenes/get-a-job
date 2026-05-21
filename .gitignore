@@ -1,3 +1,8 @@
 .env
 .env.local
 *.log
+
+# Local-only experiment dirs (not part of the job board)
+browser-harness-main/
+hermes-agent-main/
+config.local.js
