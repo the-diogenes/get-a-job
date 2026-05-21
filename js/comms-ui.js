@@ -52,9 +52,77 @@
     el._t = setTimeout(() => el.classList.remove("comms-toast-visible"), 5000);
   }
 
+  function cloudSetupHtml() {
+    return `
+      <div class="comms-setup" id="comms-setup-panel">
+        <p class="comms-offline"><strong>Chat needs Supabase</strong> (free). One-time setup:</p>
+        <ol class="comms-setup-steps">
+          <li><a href="https://supabase.com/dashboard" target="_blank" rel="noopener">Create a project</a></li>
+          <li>SQL Editor → paste <code>supabase/schema.sql</code> from the repo → Run</li>
+          <li>Settings → API → copy URL + <strong>anon public</strong> key below</li>
+        </ol>
+        <form id="comms-setup-form" class="comms-setup-form">
+          <label>Project URL <input type="url" name="supabaseUrl" placeholder="https://xxxxx.supabase.co" required /></label>
+          <label>Anon key <input type="text" name="supabaseAnonKey" placeholder="eyJhbG..." required autocomplete="off" /></label>
+          <button type="submit" class="btn btn-primary btn-sm">Connect & test</button>
+        </form>
+        <p class="comms-setup-hint">Saved in this browser only (or add <code>config.js</code> on the site for everyone).</p>
+      </div>`;
+  }
+
   function cloudBanner() {
     if (global.GAJComms && global.GAJComms.configured()) return "";
-    return `<p class="comms-offline">Cloud messaging is off — copy <code>config.example.js</code> to <code>config.js</code> and run <code>supabase/schema.sql</code>.</p>`;
+    return cloudSetupHtml();
+  }
+
+  async function testCloudConnection() {
+    if (!global.GAJSupabase || !global.GAJSupabase.isConfigured()) {
+      throw new Error("Enter Supabase URL and anon key first.");
+    }
+    const client = global.GAJSupabase.getClient();
+    const { error } = await client.from("chat_sessions").select("id").limit(1);
+    if (error) {
+      if (
+        error.message &&
+        (error.message.includes("does not exist") ||
+          error.code === "PGRST205" ||
+          error.code === "42P01")
+      ) {
+        throw new Error(
+          "Tables missing — run supabase/schema.sql in Supabase SQL Editor."
+        );
+      }
+      throw error;
+    }
+    return true;
+  }
+
+  function wireCloudSetup() {
+    document.body.addEventListener("submit", async (e) => {
+      const form = e.target.closest("#comms-setup-form");
+      if (!form) return;
+      e.preventDefault();
+      const url = form.supabaseUrl.value.trim();
+      const key = form.supabaseAnonKey.value.trim();
+      if (!url || !key) return;
+      try {
+        global.GAJCloudConfig.save({ supabaseUrl: url, supabaseAnonKey: key });
+        global.GAJSupabase.resetClient();
+        await testCloudConnection();
+        if (global.GAJComms) global.GAJComms.init();
+        showToast("Connected! Chat is live.");
+        document.getElementById("comms-setup-panel")?.remove();
+        await renderBoardView();
+        await loadJackChat();
+        await renderInboxBoard();
+        await loadInboxChats();
+        if (global.GAJTracker && global.GAJAuth.currentUser()) {
+          await global.GAJTracker.initForUser(global.GAJAuth.currentUser().id);
+        }
+      } catch (err) {
+        showToast(String(err.message || err));
+      }
+    });
   }
 
   function buildBoardThread(posts) {
@@ -261,7 +329,15 @@
 
   async function onJackSendChat(text) {
     const u = user();
-    if (!u || !activeChatSessionId) return;
+    if (!u) return;
+    if (!global.GAJComms.configured()) {
+      showToast("Connect Supabase below first (one-time setup).");
+      return;
+    }
+    if (!activeChatSessionId) {
+      const session = await global.GAJComms.getOrCreateSession(u.id);
+      activeChatSessionId = session.id;
+    }
 
     const msgsBefore = await global.GAJComms.fetchMessages(activeChatSessionId);
     const isFirst = msgsBefore.length === 0;
@@ -309,7 +385,12 @@
         const ta = jackChatForm.querySelector("textarea");
         const body = ta && ta.value.trim();
         if (!body) return;
+        if (!global.GAJComms.configured()) {
+          showToast("Connect Supabase in the setup box above first.");
+          return;
+        }
         try {
+          if (!activeChatSessionId) await loadJackChat();
           await onJackSendChat(body);
           ta.value = "";
         } catch (err) {
@@ -443,6 +524,7 @@
 
   function init() {
     if (!global.GAJComms) return;
+    wireCloudSetup();
     global.GAJComms.init();
     global.GAJComms.on(onCommsEvent);
     wireForms();

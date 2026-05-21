@@ -42,10 +42,12 @@
   }
 
   function getConfig() {
+    if (global.GAJCloudConfig) return global.GAJCloudConfig.get();
     return global.GAJ_CONFIG || null;
   }
 
   function isSyncConfigured() {
+    if (global.GAJCloudConfig) return global.GAJCloudConfig.isConfigured();
     const c = getConfig();
     return !!(c && c.supabaseUrl && c.supabaseAnonKey);
   }

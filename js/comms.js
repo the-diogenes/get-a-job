@@ -228,7 +228,10 @@
   }
 
   async function notifyEmailChatStarted(sessionId, preview) {
-    const c = global.GAJ_CONFIG || {};
+    const c =
+      (global.GAJCloudConfig && global.GAJCloudConfig.get()) ||
+      global.GAJ_CONFIG ||
+      {};
     if (!c.emailjsPublicKey || !c.emailjsServiceId || !c.emailjsTemplateId) {
       return false;
     }

@@ -30,6 +30,54 @@
   font-size: 0.8rem;
 }
 
+.comms-setup {
+  background: var(--surface);
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.comms-setup-steps {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.comms-setup-steps a {
+  color: var(--accent);
+}
+
+.comms-setup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.comms-setup-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.comms-setup-form input {
+  padding: 0.45rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+.comms-setup-hint {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+}
+
 .board-thread,
 .inbox-card {
   background: var(--surface);
