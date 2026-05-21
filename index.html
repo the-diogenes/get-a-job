@@ -40,6 +40,24 @@
       </div>
     </div>
 
+    <!-- Welcome modal (only fires for drJobless) -->
+    <div id="welcome-modal" class="welcome-modal hidden" role="dialog" aria-modal="true">
+      <div class="welcome-backdrop"></div>
+      <div class="welcome-card">
+        <div id="welcome-step-1">
+          <div class="welcome-emoji">📣</div>
+          <h2>Are you ready to GET A JOB?</h2>
+          <p class="welcome-sub">Jack made you a whole website. No pressure.</p>
+          <button type="button" id="welcome-next" class="btn btn-primary btn-block">Next</button>
+        </div>
+        <div id="welcome-step-2" hidden>
+          <div class="welcome-emoji big-smile">😊</div>
+          <h2>Jack is ready!</h2>
+          <button type="button" id="welcome-close" class="btn btn-primary btn-block">Let me at it</button>
+        </div>
+      </div>
+    </div>
+
     <!-- App -->
     <div id="app-shell" class="app-shell hidden">
       <header class="app-header">
@@ -77,6 +95,10 @@
         <div class="today-panel">
           <h2>Today's 5</h2>
           <p class="today-sub">Auto-picked from follow-ups + high-match jobs.</p>
+          <div class="info-banner">
+            <strong>Heads up:</strong> this is a hand-curated board, not a live feed.
+            Each card shows when it was verified and a <em>Verify live</em> button that opens an Indeed search to confirm the role is still open before you spend time applying.
+          </div>
           <div id="today-list" class="today-list"></div>
         </div>
       </div>
@@ -203,6 +225,16 @@
             <summary>Resume one-liner (paste at top)</summary>
             <ul>
               <li><em>Security professional with 16 years of experience in patrol, access control, incident documentation, investigations, and de-escalation. Active Oregon DPSST certification (armed). Reliable, Salem-area based, immediately available.</em></li>
+            </ul>
+          </details>
+          <details>
+            <summary>Are these listings still open?</summary>
+            <ul>
+              <li>This board is hand-curated and refreshed as a snapshot, not a live scrape — postings can close at any time.</li>
+              <li>Each card shows a freshness badge based on when it was last verified.</li>
+              <li>The <strong>Verify live</strong> button on every job opens an Indeed search for that role + employer in Salem to confirm it's still open before you sink time into the application.</li>
+              <li>If the apply link 404s, the role probably closed. Call the employer's HR anyway — they often reopen the requisition.</li>
+              <li>Staffing agencies (Express, Adecco) never "expire" — call them once a week.</li>
             </ul>
           </details>
           <details>

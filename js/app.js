@@ -3,7 +3,14 @@
 
   const PAY_MULT = { hourly: 2080, monthly: 12, annual: 1 };
   const EARTH_R_MI = 3958.8;
-  const SOUTH_CENTER = { lat: 44.884, lng: -123.033 };
+  // Home base: Clark Creek Village Apts, 884 Fairview Ave SE, Salem OR 97302
+  const HOME = { lat: 44.9173, lng: -123.0048, label: "Clark Creek Village" };
+  // Rough Salem driving speed avg, used for commute estimate.
+  // Local roads ~25 mph in town; +3 min minimum for warm-up/parking.
+  const COMMUTE_MIN_PER_MILE = 2.2;
+  const COMMUTE_BASE_MIN = 3;
+  const FRESHNESS_FRESH_DAYS = 21;
+  const FRESHNESS_STALE_DAYS = 60;
 
   let allJobs = [];
   let resources = [];
@@ -44,11 +51,11 @@
 
   function distanceMi(lat, lng) {
     const toRad = (d) => (d * Math.PI) / 180;
-    const dLat = toRad(lat - SOUTH_CENTER.lat);
-    const dLng = toRad(lng - SOUTH_CENTER.lng);
+    const dLat = toRad(lat - HOME.lat);
+    const dLng = toRad(lng - HOME.lng);
     const a =
       Math.sin(dLat / 2) ** 2 +
-      Math.cos(toRad(SOUTH_CENTER.lat)) *
+      Math.cos(toRad(HOME.lat)) *
         Math.cos(toRad(lat)) *
         Math.sin(dLng / 2) ** 2;
     return EARTH_R_MI * 2 * Math.asin(Math.sqrt(a));
@@ -58,6 +65,36 @@
     if (job._distance != null) return job._distance;
     job._distance = distanceMi(job.lat, job.lng);
     return job._distance;
+  }
+
+  // Convert straight-line miles to a rough drive-time estimate.
+  // Multiply by 1.25 for actual road routing vs straight line.
+  // First ~8 miles use city speed; remainder uses highway speed.
+  function commuteMin(job) {
+    const driveMiles = jobDistance(job) * 1.25;
+    const urban = Math.min(driveMiles, 8) * COMMUTE_MIN_PER_MILE;
+    const highway = Math.max(0, driveMiles - 8) * 1.2;
+    return Math.max(3, Math.round(COMMUTE_BASE_MIN + urban + highway));
+  }
+
+  function daysSince(isoDate) {
+    if (!isoDate) return null;
+    const t = new Date(isoDate).getTime();
+    if (isNaN(t)) return null;
+    return Math.floor((Date.now() - t) / (1000 * 60 * 60 * 24));
+  }
+
+  function freshness(job) {
+    const days = daysSince(job.posted) ?? daysSince(job.verified_on);
+    if (days == null) return { label: "Verify before applying", cls: "fresh-unknown" };
+    if (days <= FRESHNESS_FRESH_DAYS) return { label: `Fresh · ${days}d`, cls: "fresh-fresh" };
+    if (days <= FRESHNESS_STALE_DAYS) return { label: `${days}d old`, cls: "fresh-aging" };
+    return { label: `Stale · ${days}d — verify`, cls: "fresh-stale" };
+  }
+
+  function liveSearchUrl(job) {
+    const q = encodeURIComponent(`${job.title} ${job.employer}`);
+    return `https://www.indeed.com/jobs?q=${q}&l=Salem%2C+OR&sc=0kf%3Aattr%28D7S5D%29%3B&fromage=14`;
   }
 
   function sortJobs(jobs) {
@@ -211,15 +248,18 @@
 
     const tags = (job.tags || []).slice(0, 3).map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join("");
     const cats = (job.categories || []).slice(0, 2).map((c) => `<span class="badge">${escapeHtml(c)}</span>`).join("");
+    const fresh = freshness(job);
     const flags = [
       tierBadge(job.match_tier),
       job.south_salem ? '<span class="badge south">South Salem</span>' : "",
       job.priority_call ? '<span class="badge priority">Call today</span>' : "",
       job.status === "verify" ? '<span class="badge verify">Verify</span>' : "",
       s.interview ? '<span class="badge interview">Interview</span>' : "",
+      `<span class="badge ${fresh.cls}">${escapeHtml(fresh.label)}</span>`,
     ].join("");
 
     const dist = jobDistance(job).toFixed(1);
+    const drive = commuteMin(job);
 
     const applyLinks = [
       job.apply_url ? `<a class="btn btn-primary" href="${escapeHtml(job.apply_url)}" target="_blank" rel="noopener">Apply</a>` : "",
@@ -240,7 +280,8 @@
             <div class="employer">${escapeHtml(job.employer)}</div>
             <div class="card-meta-row">
               <span class="pay">${escapeHtml(job.pay_display)}</span>
-              <span class="dist">${dist} mi</span>
+              <span class="dist" title="From Clark Creek Village (straight-line distance)">${dist} mi</span>
+              <span class="commute" title="Estimated drive time from home — verify with maps">~${drive} min</span>
             </div>
           </div>
           <button type="button" class="bookmark-btn ${s.bookmarked ? "on" : ""}" data-bookmark="${escapeHtml(job.id)}" aria-label="Bookmark">★</button>
@@ -267,6 +308,8 @@
           </label>
           <div class="actions">
             ${applyLinks}${phoneBtn}
+            <a class="btn btn-secondary" href="${escapeHtml(liveSearchUrl(job))}" target="_blank" rel="noopener" title="Check Indeed for current listing">Verify live</a>
+            <a class="btn btn-secondary" href="https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent("884 Fairview Ave SE, Salem, OR 97302")}&destination=${encodeURIComponent(job.address || job.lat + "," + job.lng)}" target="_blank" rel="noopener">Directions</a>
             <button type="button" class="btn btn-secondary btn-copy" data-copy="${escapeHtml(job.id)}">Copy follow-up</button>
             <button type="button" class="btn btn-secondary btn-map-jump" data-map="${escapeHtml(job.id)}">Map</button>
             <button type="button" class="btn btn-secondary btn-share" data-share="${escapeHtml(job.id)}">Share</button>

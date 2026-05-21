@@ -68,6 +68,32 @@
     if (label) label.textContent = user.displayName;
   }
 
+  function playWelcome(userId) {
+    if (userId !== "drJobless") return;
+    const modal = document.getElementById("welcome-modal");
+    const step1 = document.getElementById("welcome-step-1");
+    const step2 = document.getElementById("welcome-step-2");
+    const nextBtn = document.getElementById("welcome-next");
+    const closeBtn = document.getElementById("welcome-close");
+    if (!modal) return;
+    step1.hidden = false;
+    step2.hidden = true;
+    modal.classList.remove("hidden");
+    modal.classList.add("welcome-show");
+    const onNext = () => {
+      step1.hidden = true;
+      step2.hidden = false;
+    };
+    const onClose = () => {
+      modal.classList.add("hidden");
+      modal.classList.remove("welcome-show");
+      nextBtn.removeEventListener("click", onNext);
+      closeBtn.removeEventListener("click", onClose);
+    };
+    nextBtn.addEventListener("click", onNext);
+    closeBtn.addEventListener("click", onClose);
+  }
+
   function bindLoginForm(onSuccess) {
     const form = document.getElementById("login-form");
     const errEl = document.getElementById("login-error");
@@ -89,6 +115,7 @@
       form.password.value = "";
       showApp({ id: result.user, displayName: result.displayName });
       if (onSuccess) onSuccess(result.user);
+      playWelcome(result.user);
     });
 
     document.getElementById("logout-btn")?.addEventListener("click", () => {

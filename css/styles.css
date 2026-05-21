@@ -366,10 +366,26 @@ body {
   .mobile-only { display: inline-flex; }
   .toolbar-filters { display: none; }
   .toolbar-filters.filters-open { display: flex; }
+
+  /* Let the document scroll naturally — fixes broken mobile job-list scrolling */
+  .app-shell { overflow: visible; }
+  .view { flex: none; }
   #view-jobs { overflow: visible; }
-  .layout-desktop { grid-template-columns: 1fr; height: auto; max-height: none; overflow: visible; }
-  .panel-list { height: auto; max-height: none; }
+  .layout-desktop {
+    display: block;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  .panel-list {
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+    border-right: none;
+    padding: 0.65rem 0.85rem 1rem;
+  }
   .panel-map { display: none; }
+
   .header-top h1 { font-size: 1.1rem; }
   .actions .btn { flex: 1 1 calc(50% - 0.25rem); }
   .tracker-cards { grid-template-columns: repeat(2, 1fr); }
@@ -410,6 +426,129 @@ body {
   .app-header h1 { font-size: 1.5rem; }
   .toolbar { padding: 0.75rem 1.5rem; }
   .panel-list { padding: 0.85rem; }
+}
+
+/* ===== Welcome modal (drJobless gag) ===== */
+.welcome-modal {
+  position: fixed; inset: 0;
+  z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  padding: 1.5rem;
+}
+.welcome-modal.hidden { display: none; }
+.welcome-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(5, 8, 12, 0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: fadeIn 0.25s ease-out;
+}
+.welcome-card {
+  position: relative;
+  width: 100%; max-width: 380px;
+  background: var(--surface);
+  border: 1px solid var(--surface2);
+  border-radius: 22px;
+  padding: 2.25rem 1.5rem 1.75rem;
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  animation: pop 0.35s cubic-bezier(0.18, 1.2, 0.6, 1);
+}
+.welcome-emoji {
+  font-size: 4rem;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+}
+.welcome-emoji.big-smile {
+  font-size: 5.5rem;
+  animation: bouncy 0.7s ease-out;
+}
+.welcome-card h2 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.005em;
+}
+.welcome-sub {
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+  font-size: 0.92rem;
+}
+.welcome-card .btn-primary { margin-top: 0.5rem; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pop {
+  0% { opacity: 0; transform: scale(0.86) translateY(8px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes bouncy {
+  0% { transform: scale(0) rotate(-15deg); }
+  60% { transform: scale(1.2) rotate(8deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Info banner (freshness disclaimer) ===== */
+.info-banner {
+  background: linear-gradient(135deg, rgba(61, 158, 255, 0.10), rgba(34, 197, 94, 0.06));
+  border: 1px solid var(--surface2);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 0.75rem 0.9rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+.info-banner strong { color: var(--text); }
+.info-banner em { color: var(--accent); font-style: normal; font-weight: 600; }
+
+/* ===== Commute pill ===== */
+.commute {
+  font-size: 0.72rem;
+  color: var(--accent);
+  background: rgba(61, 158, 255, 0.12);
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* ===== Freshness badges ===== */
+.badge.fresh-fresh { background: rgba(34, 197, 94, 0.18); color: #86efac; }
+.badge.fresh-aging { background: rgba(245, 158, 11, 0.16); color: var(--warn); }
+.badge.fresh-stale { background: rgba(239, 68, 68, 0.18); color: #fca5a5; }
+.badge.fresh-unknown { background: var(--surface2); color: var(--muted); }
+
+/* ===== Card animation polish ===== */
+.job-card { animation: fadeInUp 0.25s ease-out both; }
+.job-card:nth-child(1) { animation-delay: 0.00s; }
+.job-card:nth-child(2) { animation-delay: 0.04s; }
+.job-card:nth-child(3) { animation-delay: 0.08s; }
+.job-card:nth-child(4) { animation-delay: 0.12s; }
+.job-card:nth-child(5) { animation-delay: 0.16s; }
+.job-card:nth-child(n+6) { animation-delay: 0.2s; }
+
+/* Subtle bookmark pulse when clicked */
+.bookmark-btn.on { animation: pop 0.3s ease-out; }
+
+/* Slight gradient sweep on header */
+.app-header {
+  background:
+    linear-gradient(135deg, #1a3354 0%, #0b0f14 60%),
+    radial-gradient(circle at 0% 0%, rgba(61, 158, 255, 0.25), transparent 50%);
+  background-blend-mode: screen;
+}
+
+/* Nicer empty state */
+.empty-state {
+  background: var(--surface);
+  border: 1px dashed var(--surface3);
+  border-radius: var(--radius);
+  font-size: 0.92rem;
 }
 
 /* ===== Print ===== */
