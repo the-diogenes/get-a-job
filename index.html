@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GET A JOB - Job Board</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>GET A JOB — Job Board</h1>
+      <p class="subtitle">Get to it, boy!</p>
+      <p class="meta">
+        Salem, OR area · Sorted by pay (high → low) · DPSST-ready security +
+        general roles · Last researched: <span id="verified-date">—</span>
+      </p>
+    </header>
+
+    <div class="toolbar">
+      <input
+        type="search"
+        id="search"
+        placeholder="Search title, employer, address…"
+        aria-label="Search jobs"
+      />
+      <select id="category-filter" aria-label="Category filter">
+        <option value="all">All categories</option>
+        <option value="security">Security</option>
+        <option value="loss-prevention">Loss prevention</option>
+        <option value="corrections">Corrections</option>
+        <option value="law-enforcement">Law enforcement</option>
+        <option value="state">State jobs</option>
+        <option value="city">City jobs</option>
+        <option value="county">County</option>
+        <option value="warehouse">Warehouse</option>
+        <option value="manufacturing">Manufacturing</option>
+        <option value="retail">Retail</option>
+        <option value="healthcare">Healthcare</option>
+        <option value="education">Education</option>
+        <option value="general">General</option>
+      </select>
+      <div class="chip-group">
+        <span class="chip" data-filter="securityOnly">Security focus</span>
+        <span class="chip" data-filter="southOnly">South Salem</span>
+        <span class="chip" data-filter="hasContact">Has phone/email</span>
+        <span class="chip" data-filter="priorityOnly">Call today ★</span>
+        <span class="chip" data-filter="openOnly">Listed open</span>
+      </div>
+      <span class="stats" id="job-count">Loading…</span>
+    </div>
+
+    <main class="layout">
+      <section class="panel-list" id="job-list" aria-label="Job listings">
+        <div class="empty-state">Loading jobs…</div>
+      </section>
+      <section class="panel-map" aria-label="Job map">
+        <div id="map"></div>
+      </section>
+    </main>
+
+    <section class="playbook">
+      <h2>No replies? Do this.</h2>
+      <details open>
+        <summary>48-hour follow-up script (after every apply)</summary>
+        <ul>
+          <li>
+            Call the store or HR line from the listing. Say: “I applied online for
+            [role] on [date]. I have 16 years of security experience and an active Oregon
+            DPSST license. Who should I speak with about next steps?”
+          </li>
+          <li>Ask for a name and email. Send a one-paragraph follow-up the same day.</li>
+          <li>
+            For government jobs (City, County, DOC, OSH): call HR/recruiting numbers
+            listed — online portals often need a human nudge.
+          </li>
+          <li>
+            DOC corrections: email
+            <a href="mailto:odocjobs@doc.oregon.gov">odocjobs@doc.oregon.gov</a>
+            for NTN REACT test voucher before or right after applying.
+          </li>
+        </ul>
+      </details>
+      <details>
+        <summary>Top priorities this week (highest pay + direct contact)</summary>
+        <ul>
+          <li>Oregon DOC Correctional Officer — ~$68k–94k/yr</li>
+          <li>Marion County Deputy Sheriff (Community Corrections) — up to ~$48/hr</li>
+          <li>OSH Mental Health Security Technician — ~$53k–67k/yr</li>
+          <li>Salem-Keizer Security Field Coordinator — ~$67k–90k/yr (verify posting)</li>
+          <li>Wright Security — call 503-428-6323</li>
+          <li>WinCo Loss Prevention (south Salem) — call store 503-362-2620 after apply</li>
+          <li>Salem Health careers — 503-561-5200 (security + physical security tech)</li>
+          <li>Gensco warehouse — 503-585-1743 (south Salem industrial)</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Resume one-liner (paste at top of applications)</summary>
+        <ul>
+          <li>
+            <em
+              >Security professional with 16 years of experience in patrol, access control,
+              incident documentation, and de-escalation. Active Oregon DPSST certification.
+              Reliable, available [your schedule], Salem-area based.</em
+            >
+          </li>
+        </ul>
+      </details>
+
+      <h2 style="margin-top: 1.25rem">Local resources</h2>
+      <div class="resources-grid" id="resources"></div>
+    </section>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

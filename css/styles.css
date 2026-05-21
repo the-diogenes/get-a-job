@@ -1,0 +1,356 @@
+:root {
+  --bg: #0f1419;
+  --surface: #1a2332;
+  --surface2: #243044;
+  --text: #e8edf4;
+  --muted: #8b9cb3;
+  --accent: #3d9eff;
+  --accent2: #22c55e;
+  --warn: #f59e0b;
+  --danger: #ef4444;
+  --south: #a78bfa;
+  --radius: 10px;
+  --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.45;
+}
+
+header {
+  background: linear-gradient(135deg, #1e3a5f 0%, #0f1419 60%);
+  border-bottom: 1px solid var(--surface2);
+  padding: 1.25rem 1.5rem;
+}
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+
+header .subtitle {
+  color: var(--warn);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+header .meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--surface2);
+  align-items: center;
+}
+
+.toolbar input[type="search"] {
+  flex: 1;
+  min-width: 180px;
+  padding: 0.55rem 0.85rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--surface2);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.toolbar select,
+.toolbar label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.toolbar select {
+  padding: 0.5rem 0.65rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--surface2);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chip {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--surface2);
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s;
+}
+
+.chip.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: calc(100vh - 200px);
+  min-height: 480px;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: 45vh 40vh;
+    height: auto;
+  }
+}
+
+.panel-list {
+  overflow-y: auto;
+  border-right: 1px solid var(--surface2);
+  padding: 0.75rem;
+}
+
+.panel-map {
+  position: relative;
+  min-height: 300px;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  z-index: 1;
+}
+
+.job-card {
+  background: var(--surface);
+  border: 1px solid var(--surface2);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.65rem;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.1s;
+}
+
+.job-card:hover {
+  border-color: var(--accent);
+}
+
+.job-card.active {
+  border-color: var(--accent2);
+  box-shadow: 0 0 0 1px var(--accent2);
+}
+
+.job-card .rank {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.job-card h3 {
+  font-size: 1rem;
+  margin: 0.2rem 0;
+}
+
+.job-card .employer {
+  color: var(--accent);
+  font-size: 0.88rem;
+}
+
+.job-card .pay {
+  color: var(--accent2);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin: 0.35rem 0;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.4rem 0;
+}
+
+.badge {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  background: var(--surface2);
+  color: var(--muted);
+}
+
+.badge.security {
+  background: #1e3a5f;
+  color: #93c5fd;
+}
+
+.badge.south {
+  background: #3b2d5c;
+  color: var(--south);
+}
+
+.badge.priority {
+  background: #422006;
+  color: var(--warn);
+}
+
+.badge.verify {
+  background: #3f1d1d;
+  color: #fca5a5;
+}
+
+.job-detail {
+  display: none;
+  margin-top: 0.65rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--surface2);
+  font-size: 0.85rem;
+}
+
+.job-card.expanded .job-detail {
+  display: block;
+}
+
+.job-detail p {
+  margin-bottom: 0.5rem;
+}
+
+.job-detail .label {
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: var(--surface2);
+  color: var(--text);
+}
+
+.btn-call {
+  background: var(--accent2);
+  color: #052e16;
+}
+
+.playbook {
+  background: var(--surface);
+  border-top: 1px solid var(--surface2);
+  padding: 1.25rem 1.5rem 2rem;
+  max-height: none;
+}
+
+.playbook h2 {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.playbook details {
+  margin-bottom: 0.65rem;
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--surface2);
+}
+
+.playbook summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.playbook ul {
+  margin: 0.5rem 0 0 1.25rem;
+  color: var(--muted);
+}
+
+.playbook li {
+  margin-bottom: 0.35rem;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.resource-card {
+  background: var(--bg);
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--surface2);
+  font-size: 0.85rem;
+}
+
+.resource-card a {
+  color: var(--accent);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+}
+
+.stats {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-left: auto;
+}
+
+.leaflet-popup-content {
+  font-family: var(--font);
+  font-size: 0.85rem;
+  min-width: 180px;
+}
+
+.leaflet-popup-content strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
