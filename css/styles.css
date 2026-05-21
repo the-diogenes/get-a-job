@@ -15,7 +15,7 @@
   --font: "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --nav-h: 64px;
   --nav-total: calc(var(--nav-h) + env(safe-area-inset-bottom, 0px));
-  --mobile-header-h: 9rem; /* sticky header + progress + meta */
+  --mobile-header-h: 10.5rem; /* sticky header + progress + meta (safe on tall headers) */
   --touch: 44px;
 }
 
@@ -390,15 +390,26 @@ body {
   }
   .panel-map { display: none; }
 
-  /* Map tab: fit between sticky header and fixed bottom nav (no overlap) */
+  /* Map tab: pin between header and nav (avoid double-counting shell padding) */
+  .app-shell.map-tab-active {
+    padding-bottom: 0;
+  }
   #view-map.view-active {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: var(--mobile-header-h);
+    bottom: var(--nav-total);
     display: flex;
     flex-direction: column;
     flex: none;
-    height: calc(100dvh - var(--mobile-header-h) - var(--nav-total));
-    max-height: calc(100dvh - var(--mobile-header-h) - var(--nav-total));
+    height: auto !important;
+    max-height: none !important;
     min-height: 0;
     overflow: hidden;
+    z-index: 90;
+    margin: 0;
+    padding: 0;
   }
   #view-map .map-full,
   #map-mobile {
@@ -408,9 +419,8 @@ body {
     max-height: 100%;
     width: 100%;
   }
-  /* Keep Leaflet attribution above nav edge */
   #map-mobile .leaflet-bottom {
-    bottom: 0.5rem !important;
+    bottom: 0.35rem !important;
   }
 
   .header-top h1 { font-size: 1.1rem; }

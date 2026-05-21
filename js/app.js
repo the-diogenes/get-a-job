@@ -5,6 +5,8 @@
   const EARTH_R_MI = 3958.8;
   // Home base: Clark Creek Village Apts, 884 Fairview Ave SE, Salem OR 97302
   const HOME = { lat: 44.9173, lng: -123.0048, label: "Clark Creek Village" };
+  const SALEM_VIEW = { center: [44.9173, -123.0048], zoom: 11 };
+  const MAP_FIT_MAX_MI = 35; // only frame jobs near Salem for default map zoom
   // Rough Salem driving speed avg, used for commute estimate.
   // Local roads ~25 mph in town; +3 min minimum for warm-up/parking.
   const COMMUTE_MIN_PER_MILE = 2.2;
@@ -371,17 +373,43 @@
       });
       markerById.set(job.id, marker);
     });
-    if (jobs.length > 1 && layer === markersLayer && map) {
-      const group = L.featureGroup([...markerById.values()]);
-      try {
-        map.fitBounds(group.getBounds().pad(0.12));
-      } catch {}
+  }
+
+  function fitDesktopMap(jobs) {
+    if (!map) return;
+    const el = map.getContainer();
+    if (!el || el.offsetWidth < 50) return;
+
+    const local = jobs.filter((j) => jobDistance(j) <= MAP_FIT_MAX_MI);
+    const markers = (local.length >= 2 ? local : jobs)
+      .map((j) => markerById.get(j.id))
+      .filter(Boolean);
+
+    if (markers.length < 2) {
+      map.setView(SALEM_VIEW.center, SALEM_VIEW.zoom);
+      return;
+    }
+    try {
+      const group = L.featureGroup(markers);
+      map.fitBounds(group.getBounds().pad(0.08), {
+        maxZoom: 12,
+        padding: [28, 28],
+      });
+    } catch {
+      map.setView(SALEM_VIEW.center, SALEM_VIEW.zoom);
     }
   }
 
   function refreshMarkers(jobs) {
     buildMarkers(markersLayer, jobs);
     if (mapMobileInitialized) buildMarkers(markersLayerMobile, jobs);
+    fitDesktopMap(jobs);
+  }
+
+  function refreshMapViewport() {
+    if (!map) return;
+    map.invalidateSize();
+    fitDesktopMap(sortJobs(allJobs.filter(matchesFilters)));
   }
 
   function bindCardInteractions(listEl) {
@@ -631,7 +659,11 @@
   function initMap(elId) {
     const el = document.getElementById(elId);
     if (!el) return null;
-    const m = L.map(el, { scrollWheelZoom: false }).setView([44.92, -123.03], 11);
+    const m = L.map(el, {
+      scrollWheelZoom: false,
+      minZoom: 9,
+      maxZoom: 18,
+    }).setView(SALEM_VIEW.center, SALEM_VIEW.zoom);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap",
       maxZoom: 18,
@@ -650,9 +682,17 @@
     return m;
   }
 
+  function syncMobileHeaderHeight() {
+    const header = document.querySelector(".app-header");
+    if (!header) return;
+    const h = Math.ceil(header.getBoundingClientRect().height);
+    document.documentElement.style.setProperty("--mobile-header-h", `${h}px`);
+  }
+
   function ensureMaps() {
     if (!mapInitialized) initMap("map");
     if (!mapMobileInitialized) initMap("map-mobile");
+    syncMobileHeaderHeight();
     setTimeout(() => {
       map && map.invalidateSize();
       mapMobile && mapMobile.invalidateSize();
@@ -689,11 +729,22 @@
     document.querySelectorAll(".nav-btn").forEach((btn) => {
       btn.classList.toggle("nav-active", btn.dataset.nav === name);
     });
+    document.getElementById("app-shell")?.classList.toggle("map-tab-active", name === "map");
+
     if (name === "map") {
+      syncMobileHeaderHeight();
       ensureMaps();
       const filtered = sortJobs(allJobs.filter(matchesFilters));
       buildMarkers(markersLayerMobile, filtered);
-      setTimeout(() => mapMobile && mapMobile.invalidateSize(), 150);
+      setTimeout(() => {
+        syncMobileHeaderHeight();
+        mapMobile && mapMobile.invalidateSize();
+        mapMobile && mapMobile.setView(SALEM_VIEW.center, SALEM_VIEW.zoom);
+      }, 150);
+    }
+    if (name === "jobs") {
+      ensureMaps();
+      setTimeout(() => refreshMapViewport(), 200);
     }
     if (name === "tracker") renderTrackerView();
     if (name === "today") renderTodayView();
@@ -799,6 +850,9 @@
       renderResources();
       bindUI();
       renderList();
+      syncMobileHeaderHeight();
+      window.addEventListener("resize", syncMobileHeaderHeight);
+      setTimeout(() => refreshMapViewport(), 350);
       renderTrackerView();
       renderTodayView();
       handleShareUrl();
