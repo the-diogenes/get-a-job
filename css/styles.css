@@ -390,9 +390,14 @@ body {
   }
   .panel-map { display: none; }
 
-  /* Map tab: pin between header and nav (avoid double-counting shell padding) */
+  /* Map tab: fixed between measured header and nav */
+  body.map-tab-active {
+    overflow: hidden;
+    height: 100dvh;
+  }
   .app-shell.map-tab-active {
     padding-bottom: 0;
+    overflow: hidden;
   }
   #view-map.view-active {
     position: fixed;
@@ -400,27 +405,35 @@ body {
     right: 0;
     top: var(--mobile-header-h);
     bottom: var(--nav-total);
-    display: flex;
-    flex-direction: column;
+    display: block;
     flex: none;
     height: auto !important;
     max-height: none !important;
     min-height: 0;
     overflow: hidden;
-    z-index: 90;
+    z-index: 100;
     margin: 0;
     padding: 0;
   }
-  #view-map .map-full,
-  #map-mobile {
-    flex: 1;
+  #view-map .map-full {
+    position: absolute;
+    inset: 0;
     min-height: 0 !important;
     height: 100% !important;
-    max-height: 100%;
+    max-height: none !important;
     width: 100%;
   }
+  #map-mobile,
+  #map-mobile.leaflet-container {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
   #map-mobile .leaflet-bottom {
-    bottom: 0.35rem !important;
+    bottom: 0.25rem !important;
   }
 
   .header-top h1 { font-size: 1.1rem; }

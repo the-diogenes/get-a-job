@@ -6,7 +6,10 @@
   // Home base: Clark Creek Village Apts, 884 Fairview Ave SE, Salem OR 97302
   const HOME = { lat: 44.9173, lng: -123.0048, label: "Clark Creek Village" };
   const SALEM_VIEW = { center: [44.9173, -123.0048], zoom: 11 };
-  const MAP_FIT_MAX_MI = 35; // only frame jobs near Salem for default map zoom
+  const SALEM_BOUNDS = L.latLngBounds(
+    [44.72, -123.62], // SW — Salem metro + Brooks/Keizer
+    [45.08, -122.88]  // NE
+  );
   // Rough Salem driving speed avg, used for commute estimate.
   // Local roads ~25 mph in town; +3 min minimum for warm-up/parking.
   const COMMUTE_MIN_PER_MILE = 2.2;
@@ -375,41 +378,41 @@
     });
   }
 
-  function fitDesktopMap(jobs) {
-    if (!map) return;
-    const el = map.getContainer();
-    if (!el || el.offsetWidth < 50) return;
+  function isMapVisible(mapInstance) {
+    if (!mapInstance) return false;
+    const el = mapInstance.getContainer();
+    if (!el || el.offsetWidth < 50 || el.offsetHeight < 50) return false;
+    return el.offsetParent !== null;
+  }
 
-    const local = jobs.filter((j) => jobDistance(j) <= MAP_FIT_MAX_MI);
-    const markers = (local.length >= 2 ? local : jobs)
-      .map((j) => markerById.get(j.id))
-      .filter(Boolean);
-
-    if (markers.length < 2) {
-      map.setView(SALEM_VIEW.center, SALEM_VIEW.zoom);
-      return;
-    }
-    try {
-      const group = L.featureGroup(markers);
-      map.fitBounds(group.getBounds().pad(0.08), {
-        maxZoom: 12,
-        padding: [28, 28],
-      });
-    } catch {
-      map.setView(SALEM_VIEW.center, SALEM_VIEW.zoom);
+  function resetMapToSalem(mapInstance) {
+    if (!mapInstance) return;
+    mapInstance.setView(SALEM_VIEW.center, SALEM_VIEW.zoom, { animate: false });
+    if (mapInstance.setZoom) {
+      const z = mapInstance.getZoom();
+      if (z < 9 || z > 14) mapInstance.setZoom(SALEM_VIEW.zoom);
     }
   }
 
   function refreshMarkers(jobs) {
-    buildMarkers(markersLayer, jobs);
-    if (mapMobileInitialized) buildMarkers(markersLayerMobile, jobs);
-    fitDesktopMap(jobs);
+    if (markersLayer) buildMarkers(markersLayer, jobs);
+    if (markersLayerMobile) buildMarkers(markersLayerMobile, jobs);
   }
 
-  function refreshMapViewport() {
-    if (!map) return;
+  function refreshDesktopMapWhenVisible() {
+    if (!map || !isMapVisible(map)) return;
     map.invalidateSize();
-    fitDesktopMap(sortJobs(allJobs.filter(matchesFilters)));
+    resetMapToSalem(map);
+    buildMarkers(markersLayer, sortJobs(allJobs.filter(matchesFilters)));
+  }
+
+  function refreshMobileMapWhenVisible() {
+    if (!mapMobile || !isMapVisible(mapMobile)) return;
+    syncMobileHeaderHeight();
+    syncNavHeight();
+    mapMobile.invalidateSize();
+    resetMapToSalem(mapMobile);
+    buildMarkers(markersLayerMobile, sortJobs(allJobs.filter(matchesFilters)));
   }
 
   function bindCardInteractions(listEl) {
@@ -526,6 +529,10 @@
     refreshMarkers(filtered);
     bindCardInteractions(listEl);
     updateProgressStats();
+    if (document.getElementById("view-jobs")?.classList.contains("view-active")) {
+      ensureDesktopMap();
+      runWhenMapReady(map, refreshDesktopMapWhenVisible);
+    }
   }
 
   // ---------- today view (auto picks 5) ----------
@@ -663,6 +670,8 @@
       scrollWheelZoom: false,
       minZoom: 9,
       maxZoom: 18,
+      maxBounds: SALEM_BOUNDS,
+      maxBoundsViscosity: 0.85,
     }).setView(SALEM_VIEW.center, SALEM_VIEW.zoom);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap",
@@ -689,14 +698,28 @@
     document.documentElement.style.setProperty("--mobile-header-h", `${h}px`);
   }
 
-  function ensureMaps() {
+  function syncNavHeight() {
+    const nav = document.querySelector(".bottom-nav");
+    if (!nav) return;
+    const h = Math.ceil(nav.getBoundingClientRect().height);
+    document.documentElement.style.setProperty("--nav-total", `${h}px`);
+  }
+
+  function ensureDesktopMap() {
     if (!mapInitialized) initMap("map");
+  }
+
+  function ensureMobileMap() {
     if (!mapMobileInitialized) initMap("map-mobile");
-    syncMobileHeaderHeight();
-    setTimeout(() => {
-      map && map.invalidateSize();
-      mapMobile && mapMobile.invalidateSize();
-    }, 100);
+  }
+
+  function runWhenMapReady(mapInstance, fn, attempts = 12) {
+    if (isMapVisible(mapInstance)) {
+      fn();
+      return;
+    }
+    if (attempts <= 0) return;
+    setTimeout(() => runWhenMapReady(mapInstance, fn, attempts - 1), 50);
   }
 
   // ---------- resources ----------
@@ -730,21 +753,23 @@
       btn.classList.toggle("nav-active", btn.dataset.nav === name);
     });
     document.getElementById("app-shell")?.classList.toggle("map-tab-active", name === "map");
+    document.body.classList.toggle("map-tab-active", name === "map");
 
     if (name === "map") {
       syncMobileHeaderHeight();
-      ensureMaps();
-      const filtered = sortJobs(allJobs.filter(matchesFilters));
-      buildMarkers(markersLayerMobile, filtered);
+      syncNavHeight();
+      ensureMobileMap();
+      runWhenMapReady(mapMobile, refreshMobileMapWhenVisible);
       setTimeout(() => {
         syncMobileHeaderHeight();
-        mapMobile && mapMobile.invalidateSize();
-        mapMobile && mapMobile.setView(SALEM_VIEW.center, SALEM_VIEW.zoom);
-      }, 150);
+        syncNavHeight();
+        refreshMobileMapWhenVisible();
+      }, 250);
     }
     if (name === "jobs") {
-      ensureMaps();
-      setTimeout(() => refreshMapViewport(), 200);
+      ensureDesktopMap();
+      runWhenMapReady(map, refreshDesktopMapWhenVisible);
+      setTimeout(refreshDesktopMapWhenVisible, 300);
     }
     if (name === "tracker") renderTrackerView();
     if (name === "today") renderTodayView();
@@ -846,13 +871,22 @@
     currentUserId = userId;
     try {
       await loadData();
-      ensureMaps();
+      ensureMobileMap();
       renderResources();
       bindUI();
       renderList();
       syncMobileHeaderHeight();
-      window.addEventListener("resize", syncMobileHeaderHeight);
-      setTimeout(() => refreshMapViewport(), 350);
+      syncNavHeight();
+      window.addEventListener("resize", () => {
+        syncMobileHeaderHeight();
+        syncNavHeight();
+        if (document.getElementById("view-jobs")?.classList.contains("view-active")) {
+          refreshDesktopMapWhenVisible();
+        }
+        if (document.getElementById("view-map")?.classList.contains("view-active")) {
+          refreshMobileMapWhenVisible();
+        }
+      });
       renderTrackerView();
       renderTodayView();
       handleShareUrl();
