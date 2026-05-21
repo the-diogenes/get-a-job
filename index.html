@@ -2,7 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0f1419" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>GET A JOB - Job Board</title>
     <link
       rel="stylesheet"
@@ -13,114 +18,223 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <header>
-      <h1>GET A JOB — Job Board</h1>
-      <p class="subtitle">Get to it, boy!</p>
-      <p class="meta">
-        Salem, OR area · Sorted by pay (high → low) · DPSST-ready security +
-        general roles · Last researched: <span id="verified-date">—</span>
-      </p>
-    </header>
-
-    <div class="toolbar">
-      <input
-        type="search"
-        id="search"
-        placeholder="Search title, employer, address…"
-        aria-label="Search jobs"
-      />
-      <select id="category-filter" aria-label="Category filter">
-        <option value="all">All categories</option>
-        <option value="security">Security</option>
-        <option value="loss-prevention">Loss prevention</option>
-        <option value="corrections">Corrections</option>
-        <option value="law-enforcement">Law enforcement</option>
-        <option value="state">State jobs</option>
-        <option value="city">City jobs</option>
-        <option value="county">County</option>
-        <option value="warehouse">Warehouse</option>
-        <option value="manufacturing">Manufacturing</option>
-        <option value="retail">Retail</option>
-        <option value="healthcare">Healthcare</option>
-        <option value="education">Education</option>
-        <option value="general">General</option>
-      </select>
-      <div class="chip-group">
-        <span class="chip" data-filter="securityOnly">Security focus</span>
-        <span class="chip" data-filter="southOnly">South Salem</span>
-        <span class="chip" data-filter="hasContact">Has phone/email</span>
-        <span class="chip" data-filter="priorityOnly">Call today ★</span>
-        <span class="chip" data-filter="openOnly">Listed open</span>
+    <!-- Login (default) -->
+    <div id="login-screen" class="login-screen">
+      <div class="login-card">
+        <h1>GET A JOB</h1>
+        <p class="login-sub">Get to it, boy!</p>
+        <p class="login-hint">Salem-area job board · Sign in to save your progress</p>
+        <form id="login-form" autocomplete="on">
+          <label>
+            Username
+            <input
+              type="text"
+              name="username"
+              required
+              autocomplete="username"
+              placeholder="drJobless"
+            />
+          </label>
+          <label>
+            Password
+            <input
+              type="password"
+              name="password"
+              required
+              autocomplete="current-password"
+              placeholder="••••••••"
+            />
+          </label>
+          <p id="login-error" class="login-error" hidden></p>
+          <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+        </form>
+        <p class="login-foot">
+          Progress syncs per account on this device (phone ↔ same browser).
+        </p>
       </div>
-      <span class="stats" id="job-count">Loading…</span>
     </div>
 
-    <main class="layout">
-      <section class="panel-list" id="job-list" aria-label="Job listings">
-        <div class="empty-state">Loading jobs…</div>
-      </section>
-      <section class="panel-map" aria-label="Job map">
-        <div id="map"></div>
-      </section>
-    </main>
+    <!-- Main app -->
+    <div id="app-shell" class="app-shell hidden">
+      <header class="app-header">
+        <div class="header-top">
+          <div>
+            <h1>GET A JOB</h1>
+            <p class="subtitle">Get to it, boy!</p>
+          </div>
+          <div class="header-actions">
+            <span class="user-pill" id="user-label">—</span>
+            <button type="button" class="btn btn-ghost" id="logout-btn">Log out</button>
+          </div>
+        </div>
+        <div class="progress-bar" id="progress-bar">
+          <span><strong id="stat-applied">0</strong> applied</span>
+          <span><strong id="stat-called">0</strong> called</span>
+          <span><strong id="stat-interview">0</strong> interviews</span>
+        </div>
+        <p class="meta">
+          Salem, OR · Pay high → low ·
+          <span id="verified-date">—</span>
+        </p>
+      </header>
 
-    <section class="playbook">
-      <h2>No replies? Do this.</h2>
-      <details open>
-        <summary>48-hour follow-up script (after every apply)</summary>
-        <ul>
-          <li>
-            Call the store or HR line from the listing. Say: “I applied online for
-            [role] on [date]. I have 16 years of security experience and an active Oregon
-            DPSST license. Who should I speak with about next steps?”
-          </li>
-          <li>Ask for a name and email. Send a one-paragraph follow-up the same day.</li>
-          <li>
-            For government jobs (City, County, DOC, OSH): call HR/recruiting numbers
-            listed — online portals often need a human nudge.
-          </li>
-          <li>
-            DOC corrections: email
-            <a href="mailto:odocjobs@doc.oregon.gov">odocjobs@doc.oregon.gov</a>
-            for NTN REACT test voucher before or right after applying.
-          </li>
-        </ul>
-      </details>
-      <details>
-        <summary>Top priorities this week (highest pay + direct contact)</summary>
-        <ul>
-          <li>Oregon DOC Correctional Officer — ~$68k–94k/yr</li>
-          <li>Marion County Deputy Sheriff (Community Corrections) — up to ~$48/hr</li>
-          <li>OSH Mental Health Security Technician — ~$53k–67k/yr</li>
-          <li>Salem-Keizer Security Field Coordinator — ~$67k–90k/yr (verify posting)</li>
-          <li>Wright Security — call 503-428-6323</li>
-          <li>WinCo Loss Prevention (south Salem) — call store 503-362-2620 after apply</li>
-          <li>Salem Health careers — 503-561-5200 (security + physical security tech)</li>
-          <li>Gensco warehouse — 503-585-1743 (south Salem industrial)</li>
-        </ul>
-      </details>
-      <details>
-        <summary>Resume one-liner (paste at top of applications)</summary>
-        <ul>
-          <li>
-            <em
-              >Security professional with 16 years of experience in patrol, access control,
-              incident documentation, and de-escalation. Active Oregon DPSST certification.
-              Reliable, available [your schedule], Salem-area based.</em
-            >
-          </li>
-        </ul>
-      </details>
+      <!-- Jobs view -->
+      <div class="view view-active" id="view-jobs" data-view="jobs">
+        <div class="toolbar">
+          <input
+            type="search"
+            id="search"
+            placeholder="Search jobs…"
+            aria-label="Search jobs"
+          />
+          <button
+            type="button"
+            class="btn btn-secondary mobile-only"
+            id="toggle-filters"
+            aria-expanded="false"
+          >
+            Filters
+          </button>
+          <div class="toolbar-filters" id="toolbar-filters">
+            <select id="category-filter" aria-label="Category">
+              <option value="all">All categories</option>
+              <option value="security">Security</option>
+              <option value="loss-prevention">Loss prevention</option>
+              <option value="corrections">Corrections</option>
+              <option value="law-enforcement">Law enforcement</option>
+              <option value="state">State</option>
+              <option value="city">City</option>
+              <option value="county">County</option>
+              <option value="warehouse">Warehouse</option>
+              <option value="manufacturing">Manufacturing</option>
+              <option value="retail">Retail</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="education">Education</option>
+              <option value="general">General</option>
+            </select>
+            <select id="status-filter" aria-label="Your progress">
+              <option value="all">All progress</option>
+              <option value="not_applied">Not applied yet</option>
+              <option value="applied">Applied</option>
+              <option value="need_followup">Need follow-up call</option>
+              <option value="interview">Has interview</option>
+            </select>
+            <div class="chip-group">
+              <span class="chip" data-filter="securityOnly">Security</span>
+              <span class="chip" data-filter="southOnly">South Salem</span>
+              <span class="chip" data-filter="hasContact">Has contact</span>
+              <span class="chip" data-filter="priorityOnly">Call today ★</span>
+              <span class="chip" data-filter="openOnly">Listed open</span>
+            </div>
+          </div>
+          <span class="stats" id="job-count">Loading…</span>
+        </div>
 
-      <h2 style="margin-top: 1.25rem">Local resources</h2>
-      <div class="resources-grid" id="resources"></div>
-    </section>
+        <main class="layout layout-desktop">
+          <section class="panel-list" id="job-list" aria-label="Job listings">
+            <div class="empty-state">Loading jobs…</div>
+          </section>
+          <section class="panel-map" aria-label="Job map">
+            <div id="map"></div>
+          </section>
+        </main>
+      </div>
+
+      <!-- Map-only view (mobile tab) -->
+      <div class="view" id="view-map" data-view="map">
+        <div id="map-mobile" class="map-full"></div>
+      </div>
+
+      <!-- Tracker dashboard -->
+      <div class="view" id="view-tracker" data-view="tracker">
+        <div class="tracker-panel">
+          <h2>Your hunt</h2>
+          <p class="tracker-sub">Saved on this device for your account.</p>
+          <div class="tracker-cards" id="tracker-summary"></div>
+          <h3>Need follow-up</h3>
+          <ul class="tracker-list" id="tracker-followup"></ul>
+          <h3>Applied</h3>
+          <ul class="tracker-list" id="tracker-applied"></ul>
+        </div>
+      </div>
+
+      <!-- Tips / playbook -->
+      <div class="view" id="view-tips" data-view="tips">
+        <section class="playbook">
+          <h2>No replies? Do this.</h2>
+          <details open>
+            <summary>48-hour follow-up script</summary>
+            <ul>
+              <li>
+                Call the store or HR line. Say: “I applied online for [role] on [date].
+                I have 16 years of security experience and an active Oregon DPSST license.
+                Who should I speak with about next steps?”
+              </li>
+              <li>Ask for a name and email. Follow up same day.</li>
+              <li>Government jobs: call HR — portals often need a nudge.</li>
+              <li>
+                DOC:
+                <a href="mailto:odocjobs@doc.oregon.gov">odocjobs@doc.oregon.gov</a>
+                for NTN REACT voucher.
+              </li>
+            </ul>
+          </details>
+          <details>
+            <summary>Top priorities this week</summary>
+            <ul>
+              <li>Oregon DOC Correctional Officer — ~$68k–94k/yr</li>
+              <li>Marion County Deputy Sheriff — up to ~$48/hr</li>
+              <li>OSH Mental Health Security Technician — ~$53k–67k/yr</li>
+              <li>Wright Security — 503-428-6323</li>
+              <li>WinCo LP south — 503-362-2620</li>
+              <li>Salem Health — 503-561-5200</li>
+              <li>Gensco — 503-585-1743</li>
+            </ul>
+          </details>
+          <details>
+            <summary>Resume one-liner</summary>
+            <ul>
+              <li>
+                <em
+                  >Security professional with 16 years of experience in patrol, access
+                  control, incident documentation, and de-escalation. Active Oregon DPSST
+                  certification. Reliable, Salem-area based.</em
+                >
+              </li>
+            </ul>
+          </details>
+          <h2>Local resources</h2>
+          <div class="resources-grid" id="resources"></div>
+        </section>
+      </div>
+
+      <nav class="bottom-nav" aria-label="Main navigation">
+        <button type="button" class="nav-btn nav-active" data-nav="jobs">
+          <span class="nav-icon">📋</span>
+          Jobs
+        </button>
+        <button type="button" class="nav-btn" data-nav="map">
+          <span class="nav-icon">🗺</span>
+          Map
+        </button>
+        <button type="button" class="nav-btn" data-nav="tracker">
+          <span class="nav-icon">✓</span>
+          Tracker
+        </button>
+        <button type="button" class="nav-btn" data-nav="tips">
+          <span class="nav-icon">💡</span>
+          Tips
+        </button>
+      </nav>
+    </div>
 
     <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
+    <script src="js/auth.js"></script>
+    <script src="js/tracker.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

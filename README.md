@@ -4,6 +4,17 @@ Local job collation for Salem, OR area (security + general roles), sorted by pay
 
 **Subtitle:** *Get to it, boy!*
 
+## Sign-in (two users)
+
+| Username | Password | Who |
+|----------|----------|-----|
+| `master` | `master` | You (admin view) |
+| `drJobless` | `thanksJack` | Your friend |
+
+Progress (Applied / Called / Interview / notes) saves in the browser **per username** on that device. Same account on phone + PC only syncs if he uses the same browser with sync (e.g. Chrome signed in); otherwise each device keeps its own copy.
+
+**Note:** Login is client-side only (not true security). Anyone can view passwords in the site source. Fine for a personal job board; don’t use for secrets.
+
 ## Host on GitHub (share a link with him)
 
 Use **GitHub Pages** — free, static, no server needed.
@@ -62,6 +73,20 @@ python -m http.server 8080
 - Filters: security focus, south Salem, has contact, call today, listed open
 - **Follow-up playbook** for when online applications get no response
 - **License/requirement** notes on each card
+
+## Easy push (no token in files)
+
+After your first successful `git push`, Windows usually **remembers** your login.
+
+1. Edit `data/jobs.json` (or any files).
+2. Double-click **`push.bat`** or in PowerShell:
+
+   ```powershell
+   cd "d:\Projects\Cursor\doni job"
+   .\push.ps1 "Describe what you changed"
+   ```
+
+Never put a `ghp_...` token in scripts, `.env`, or this repo.
 
 ## Updating jobs (batch 2: +50 more)
 
