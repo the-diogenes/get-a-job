@@ -98,10 +98,11 @@
   }
 
   function wireCloudSetup() {
-    document.body.addEventListener("submit", async (e) => {
-      const form = e.target.closest("#comms-setup-form");
+    document.addEventListener("submit", async (e) => {
+      const form = e.target.closest && e.target.closest("#comms-setup-form");
       if (!form) return;
       e.preventDefault();
+      e.stopPropagation();
       const url = form.supabaseUrl.value.trim();
       const key = form.supabaseAnonKey.value.trim();
       if (!url || !key) return;
@@ -358,68 +359,109 @@
     await loadJackChat();
   }
 
+  const COMMS_FORM_IDS = new Set([
+    "board-post-form",
+    "chat-form-jack",
+    "inbox-chat-form",
+    "comms-setup-form",
+  ]);
+
+  function isCommsForm(form) {
+    if (!form) return false;
+    if (COMMS_FORM_IDS.has(form.id)) return true;
+    if (form.classList && form.classList.contains("inbox-reply-form")) return true;
+    return false;
+  }
+
+  async function handleBoardPost(form) {
+    const u = user();
+    const ta = form.querySelector("textarea");
+    const body = ta && ta.value.trim();
+    if (!u || !body) return;
+    if (!global.GAJComms.configured()) {
+      showToast("Cloud not connected — set up Supabase first.");
+      return;
+    }
+    try {
+      await global.GAJComms.postBoardMessage(u.id, body);
+      ta.value = "";
+      await renderBoardView();
+      showToast("Posted to the board.");
+    } catch (err) {
+      showToast(String(err.message || err));
+    }
+  }
+
+  async function handleJackSend(form) {
+    const ta = form.querySelector("textarea");
+    const body = ta && ta.value.trim();
+    if (!body) return;
+    if (!global.GAJComms.configured()) {
+      showToast("Cloud not connected — set up Supabase first.");
+      return;
+    }
+    try {
+      if (!activeChatSessionId) await loadJackChat();
+      await onJackSendChat(body);
+      ta.value = "";
+    } catch (err) {
+      showToast(String(err.message || err));
+    }
+  }
+
+  async function handleInboxSend(form) {
+    const u = user();
+    const ta = form.querySelector("textarea");
+    const body = ta && ta.value.trim();
+    if (!u || !body) {
+      return;
+    }
+    if (!activeChatSessionId) {
+      showToast("Pick a chat session on the left first.");
+      return;
+    }
+    try {
+      await global.GAJComms.sendChatMessage(activeChatSessionId, u.id, body);
+      ta.value = "";
+      await selectInboxSession(activeChatSessionId);
+    } catch (err) {
+      showToast(String(err.message || err));
+    }
+  }
+
+  async function handleInboxReply(form) {
+    const id = form.dataset.boardId;
+    const ta = form.querySelector("textarea");
+    const body = ta && ta.value.trim();
+    const u = user();
+    if (!id || !body || !u) return;
+    try {
+      await global.GAJComms.postBoardMessage(u.id, body, id);
+      ta.value = "";
+      await renderInboxBoard();
+      showToast("Reply sent.");
+    } catch (err) {
+      showToast(String(err.message || err));
+    }
+  }
+
   function wireForms() {
-    const boardForm = document.getElementById("board-post-form");
-    if (boardForm) {
-      boardForm.addEventListener("submit", async (e) => {
+    document.addEventListener(
+      "submit",
+      (e) => {
+        const form = e.target;
+        if (!isCommsForm(form)) return;
         e.preventDefault();
-        const u = user();
-        const ta = boardForm.querySelector("textarea");
-        const body = ta && ta.value.trim();
-        if (!u || !body) return;
-        try {
-          await global.GAJComms.postBoardMessage(u.id, body);
-          ta.value = "";
-          await renderBoardView();
-          showToast("Posted to the board.");
-        } catch (err) {
-          showToast(String(err.message || err));
-        }
-      });
-    }
+        e.stopPropagation();
 
-    const jackChatForm = document.getElementById("chat-form-jack");
-    if (jackChatForm) {
-      jackChatForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const ta = jackChatForm.querySelector("textarea");
-        const body = ta && ta.value.trim();
-        if (!body) return;
-        if (!global.GAJComms.configured()) {
-          showToast("Connect Supabase in the setup box above first.");
-          return;
-        }
-        try {
-          if (!activeChatSessionId) await loadJackChat();
-          await onJackSendChat(body);
-          ta.value = "";
-        } catch (err) {
-          showToast(String(err.message || err));
-        }
-      });
-    }
-
-    const inboxChatForm = document.getElementById("inbox-chat-form");
-    if (inboxChatForm) {
-      inboxChatForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const u = user();
-        const ta = inboxChatForm.querySelector("textarea");
-        const body = ta && ta.value.trim();
-        if (!u || !body || !activeChatSessionId) return;
-        try {
-          await global.GAJComms.sendChatMessage(
-            activeChatSessionId,
-            u.id,
-            body
-          );
-          ta.value = "";
-          await selectInboxSession(activeChatSessionId);
-        } catch (err) {
-          showToast(String(err.message || err));
-        }
-      });
-    }
+        if (form.id === "board-post-form") return handleBoardPost(form);
+        if (form.id === "chat-form-jack") return handleJackSend(form);
+        if (form.id === "inbox-chat-form") return handleInboxSend(form);
+        if (form.id === "comms-setup-form") return; // handled in wireCloudSetup
+        if (form.classList.contains("inbox-reply-form")) return handleInboxReply(form);
+      },
+      true
+    );
 
     document.body.addEventListener("click", async (e) => {
       const sessionBtn = e.target.closest(".chat-session-btn");
@@ -436,27 +478,6 @@
           await global.GAJComms.resolveBoardPost(id, true);
           await renderInboxBoard();
         }
-        return;
-      }
-
-    });
-
-    document.body.addEventListener("submit", async (e) => {
-      const replyForm = e.target.closest(".inbox-reply-form");
-      if (!replyForm) return;
-      e.preventDefault();
-      const id = replyForm.dataset.boardId;
-      const ta = replyForm.querySelector("textarea");
-      const body = ta && ta.value.trim();
-      const u = user();
-      if (!id || !body || !u) return;
-      try {
-        await global.GAJComms.postBoardMessage(u.id, body, id);
-        ta.value = "";
-        await renderInboxBoard();
-        showToast("Reply sent.");
-      } catch (err) {
-        showToast(String(err.message || err));
       }
     });
   }
