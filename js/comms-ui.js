@@ -198,9 +198,9 @@
     }
     try {
       const posts = await global.GAJComms.fetchBoardPosts();
-      const open = posts.filter((p) => !p.parent_id && p.author === JACK_ID);
+      const open = posts.filter((p) => !p.parent_id && p.author !== MASTER_ID);
       if (!open.length) {
-        el.innerHTML = '<p class="empty-hint">No open notes from Jack.</p>';
+        el.innerHTML = '<p class="empty-hint">No open notes from users.</p>';
         return;
       }
       el.innerHTML = open
