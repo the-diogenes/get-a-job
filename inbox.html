@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#0f1419" />
     <title>GET A JOB — Inbox (John)</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/comms.css" />
+    <link rel="stylesheet" href="css/styles.css?v=5" />
+    <link rel="stylesheet" href="css/comms.css?v=5" />
     <style>
       .inbox-page {
         min-height: 100dvh;
@@ -93,17 +93,17 @@
       </header>
       <main class="inbox-page-main">
         <section class="inbox-pane">
-          <h2>Board from Jack</h2>
+          <h2>Message board</h2>
           <div id="inbox-board-list"></div>
         </section>
         <section class="inbox-pane">
-          <h2>Talk to Jack — live</h2>
+          <h2>Live chat — open sessions</h2>
           <div class="inbox-layout chat-split">
             <div id="inbox-chat-sessions"></div>
             <div>
               <div id="inbox-chat-log" class="chat-log" aria-live="polite"></div>
               <form id="inbox-chat-form" class="chat-form-bar" style="border-radius:0 0 10px 10px">
-                <textarea rows="2" placeholder="Reply to Jack…" required></textarea>
+                <textarea rows="2" placeholder="Reply to user…" required></textarea>
                 <button type="submit" class="btn btn-primary">Send</button>
               </form>
             </div>
@@ -118,11 +118,11 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="js/auth.js?v=4"></script>
-    <script src="js/cloud-config.js?v=4"></script>
-    <script src="js/supabase-client.js?v=4"></script>
-    <script src="js/comms.js?v=4"></script>
-    <script src="js/comms-ui.js?v=4"></script>
+    <script src="js/auth.js?v=5"></script>
+    <script src="js/cloud-config.js?v=5"></script>
+    <script src="js/supabase-client.js?v=5"></script>
+    <script src="js/comms.js?v=5"></script>
+    <script src="js/comms-ui.js?v=5"></script>
     <script>
       (function () {
         const MASTER = "master";

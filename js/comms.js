@@ -96,6 +96,36 @@
     emit("board_post", { eventType: "UPDATE" });
   }
 
+  async function deleteBoardPost(id) {
+    const client = sb();
+    if (!client) throw new Error("Cloud not configured");
+    const { error } = await client.from("board_posts").delete().eq("id", id);
+    if (error) throw error;
+    emit("board_post", { eventType: "DELETE", old: { id } });
+  }
+
+  async function deleteChatSession(sessionId) {
+    const client = sb();
+    if (!client) throw new Error("Cloud not configured");
+    const { error } = await client
+      .from("chat_sessions")
+      .delete()
+      .eq("id", sessionId);
+    if (error) throw error;
+    emit("chat_message", { eventType: "DELETE", session_id: sessionId });
+  }
+
+  async function closeChatSession(sessionId) {
+    const client = sb();
+    if (!client) throw new Error("Cloud not configured");
+    const { error } = await client
+      .from("chat_sessions")
+      .update({ status: "closed", updated_at: new Date().toISOString() })
+      .eq("id", sessionId);
+    if (error) throw error;
+    emit("chat_message", { eventType: "UPDATE", session_id: sessionId });
+  }
+
   async function fetchOpenSessions() {
     const client = sb();
     if (!client) return [];
@@ -227,37 +257,104 @@
     }
   }
 
-  async function notifyEmailChatStarted(sessionId, preview) {
-    const c =
+  function getNotifyConfig() {
+    return (
       (global.GAJCloudConfig && global.GAJCloudConfig.get()) ||
       global.GAJ_CONFIG ||
-      {};
-    if (!c.emailjsPublicKey || !c.emailjsServiceId || !c.emailjsTemplateId) {
+      {}
+    );
+  }
+
+  function getReplyUrl() {
+    const origin = global.location.origin || "";
+    const path = (global.location.pathname || "").replace(/[^/]+$/, "");
+    return origin + path + "inbox.html";
+  }
+
+  async function notifyViaFormSubmit(subject, message, extra) {
+    const c = getNotifyConfig();
+    const target = c.notifyEmail || "john.raymond.jr@gmail.com";
+    const endpoint =
+      c.notifyEmailEndpoint || `https://formsubmit.co/ajax/${target}`;
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: subject,
+          _captcha: "false",
+          _template: "table",
+          message,
+          reply_url: getReplyUrl(),
+          ...extra,
+        }),
+      });
+      const json = await res.json().catch(() => ({}));
+      return res.ok && (json.success === "true" || json.success === true);
+    } catch (e) {
+      console.warn("formsubmit fail", e);
       return false;
     }
+  }
+
+  async function notifyViaEmailJS(templateVars) {
+    const c = getNotifyConfig();
+    if (!c.emailjsPublicKey || !c.emailjsServiceId || !c.emailjsTemplateId)
+      return false;
     if (!global.emailjs) return false;
     try {
       global.emailjs.init({ publicKey: c.emailjsPublicKey });
       await global.emailjs.send(
         c.emailjsServiceId,
         c.emailjsTemplateId,
-        {
-          to_email: c.notifyEmail || "john.raymond.jr@gmail.com",
-          from_name: "Jack — Talk to Jack",
-          message: preview || "Jack opened live support on GET A JOB.",
-          session_id: sessionId,
-          reply_url:
-            (global.location.origin || "") +
-            (global.location.pathname || "").replace(/[^/]+$/, "") +
-            "inbox.html",
-        },
+        templateVars,
         c.emailjsPublicKey
       );
       return true;
     } catch (e) {
-      console.warn("email notify", e);
+      console.warn("emailjs fail", e);
       return false;
     }
+  }
+
+  async function notifyEmailChatStarted(sessionId, preview, fromUser) {
+    const c = getNotifyConfig();
+    const subject = `[GET A JOB] New live chat from ${fromUser || "user"}`;
+    const message = preview || "User opened live support on GET A JOB.";
+    const ejs = await notifyViaEmailJS({
+      to_email: c.notifyEmail || "john.raymond.jr@gmail.com",
+      from_name: `${fromUser || "User"} — Live chat`,
+      message,
+      session_id: sessionId,
+      reply_url: getReplyUrl(),
+    });
+    if (ejs) return true;
+    return notifyViaFormSubmit(subject, message, {
+      from_user: fromUser || "user",
+      session_id: sessionId,
+      type: "chat_started",
+    });
+  }
+
+  async function notifyEmailBoardPost(postId, body, fromUser) {
+    const c = getNotifyConfig();
+    const subject = `[GET A JOB] New board post from ${fromUser || "user"}`;
+    const ejs = await notifyViaEmailJS({
+      to_email: c.notifyEmail || "john.raymond.jr@gmail.com",
+      from_name: `${fromUser || "User"} — Message board`,
+      message: body || "(no body)",
+      session_id: postId,
+      reply_url: getReplyUrl(),
+    });
+    if (ejs) return true;
+    return notifyViaFormSubmit(subject, body || "(no body)", {
+      from_user: fromUser || "user",
+      post_id: postId,
+      type: "board_post",
+    });
   }
 
   function init() {
@@ -275,6 +372,9 @@
     fetchBoardPosts,
     postBoardMessage,
     resolveBoardPost,
+    deleteBoardPost,
+    deleteChatSession,
+    closeChatSession,
     fetchOpenSessions,
     getOrCreateSession,
     fetchMessages,
@@ -283,5 +383,6 @@
     countUnreadChats,
     countUnreadBoard,
     notifyEmailChatStarted,
+    notifyEmailBoardPost,
   };
 })(window);

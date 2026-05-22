@@ -1,10 +1,21 @@
 (function (global) {
   "use strict";
 
-  const JACK_ID = "drJobless";
   const MASTER_ID = "master";
+  const SUPPORT_LABEL = "Support";
   let activeChatSessionId = null;
   let emailSentForSession = new Set();
+  let emailSentForPost = new Set();
+
+  function displayName(authorId) {
+    const u = user();
+    if (!authorId) return "Unknown";
+    if (u && authorId === u.id) return "You";
+    if (authorId === MASTER_ID && (!u || u.id !== MASTER_ID)) {
+      return SUPPORT_LABEL;
+    }
+    return authorId;
+  }
 
   function user() {
     return global.GAJAuth && global.GAJAuth.currentUser();
@@ -17,7 +28,7 @@
 
   function isJack() {
     const u = user();
-    return u && u.id === JACK_ID;
+    return u && u.id !== MASTER_ID;
   }
 
   function esc(s) {
@@ -141,14 +152,14 @@
         const replies = (byParent.get(root.id) || [])
           .map(
             (r) =>
-              `<div class="board-reply"><strong>${esc(r.author)}</strong> <time>${fmtTime(r.created_at)}</time><p>${esc(r.body)}</p></div>`
+              `<div class="board-reply"><strong>${esc(displayName(r.author))}</strong> <time>${fmtTime(r.created_at)}</time><p>${esc(r.body)}</p></div>`
           )
           .join("");
         const resolved = root.resolved
           ? '<span class="badge-resolved">Resolved</span>'
           : "";
         return `<article class="board-thread ${root.resolved ? "resolved" : ""}" data-id="${root.id}">
-          <header><strong>${esc(root.author)}</strong> ${resolved} <time>${fmtTime(root.created_at)}</time></header>
+          <header><strong>${esc(displayName(root.author))}</strong> ${resolved} <time>${fmtTime(root.created_at)}</time></header>
           <p class="board-body">${esc(root.body)}</p>
           ${replies}
         </article>`;
@@ -198,18 +209,25 @@
           const replyHtml = replies
             .map(
               (r) =>
-                `<div class="board-reply mine"><strong>${esc(r.author)}</strong> <time>${fmtTime(r.created_at)}</time><p>${esc(r.body)}</p></div>`
+                `<div class="board-reply mine"><strong>${esc(displayName(r.author))}</strong> <time>${fmtTime(r.created_at)}</time><p>${esc(r.body)}</p></div>`
             )
             .join("");
           const status = root.resolved ? "resolved" : "open";
           return `<article class="inbox-card" data-board-id="${root.id}">
-            <header><span class="badge-${status}">${status}</span> <time>${fmtTime(root.created_at)}</time></header>
+            <header>
+              <strong>${esc(root.author)}</strong>
+              <span class="badge-${status}">${status}</span>
+              <time>${fmtTime(root.created_at)}</time>
+            </header>
             <p>${esc(root.body)}</p>
             ${replyHtml}
             <form class="inbox-reply-form" data-board-id="${root.id}">
-              <textarea rows="2" placeholder="Reply to Jack…" required></textarea>
-              <button type="submit" class="btn btn-primary btn-sm">Reply</button>
-              ${root.resolved ? "" : '<button type="button" class="btn btn-ghost btn-sm resolve-btn">Mark resolved</button>'}
+              <textarea rows="2" placeholder="Reply to ${esc(root.author)}…" required></textarea>
+              <div class="inbox-actions">
+                <button type="submit" class="btn btn-primary btn-sm">Reply</button>
+                ${root.resolved ? "" : '<button type="button" class="btn btn-ghost btn-sm resolve-btn">Mark resolved</button>'}
+                <button type="button" class="btn btn-danger btn-sm delete-board-btn">Delete</button>
+              </div>
             </form>
           </article>`;
         })
@@ -223,13 +241,14 @@
     const el = document.getElementById(containerId);
     if (!el) return;
     el.innerHTML = messages
-      .map(
-        (m) =>
-          `<div class="chat-bubble chat-from-${esc(m.author)}" data-author="${esc(m.author)}">
-            <span class="chat-meta">${esc(m.author)} · ${fmtTime(m.created_at)}</span>
+      .map((m) => {
+        const isMine = user() && m.author === user().id;
+        const cls = isMine ? "mine" : m.author === MASTER_ID ? "support" : "user";
+        return `<div class="chat-bubble chat-bubble-${cls}" data-author="${esc(m.author)}">
+            <span class="chat-meta">${esc(displayName(m.author))} · ${fmtTime(m.created_at)}</span>
             <p>${esc(m.body)}</p>
-          </div>`
-      )
+          </div>`;
+      })
       .join("");
     el.scrollTop = el.scrollHeight;
   }
@@ -285,9 +304,13 @@
       list.innerHTML = sessions
         .map(
           (s, i) =>
-            `<button type="button" class="chat-session-btn ${i === 0 ? "active" : ""}" data-session="${s.id}">
-              ${esc(s.started_by)} · ${fmtTime(s.updated_at || s.created_at)}
-            </button>`
+            `<div class="chat-session-row">
+              <button type="button" class="chat-session-btn ${i === 0 ? "active" : ""}" data-session="${s.id}">
+                <strong>${esc(s.started_by)}</strong>
+                <small>${fmtTime(s.updated_at || s.created_at)}</small>
+              </button>
+              <button type="button" class="chat-session-del" data-session-del="${s.id}" title="Delete this chat">×</button>
+            </div>`
         )
         .join("");
 
@@ -349,10 +372,11 @@
       emailSentForSession.add(activeChatSessionId);
       const ok = await global.GAJComms.notifyEmailChatStarted(
         activeChatSessionId,
-        text.slice(0, 200)
+        text.slice(0, 200),
+        u.id
       );
       if (!ok) {
-        showToast("Message sent. (Email notify not set up — add EmailJS in config.js)");
+        showToast("Message sent. (Heads-up email failed; check FormSubmit setup.)");
       }
     }
 
@@ -383,10 +407,15 @@
       return;
     }
     try {
-      await global.GAJComms.postBoardMessage(u.id, body);
+      const post = await global.GAJComms.postBoardMessage(u.id, body);
       ta.value = "";
       await renderBoardView();
       showToast("Posted to the board.");
+
+      if (u.id !== MASTER_ID && post && !emailSentForPost.has(post.id)) {
+        emailSentForPost.add(post.id);
+        await global.GAJComms.notifyEmailBoardPost(post.id, body, u.id);
+      }
     } catch (err) {
       showToast(String(err.message || err));
     }
@@ -470,6 +499,24 @@
         return;
       }
 
+      const sessionDel = e.target.closest(".chat-session-del");
+      if (sessionDel) {
+        if (!confirm("Delete this chat session and all its messages?")) return;
+        try {
+          await global.GAJComms.deleteChatSession(sessionDel.dataset.sessionDel);
+          if (activeChatSessionId === sessionDel.dataset.sessionDel) {
+            activeChatSessionId = null;
+            const log = document.getElementById("inbox-chat-log");
+            if (log) log.innerHTML = '<p class="empty-hint">Pick a session.</p>';
+          }
+          await loadInboxChats();
+          showToast("Chat deleted.");
+        } catch (err) {
+          showToast(String(err.message || err));
+        }
+        return;
+      }
+
       const resolveBtn = e.target.closest(".resolve-btn");
       if (resolveBtn) {
         const card = resolveBtn.closest(".inbox-card");
@@ -477,6 +524,22 @@
         if (id) {
           await global.GAJComms.resolveBoardPost(id, true);
           await renderInboxBoard();
+        }
+        return;
+      }
+
+      const deleteBoardBtn = e.target.closest(".delete-board-btn");
+      if (deleteBoardBtn) {
+        const card = deleteBoardBtn.closest(".inbox-card");
+        const id = card && card.dataset.boardId;
+        if (!id) return;
+        if (!confirm("Delete this thread and all replies?")) return;
+        try {
+          await global.GAJComms.deleteBoardPost(id);
+          await renderInboxBoard();
+          showToast("Thread deleted.");
+        } catch (err) {
+          showToast(String(err.message || err));
         }
       }
     });
@@ -489,7 +552,7 @@
     if (event === "chat_message" && payload && payload.new) {
       const msg = payload.new;
       if (msg.author !== u.id) {
-        showToast("New message from " + msg.author);
+        showToast("New message from " + displayName(msg.author));
         if (document.getElementById("view-chat")?.classList.contains("view-active")) {
           loadJackChat();
         }

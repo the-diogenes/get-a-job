@@ -16,8 +16,8 @@
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
       crossorigin=""
     />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/comms.css" />
+    <link rel="stylesheet" href="css/styles.css?v=5" />
+    <link rel="stylesheet" href="css/comms.css?v=5" />
   </head>
   <body>
     <!-- Login -->
@@ -93,7 +93,7 @@
         <button type="button" class="nav-btn" data-nav="map"><span class="nav-icon">🗺</span>Map</button>
         <button type="button" class="nav-btn" data-nav="tracker"><span class="nav-icon">✓</span>Tracker</button>
         <button type="button" class="nav-btn" data-nav-jack data-nav="board"><span class="nav-icon">📌</span>Board<span class="nav-badge" data-badge="board" hidden></span></button>
-        <button type="button" class="nav-btn" data-nav-jack data-nav="chat"><span class="nav-icon">💬</span>Jack<span class="nav-badge" data-badge="chat" hidden></span></button>
+        <button type="button" class="nav-btn" data-nav-jack data-nav="chat"><span class="nav-icon">💬</span>Support<span class="nav-badge" data-badge="chat" hidden></span></button>
         <button type="button" class="nav-btn" data-nav-master data-nav="inbox"><span class="nav-icon">📥</span>Inbox<span class="nav-badge" data-badge="inbox" hidden></span></button>
         <button type="button" class="nav-btn" data-nav="tips"><span class="nav-icon">💡</span>Tips</button>
       </nav>
@@ -218,19 +218,19 @@
         </div>
       </div>
 
-      <!-- TALK TO JACK live chat (Jack side) -->
+      <!-- Live support chat (user side) -->
       <div class="view" id="view-chat" data-view="chat">
         <div class="comms-panel">
           <div class="talk-brand">
             <span class="live-dot" aria-hidden="true"></span>
-            <h2>Talk to Jack</h2>
+            <h2>Talk to Support</h2>
           </div>
-          <p class="comms-sub">Live support (sort of). First message pings John’s email. Keep this tab open for replies.</p>
+          <p class="comms-sub">Live support. First message pings the admin. Keep this tab open for replies.</p>
           <p id="chat-status-jack" class="chat-status">Connecting…</p>
           <div class="chat-wrap">
             <div id="chat-log-jack" class="chat-log" aria-live="polite"></div>
             <form id="chat-form-jack" class="chat-form-bar">
-              <textarea rows="1" placeholder="Type a message…" required></textarea>
+              <textarea rows="1" placeholder="Type a message to Support…" required></textarea>
               <button type="submit" class="btn btn-primary">Send</button>
             </form>
           </div>
@@ -250,7 +250,7 @@
             <div>
               <div id="inbox-chat-log" class="chat-log" style="min-height:200px;border-radius:10px"></div>
               <form id="inbox-chat-form" class="chat-form-bar" style="border-radius:0 0 10px 10px">
-                <textarea rows="1" placeholder="Reply to Jack…" required></textarea>
+                <textarea rows="1" placeholder="Reply to user…" required></textarea>
                 <button type="submit" class="btn btn-primary">Send</button>
               </form>
             </div>
@@ -325,12 +325,12 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="js/auth.js?v=4"></script>
-    <script src="js/cloud-config.js?v=4"></script>
-    <script src="js/supabase-client.js?v=4"></script>
-    <script src="js/comms.js?v=4"></script>
-    <script src="js/comms-ui.js?v=4"></script>
-    <script src="js/tracker.js?v=4"></script>
-    <script src="js/app.js?v=4"></script>
+    <script src="js/auth.js?v=5"></script>
+    <script src="js/cloud-config.js?v=5"></script>
+    <script src="js/supabase-client.js?v=5"></script>
+    <script src="js/comms.js?v=5"></script>
+    <script src="js/comms-ui.js?v=5"></script>
+    <script src="js/tracker.js?v=5"></script>
+    <script src="js/app.js?v=5"></script>
   </body>
 </html>
