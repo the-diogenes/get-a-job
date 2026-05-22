@@ -776,8 +776,8 @@
     }
     if (name === "tracker") renderTrackerView();
     if (name === "today") renderTodayView();
-    if (global.GAJCommsUI && global.GAJCommsUI.onViewShown) {
-      global.GAJCommsUI.onViewShown(name);
+    if (window.GAJCommsUI && window.GAJCommsUI.onViewShown) {
+      window.GAJCommsUI.onViewShown(name);
     }
   }
 
@@ -902,7 +902,7 @@
       ensureMobileMap();
       renderResources();
       bindUI();
-      if (global.GAJCommsUI) global.GAJCommsUI.init();
+      if (window.GAJCommsUI) window.GAJCommsUI.init();
       renderList();
       syncMobileHeaderHeight();
       syncNavHeight();
