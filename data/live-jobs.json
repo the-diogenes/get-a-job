@@ -1,6 +1,6 @@
 {
   "meta": {
-    "fetched_at": "2026-06-28T15:17:53.289505+00:00",
+    "fetched_at": "2026-06-29T16:52:53.002115+00:00",
     "area": "Salem, OR",
     "max_days_old": 14,
     "sources_used": [
@@ -23,7 +23,7 @@
   },
   "jobs": [
     {
-      "id": "live-information-systems-security-officer-isso-govcio-f4ebc252fff5",
+      "id": "live-information-systems-security-officer-isso-govcio-urce94e812e8",
       "title": "Information Systems Security Officer (ISSO)",
       "employer": "GovCIO",
       "categories": [
@@ -44,7 +44,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5775661021?se=1EFKhQRz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=1BD26B3D167C93EA1488F6C11483F4EBC252FFF5",
+      "apply_url": "https://www.adzuna.com/details/5775661021?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-24",
       "source": "adzuna",
       "source_query": "security officer",
@@ -54,31 +54,31 @@
       "licenses_required": []
     },
     {
-      "id": "live-unarmed-security-guard-parking-lot-patrol-security-inner-parish-security-corpora-urce94e812e8",
-      "title": "Unarmed Security Guard - Parking Lot Patrol (Security)",
-      "employer": "Inner Parish Security Corporation",
+      "id": "live-field-instructor-vontier-urce94e812e8",
+      "title": "Field Instructor",
+      "employer": "Vontier",
       "categories": [
-        "security"
+        "general"
       ],
       "tags": [
         "live-feed",
         "adzuna",
-        "security"
+        "general"
       ],
-      "pay_min": 37440.0,
-      "pay_max": 39520.0,
+      "pay_min": 60549.07,
+      "pay_max": 60549.07,
       "pay_type": "annual",
-      "pay_display": "$37,440\u2013$39,520",
-      "match_score": 90,
+      "pay_display": "$60,549\u2013$60,549",
+      "match_score": 80,
       "match_tier": "high",
       "address": "US, Oregon, Marion County, Salem",
-      "lat": 44.946482,
-      "lng": -123.001894,
+      "lat": 44.94379,
+      "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5763267826?utm_medium=api&utm_source=94e812e8",
-      "posted": "2026-06-14",
+      "apply_url": "https://www.adzuna.com/details/5780745622?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-28",
       "source": "adzuna",
-      "source_query": "security officer",
+      "source_query": "custodian",
       "status": "open",
       "priority_call": false,
       "experience_pitch": "Live listing \u2014 confirm still open before applying.",
@@ -116,7 +116,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-materials-handler-emerson-b89748ce3196",
+      "id": "live-materials-handler-emerson-urce94e812e8",
       "title": "Materials Handler",
       "employer": "Emerson",
       "categories": [
@@ -137,165 +137,10 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5777156697?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=4D66236318D2BA4DA5ED8BC92693B89748CE3196",
+      "apply_url": "https://www.adzuna.com/details/5777156697?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-25",
       "source": "adzuna",
       "source_query": "warehouse",
-      "status": "open",
-      "priority_call": false,
-      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
-      "licenses_required": []
-    },
-    {
-      "id": "live-behavior-technician-work-with-kids-training-provided-centria-autism-urce94e812e8",
-      "title": "Behavior Technician - Work with Kids - Training Provided",
-      "employer": "Centria Autism",
-      "categories": [
-        "retail"
-      ],
-      "tags": [
-        "live-feed",
-        "adzuna",
-        "retail"
-      ],
-      "pay_min": 39520.0,
-      "pay_max": 49920.0,
-      "pay_type": "annual",
-      "pay_display": "$39,520\u2013$49,920",
-      "match_score": 80,
-      "match_tier": "high",
-      "address": "US, Oregon, Yamhill County, Newberg",
-      "lat": 45.300118,
-      "lng": -122.973157,
-      "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5778997421?utm_medium=api&utm_source=94e812e8",
-      "posted": "2026-06-27",
-      "source": "adzuna",
-      "source_query": "retail",
-      "status": "open",
-      "priority_call": false,
-      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
-      "licenses_required": []
-    },
-    {
-      "id": "live-behavior-technician-work-with-kids-training-provided-centria-autism-urce94e812e8",
-      "title": "Behavior Technician - Work with Kids - Training Provided",
-      "employer": "Centria Autism",
-      "categories": [
-        "retail"
-      ],
-      "tags": [
-        "live-feed",
-        "adzuna",
-        "retail"
-      ],
-      "pay_min": 39520.0,
-      "pay_max": 41600.0,
-      "pay_type": "annual",
-      "pay_display": "$39,520\u2013$41,600",
-      "match_score": 80,
-      "match_tier": "high",
-      "address": "US, Oregon, Marion County, Salem",
-      "lat": 44.946482,
-      "lng": -123.001894,
-      "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5778965457?utm_medium=api&utm_source=94e812e8",
-      "posted": "2026-06-27",
-      "source": "adzuna",
-      "source_query": "retail",
-      "status": "open",
-      "priority_call": false,
-      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
-      "licenses_required": []
-    },
-    {
-      "id": "live-behavior-technician-work-with-kids-training-provided-centria-autism-urce94e812e8",
-      "title": "Behavior Technician - Work with Kids - Training Provided",
-      "employer": "Centria Autism",
-      "categories": [
-        "retail"
-      ],
-      "tags": [
-        "live-feed",
-        "adzuna",
-        "retail"
-      ],
-      "pay_min": 39520.0,
-      "pay_max": 49920.0,
-      "pay_type": "annual",
-      "pay_display": "$39,520\u2013$49,920",
-      "match_score": 80,
-      "match_tier": "high",
-      "address": "US, Oregon, Marion County, Turner",
-      "lat": 44.843177,
-      "lng": -122.952871,
-      "south_salem": true,
-      "apply_url": "https://www.adzuna.com/details/5778880279?utm_medium=api&utm_source=94e812e8",
-      "posted": "2026-06-27",
-      "source": "adzuna",
-      "source_query": "retail",
-      "status": "open",
-      "priority_call": false,
-      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
-      "licenses_required": []
-    },
-    {
-      "id": "live-behavior-technician-work-with-kids-training-provided-centria-autism-urce94e812e8",
-      "title": "Behavior Technician - Work with Kids - Training Provided",
-      "employer": "Centria Autism",
-      "categories": [
-        "retail"
-      ],
-      "tags": [
-        "live-feed",
-        "adzuna",
-        "retail"
-      ],
-      "pay_min": 39520.0,
-      "pay_max": 41600.0,
-      "pay_type": "annual",
-      "pay_display": "$39,520\u2013$41,600",
-      "match_score": 80,
-      "match_tier": "high",
-      "address": "US, Oregon, Polk County, Independence",
-      "lat": 44.851231,
-      "lng": -123.186766,
-      "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5778879050?utm_medium=api&utm_source=94e812e8",
-      "posted": "2026-06-27",
-      "source": "adzuna",
-      "source_query": "retail",
-      "status": "open",
-      "priority_call": false,
-      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
-      "licenses_required": []
-    },
-    {
-      "id": "live-behavior-technician-work-with-kids-training-provided-centria-autism-urce94e812e8",
-      "title": "Behavior Technician - Work with Kids - Training Provided",
-      "employer": "Centria Autism",
-      "categories": [
-        "retail"
-      ],
-      "tags": [
-        "live-feed",
-        "adzuna",
-        "retail"
-      ],
-      "pay_min": 39520.0,
-      "pay_max": 41600.0,
-      "pay_type": "annual",
-      "pay_display": "$39,520\u2013$41,600",
-      "match_score": 80,
-      "match_tier": "high",
-      "address": "US, Oregon, Marion County, Woodburn",
-      "lat": 45.143731,
-      "lng": -122.855373,
-      "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5778878419?utm_medium=api&utm_source=94e812e8",
-      "posted": "2026-06-27",
-      "source": "adzuna",
-      "source_query": "retail",
       "status": "open",
       "priority_call": false,
       "experience_pitch": "Live listing \u2014 confirm still open before applying.",
@@ -333,31 +178,31 @@
       "licenses_required": []
     },
     {
-      "id": "live-director-operations-ezee-fiber-texas-llc-urce94e812e8",
-      "title": "Director, Operations",
-      "employer": "Ezee Fiber Texas, LLC",
+      "id": "live-behavior-technician-work-with-kids-training-provided-centria-autism-urce94e812e8",
+      "title": "Behavior Technician - Work with Kids - Training Provided",
+      "employer": "Centria Autism",
       "categories": [
-        "warehouse"
+        "retail"
       ],
       "tags": [
         "live-feed",
         "adzuna",
-        "warehouse"
+        "retail"
       ],
-      "pay_min": 232779.56,
-      "pay_max": 232779.56,
+      "pay_min": 25845.16,
+      "pay_max": 25845.16,
       "pay_type": "annual",
-      "pay_display": "$232,780\u2013$232,780",
-      "match_score": 65,
-      "match_tier": "medium",
-      "address": "US, Oregon, Marion County, Salem",
-      "lat": 44.979965,
-      "lng": -122.970719,
+      "pay_display": "$25,845\u2013$25,845",
+      "match_score": 80,
+      "match_tier": "high",
+      "address": "US, Oregon, Marion County, Woodburn",
+      "lat": 45.146589,
+      "lng": -122.856931,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5774635943?utm_medium=api&utm_source=94e812e8",
-      "posted": "2026-06-24",
+      "apply_url": "https://www.adzuna.com/details/5781049310?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-29",
       "source": "adzuna",
-      "source_query": "warehouse",
+      "source_query": "retail",
       "status": "open",
       "priority_call": false,
       "experience_pitch": "Live listing \u2014 confirm still open before applying.",
@@ -395,7 +240,38 @@
       "licenses_required": []
     },
     {
-      "id": "live-senior-manager-software-engineering-oci-oracle-8fffb30037a9",
+      "id": "live-consulting-project-technical-director-oracle-urce94e812e8",
+      "title": "Consulting Project Technical Director",
+      "employer": "Oracle",
+      "categories": [
+        "warehouse"
+      ],
+      "tags": [
+        "live-feed",
+        "adzuna",
+        "warehouse"
+      ],
+      "pay_min": 181874.22,
+      "pay_max": 181874.22,
+      "pay_type": "annual",
+      "pay_display": "$181,874\u2013$181,874",
+      "match_score": 65,
+      "match_tier": "medium",
+      "address": "US, Oregon, Marion County, Salem",
+      "lat": 44.94379,
+      "lng": -123.02826,
+      "south_salem": false,
+      "apply_url": "https://www.adzuna.com/details/5780735520?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-28",
+      "source": "adzuna",
+      "source_query": "warehouse",
+      "status": "open",
+      "priority_call": false,
+      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
+      "licenses_required": []
+    },
+    {
+      "id": "live-senior-manager-software-engineering-oci-oracle-urce94e812e8",
       "title": "Senior Manager, Software Engineering (OCI)",
       "employer": "Oracle",
       "categories": [
@@ -416,7 +292,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5778530415?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=804710B020DEBD8F2A285387F5198FFFB30037A9",
+      "apply_url": "https://www.adzuna.com/details/5778530415?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -426,7 +302,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-director-data-intelligence-franklincovey-36b87f4f61bf",
+      "id": "live-director-data-intelligence-franklincovey-urce94e812e8",
       "title": "Director, Data Intelligence",
       "employer": "FranklinCovey",
       "categories": [
@@ -447,7 +323,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5777157042?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=4E34EFEF8DA4A53E0773245BBDA536B87F4F61BF",
+      "apply_url": "https://www.adzuna.com/details/5777157042?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-25",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -457,7 +333,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-senior-account-executive-rocket-software-18b65a18a207",
+      "id": "live-senior-account-executive-rocket-software-urce94e812e8",
       "title": "Senior Account Executive",
       "employer": "Rocket Software",
       "categories": [
@@ -478,7 +354,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5778536352?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=DE381A525EE5AE8CC8A055BBFA9418B65A18A207",
+      "apply_url": "https://www.adzuna.com/details/5778536352?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -488,7 +364,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-director-solutions-design-ryder-system-39d23e66c543",
+      "id": "live-director-solutions-design-ryder-system-urce94e812e8",
       "title": "Director Solutions Design",
       "employer": "Ryder System",
       "categories": [
@@ -509,7 +385,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5779705235?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=2F6CFD573153F4C9738CE584831439D23E66C543",
+      "apply_url": "https://www.adzuna.com/details/5779705235?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-27",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -519,7 +395,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-aws-connect-salesforce-architect-remote-cognizant-f137648e316b",
+      "id": "live-aws-connect-salesforce-architect-remote-cognizant-urce94e812e8",
       "title": "AWS Connect & Salesforce Architect (Remote)",
       "employer": "Cognizant",
       "categories": [
@@ -540,7 +416,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5777155512?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=28AA32B9969E8E96955DE3AB8851F137648E316B",
+      "apply_url": "https://www.adzuna.com/details/5777155512?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-25",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -581,7 +457,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-director-global-compensation-vontier-18f76e58a695",
+      "id": "live-director-global-compensation-vontier-urce94e812e8",
       "title": "Director, Global Compensation",
       "employer": "Vontier",
       "categories": [
@@ -602,7 +478,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5770048803?se=MCHVhwRz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=9E90A2BEE2A52ED23C47433BFC9F18F76E58A695",
+      "apply_url": "https://www.adzuna.com/details/5770048803?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-19",
       "source": "adzuna",
       "source_query": "custodian",
@@ -612,7 +488,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-ai-architect-isc2-c6814cde9e0e",
+      "id": "live-ai-architect-isc2-urce94e812e8",
       "title": "AI Architect",
       "employer": "ISC2",
       "categories": [
@@ -633,7 +509,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5777158205?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=833835643CFCFAFAC99CC5D25A6DC6814CDE9E0E",
+      "apply_url": "https://www.adzuna.com/details/5777158205?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-25",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -643,38 +519,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-it-support-associate-ii-ops-tech-solutions-ots-amazon-ab7d64000592",
-      "title": "IT Support Associate II, Ops Tech Solutions (OTS)",
-      "employer": "Amazon",
-      "categories": [
-        "warehouse"
-      ],
-      "tags": [
-        "live-feed",
-        "adzuna",
-        "warehouse"
-      ],
-      "pay_min": 135931.22,
-      "pay_max": 135931.22,
-      "pay_type": "annual",
-      "pay_display": "$135,931\u2013$135,931",
-      "match_score": 65,
-      "match_tier": "medium",
-      "address": "US, Oregon, Marion County, Woodburn",
-      "lat": 45.146589,
-      "lng": -122.856931,
-      "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5775655797?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=C4E4573CAD6EC9BB349D1D7ED5DFAB7D64000592",
-      "posted": "2026-06-24",
-      "source": "adzuna",
-      "source_query": "warehouse",
-      "status": "open",
-      "priority_call": false,
-      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
-      "licenses_required": []
-    },
-    {
-      "id": "live-strategic-account-manager-hvacr-chemours-19e5ecac469e",
+      "id": "live-strategic-account-manager-hvacr-chemours-urce94e812e8",
       "title": "Strategic Account Manager - HVACR",
       "employer": "Chemours",
       "categories": [
@@ -695,8 +540,70 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5774275782?se=MCHVhwRz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=DB01FADC70AB342A12EFCF22487519E5ECAC469E",
+      "apply_url": "https://www.adzuna.com/details/5774275782?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-23",
+      "source": "adzuna",
+      "source_query": "custodian",
+      "status": "open",
+      "priority_call": false,
+      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
+      "licenses_required": []
+    },
+    {
+      "id": "live-creative-director-meta-com-meta-urce94e812e8",
+      "title": "Creative Director, Meta.com",
+      "employer": "Meta",
+      "categories": [
+        "retail"
+      ],
+      "tags": [
+        "live-feed",
+        "adzuna",
+        "retail"
+      ],
+      "pay_min": 130111.73,
+      "pay_max": 130111.73,
+      "pay_type": "annual",
+      "pay_display": "$130,112\u2013$130,112",
+      "match_score": 65,
+      "match_tier": "medium",
+      "address": "US, Oregon, Marion County, Salem",
+      "lat": 44.94379,
+      "lng": -123.02826,
+      "south_salem": false,
+      "apply_url": "https://www.adzuna.com/details/5780727648?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-28",
+      "source": "adzuna",
+      "source_query": "retail",
+      "status": "open",
+      "priority_call": false,
+      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
+      "licenses_required": []
+    },
+    {
+      "id": "live-digital-innovation-and-artificial-intelligence-leader-vontier-urce94e812e8",
+      "title": "Digital Innovation and Artificial Intelligence Leader",
+      "employer": "Vontier",
+      "categories": [
+        "general"
+      ],
+      "tags": [
+        "live-feed",
+        "adzuna",
+        "general"
+      ],
+      "pay_min": 129961.67,
+      "pay_max": 129961.67,
+      "pay_type": "annual",
+      "pay_display": "$129,962\u2013$129,962",
+      "match_score": 65,
+      "match_tier": "medium",
+      "address": "US, Oregon, Marion County, Salem",
+      "lat": 44.94379,
+      "lng": -123.02826,
+      "south_salem": false,
+      "apply_url": "https://www.adzuna.com/details/5780745618?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-28",
       "source": "adzuna",
       "source_query": "custodian",
       "status": "open",
@@ -726,7 +633,7 @@
       "lat": 45.143731,
       "lng": -122.855373,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5775979969?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=497911B6F06EACB7E1AD1151C020E094ED405737",
+      "apply_url": "https://www.adzuna.com/land/ad/5775979969?se=bA2Q9dpz8RG5B_ZD6wKS8Q&utm_medium=api&utm_source=94e812e8&v=497911B6F06EACB7E1AD1151C020E094ED405737",
       "posted": "2026-06-25",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -736,7 +643,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-sr-project-manager-warehouse-design-and-construction-cardinal-health-0a26541c1e20",
+      "id": "live-sr-project-manager-warehouse-design-and-construction-cardinal-health-urce94e812e8",
       "title": "Sr Project Manager - Warehouse Design and Construction",
       "employer": "Cardinal Health",
       "categories": [
@@ -757,7 +664,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5779705473?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=8FD5353C9729DF6C3E7D5CD5691B0A26541C1E20",
+      "apply_url": "https://www.adzuna.com/details/5779705473?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-27",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -767,7 +674,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-hr-business-partner-nacf-amazon-91be46d55b7e",
+      "id": "live-hr-business-partner-nacf-amazon-urce94e812e8",
       "title": "HR Business Partner, NACF",
       "employer": "Amazon",
       "categories": [
@@ -788,7 +695,7 @@
       "lat": 45.146589,
       "lng": -122.856931,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5779688477?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=E9CD517F20AD6ED5823F870F4D3191BE46D55B7E",
+      "apply_url": "https://www.adzuna.com/details/5779688477?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-27",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -798,38 +705,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-hr-business-partner-nacf-amazon-91be46d55b7e",
-      "title": "HR Business Partner, NACF",
-      "employer": "Amazon",
-      "categories": [
-        "retail"
-      ],
-      "tags": [
-        "live-feed",
-        "adzuna",
-        "retail"
-      ],
-      "pay_min": 115501.82,
-      "pay_max": 115501.82,
-      "pay_type": "annual",
-      "pay_display": "$115,502\u2013$115,502",
-      "match_score": 65,
-      "match_tier": "medium",
-      "address": "US, Oregon, Marion County, Woodburn",
-      "lat": 45.146589,
-      "lng": -122.856931,
-      "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5779688477?se=-j1DiARz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=E9CD517F20AD6ED5823F870F4D3191BE46D55B7E",
-      "posted": "2026-06-27",
-      "source": "adzuna",
-      "source_query": "retail",
-      "status": "open",
-      "priority_call": false,
-      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
-      "licenses_required": []
-    },
-    {
-      "id": "live-new-business-development-professional-us-chemours-3e92aa00c00a",
+      "id": "live-new-business-development-professional-us-chemours-urce94e812e8",
       "title": "New Business Development Professional, US",
       "employer": "Chemours",
       "categories": [
@@ -850,7 +726,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5777154916?se=MCHVhwRz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=95E20A671EECC47A5C46F4F0E1DF3E92AA00C00A",
+      "apply_url": "https://www.adzuna.com/details/5777154916?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-25",
       "source": "adzuna",
       "source_query": "custodian",
@@ -860,7 +736,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-senior-database-engineer-humana-ab6fc221d3f1",
+      "id": "live-senior-database-engineer-humana-urce94e812e8",
       "title": "Senior Database Engineer",
       "employer": "Humana",
       "categories": [
@@ -881,7 +757,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5779696994?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=1C2975B065B40898FBF7EAF2D64BAB6FC221D3F1",
+      "apply_url": "https://www.adzuna.com/details/5779696994?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-27",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -922,7 +798,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-operations-manager-starting-summer-2026-regional-distribution-center-albany-or-t-001c3a4f7526",
+      "id": "live-operations-manager-starting-summer-2026-regional-distribution-center-albany-or-t-urce94e812e8",
       "title": "Operations Manager (Starting Summer 2026) -Regional Distribution Center, Albany, OR",
       "employer": "Target",
       "categories": [
@@ -943,7 +819,7 @@
       "lat": 44.637292,
       "lng": -123.116872,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5775666615?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=27CBEE825BD4C23BE27E07F026FA001C3A4F7526",
+      "apply_url": "https://www.adzuna.com/details/5775666615?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-24",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -953,7 +829,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-civil-structural-engineer-chemours-05977265e924",
+      "id": "live-civil-structural-engineer-chemours-urce94e812e8",
       "title": "Civil Structural Engineer",
       "employer": "Chemours",
       "categories": [
@@ -974,7 +850,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5779689480?se=MCHVhwRz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=DA4D24F80248739600F9742C751705977265E924",
+      "apply_url": "https://www.adzuna.com/details/5779689480?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-27",
       "source": "adzuna",
       "source_query": "custodian",
@@ -1005,7 +881,7 @@
       "lat": 44.92796,
       "lng": -123.01102,
       "south_salem": true,
-      "apply_url": "https://www.adzuna.com/land/ad/5772328704?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=8DFACD23C21C102DEC7218C8D0421DA40634CE44",
+      "apply_url": "https://www.adzuna.com/land/ad/5772328704?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=8DFACD23C21C102DEC7218C8D0421DA40634CE44",
       "posted": "2026-06-22",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -1015,7 +891,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-enterprise-data-architect-ai-readiness-data-transformation-eliassen-group-9d2534d57c40",
+      "id": "live-enterprise-data-architect-ai-readiness-data-transformation-eliassen-group-urce94e812e8",
       "title": "Enterprise Data Architect - AI Readiness / Data Transformation",
       "employer": "Eliassen Group",
       "categories": [
@@ -1036,7 +912,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5774276878?se=MCHVhwRz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=E833E964BCDA7EDF6A3275E243799D2534D57C40",
+      "apply_url": "https://www.adzuna.com/details/5774276878?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-23",
       "source": "adzuna",
       "source_query": "custodian",
@@ -1046,7 +922,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-instacart-shopper-delivery-driver-instacart-shoppers-urce94e812e8",
+      "id": "live-instacart-shopper-delivery-driver-instacart-shoppers-b96146f290bc",
       "title": "Instacart Shopper - Delivery Driver",
       "employer": "Instacart Shoppers",
       "categories": [
@@ -1067,7 +943,7 @@
       "lat": 45.1746,
       "lng": -123.06966,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5777645334?utm_medium=api&utm_source=94e812e8",
+      "apply_url": "https://www.adzuna.com/land/ad/5777645334?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=59F61D178BB0F2CA31F6AE22CABCB96146F290BC",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -1098,7 +974,7 @@
       "lat": 45.143731,
       "lng": -122.855373,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5778600295?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=A783D078464585B0316EA000DE488C276426B32F",
+      "apply_url": "https://www.adzuna.com/land/ad/5778600295?se=bA2Q9dpz8RG5B_ZD6wKS8Q&utm_medium=api&utm_source=94e812e8&v=A783D078464585B0316EA000DE488C276426B32F",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -1129,7 +1005,7 @@
       "lat": 45.1746,
       "lng": -123.06966,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5772413617?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=2A2D0329CB6DF8EFB0E5FDFC3FB058A5DBD14407",
+      "apply_url": "https://www.adzuna.com/land/ad/5772413617?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=2A2D0329CB6DF8EFB0E5FDFC3FB058A5DBD14407",
       "posted": "2026-06-22",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -1160,7 +1036,7 @@
       "lat": 44.946482,
       "lng": -123.001894,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5778620109?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=A4F852138DA7BB879E85A0E3EB67B44BDC4981AD",
+      "apply_url": "https://www.adzuna.com/land/ad/5778620109?se=bA2Q9dpz8RG5B_ZD6wKS8Q&utm_medium=api&utm_source=94e812e8&v=A4F852138DA7BB879E85A0E3EB67B44BDC4981AD",
       "posted": "2026-06-27",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -1201,7 +1077,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-hr-business-partner-nacf-amazon-ad8c646d5eb3",
+      "id": "live-hr-business-partner-nacf-amazon-urce94e812e8",
       "title": "HR Business Partner, NACF",
       "employer": "Amazon",
       "categories": [
@@ -1222,7 +1098,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5779688476?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=0C8F86E38EF3EE90784679349CEAAD8C646D5EB3",
+      "apply_url": "https://www.adzuna.com/details/5779688476?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-27",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -1232,38 +1108,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-hr-business-partner-nacf-amazon-ad8c646d5eb3",
-      "title": "HR Business Partner, NACF",
-      "employer": "Amazon",
-      "categories": [
-        "retail"
-      ],
-      "tags": [
-        "live-feed",
-        "adzuna",
-        "retail"
-      ],
-      "pay_min": 99383.13,
-      "pay_max": 99383.13,
-      "pay_type": "annual",
-      "pay_display": "$99,383\u2013$99,383",
-      "match_score": 65,
-      "match_tier": "medium",
-      "address": "US, Oregon, Marion County, Salem",
-      "lat": 44.94379,
-      "lng": -123.02826,
-      "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5779688476?se=-j1DiARz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=0C8F86E38EF3EE90784679349CEAAD8C646D5EB3",
-      "posted": "2026-06-27",
-      "source": "adzuna",
-      "source_query": "retail",
-      "status": "open",
-      "priority_call": false,
-      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
-      "licenses_required": []
-    },
-    {
-      "id": "live-technical-marketing-specialist-chemours-5c5dbc48faf2",
+      "id": "live-technical-marketing-specialist-chemours-urce94e812e8",
       "title": "Technical Marketing Specialist",
       "employer": "Chemours",
       "categories": [
@@ -1284,7 +1129,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5777154917?se=MCHVhwRz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=27E85072D28C62E3349FB906BE775C5DBC48FAF2",
+      "apply_url": "https://www.adzuna.com/details/5777154917?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-25",
       "source": "adzuna",
       "source_query": "custodian",
@@ -1294,7 +1139,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-sigma-semantic-modeler-cognizant-697e224ccc4e",
+      "id": "live-sigma-semantic-modeler-cognizant-urce94e812e8",
       "title": "Sigma Semantic Modeler",
       "employer": "Cognizant",
       "categories": [
@@ -1315,7 +1160,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5777155505?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=D81740F68A9EAA7A5C27AAB538B7697E224CCC4E",
+      "apply_url": "https://www.adzuna.com/details/5777155505?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-25",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -1346,7 +1191,7 @@
       "lat": 45.002516,
       "lng": -123.023209,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5772328713?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=64279B34CD3C50AB1158BFDA78408EB96BBEDCBE",
+      "apply_url": "https://www.adzuna.com/land/ad/5772328713?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=64279B34CD3C50AB1158BFDA78408EB96BBEDCBE",
       "posted": "2026-06-22",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -1356,7 +1201,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-senior-informaticist-centerwell-9c0080dbc2b3",
+      "id": "live-senior-informaticist-centerwell-urce94e812e8",
       "title": "Senior Informaticist",
       "employer": "CenterWell",
       "categories": [
@@ -1377,7 +1222,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5779689430?se=-j1DiARz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=3F298AFE467DAEF844B6E1C417DD9C0080DBC2B3",
+      "apply_url": "https://www.adzuna.com/details/5779689430?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-27",
       "source": "adzuna",
       "source_query": "retail",
@@ -1387,38 +1232,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-wireless-sales-manager-w5396-w1775-w1925-osl-retail-services-corporation-urce94e812e8",
-      "title": "Wireless Sales Manager - W5396/W1775/W1925",
-      "employer": "OSL Retail Services Corporation",
-      "categories": [
-        "retail"
-      ],
-      "tags": [
-        "live-feed",
-        "adzuna",
-        "retail"
-      ],
-      "pay_min": 94074.77,
-      "pay_max": 94074.77,
-      "pay_type": "annual",
-      "pay_display": "$94,075\u2013$94,075",
-      "match_score": 65,
-      "match_tier": "medium",
-      "address": "US, Oregon, Linn County, Albany",
-      "lat": 44.623769,
-      "lng": -123.071842,
-      "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5778991293?utm_medium=api&utm_source=94e812e8",
-      "posted": "2026-06-27",
-      "source": "adzuna",
-      "source_query": "retail",
-      "status": "open",
-      "priority_call": false,
-      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
-      "licenses_required": []
-    },
-    {
-      "id": "live-instacart-shopper-delivery-driver-instacart-shoppers-urce94e812e8",
+      "id": "live-instacart-shopper-delivery-driver-instacart-shoppers-0e4fbead8e02",
       "title": "Instacart Shopper - Delivery Driver",
       "employer": "Instacart Shoppers",
       "categories": [
@@ -1439,7 +1253,7 @@
       "lat": 45.237399,
       "lng": -122.789191,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5777645844?utm_medium=api&utm_source=94e812e8",
+      "apply_url": "https://www.adzuna.com/land/ad/5777645844?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=24BD80AE9DC502359225F03CDF410E4FBEAD8E02",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -1460,18 +1274,18 @@
         "adzuna",
         "warehouse"
       ],
-      "pay_min": 92826.82,
-      "pay_max": 92826.82,
+      "pay_min": 93398.77,
+      "pay_max": 93398.77,
       "pay_type": "annual",
-      "pay_display": "$92,827\u2013$92,827",
+      "pay_display": "$93,399\u2013$93,399",
       "match_score": 65,
       "match_tier": "medium",
       "address": "US, Oregon, Marion County, Turner",
       "lat": 44.89876,
       "lng": -122.92704,
       "south_salem": true,
-      "apply_url": "https://www.adzuna.com/details/5780172707?utm_medium=api&utm_source=94e812e8",
-      "posted": "2026-06-28",
+      "apply_url": "https://www.adzuna.com/details/5781197188?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-29",
       "source": "adzuna",
       "source_query": "forklift",
       "status": "open",
@@ -1480,7 +1294,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-sr-data-analytics-engineer-under-armour-inc-b9aea5ed3466",
+      "id": "live-sr-data-analytics-engineer-under-armour-inc-urce94e812e8",
       "title": "Sr. Data Analytics Engineer",
       "employer": "Under Armour, Inc.",
       "categories": [
@@ -1501,7 +1315,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5775667019?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=1B8B68434F4BE24885C679300CFAB9AEA5ED3466",
+      "apply_url": "https://www.adzuna.com/details/5775667019?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-24",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -1532,41 +1346,10 @@
       "lat": 45.237399,
       "lng": -122.789191,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5772412923?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=4950FE6E0796A9DB808E25A2D5B18CAFCD671142",
+      "apply_url": "https://www.adzuna.com/land/ad/5772412923?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=4950FE6E0796A9DB808E25A2D5B18CAFCD671142",
       "posted": "2026-06-22",
       "source": "adzuna",
       "source_query": "delivery driver",
-      "status": "open",
-      "priority_call": false,
-      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
-      "licenses_required": []
-    },
-    {
-      "id": "live-class-a-cdl-company-driver-1yr-exp-required-regional-dry-van-transervice-logisti-14fb16793e66",
-      "title": "Class A CDL Company Driver - 1yr EXP Required - Regional - Dry Van - Transervice Logistics",
-      "employer": "Transervice Logistics",
-      "categories": [
-        "retail"
-      ],
-      "tags": [
-        "live-feed",
-        "adzuna",
-        "retail"
-      ],
-      "pay_min": 91433.44,
-      "pay_max": 91433.44,
-      "pay_type": "annual",
-      "pay_display": "$91,433\u2013$91,433",
-      "match_score": 65,
-      "match_tier": "medium",
-      "address": "US, Oregon, Linn County, Albany",
-      "lat": 44.637292,
-      "lng": -123.116872,
-      "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5780188679?se=-j1DiARz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=B01EE3DD516CA9C21261489C455614FB16793E66",
-      "posted": "2026-06-28",
-      "source": "adzuna",
-      "source_query": "retail",
       "status": "open",
       "priority_call": false,
       "experience_pitch": "Live listing \u2014 confirm still open before applying.",
@@ -1604,7 +1387,38 @@
       "licenses_required": []
     },
     {
-      "id": "live-regional-truck-driver-company-1yr-exp-required-dry-van-transervice-logistics-tra-da4e903dfb1b",
+      "id": "live-cdl-a-company-driver-1yr-exp-required-regional-dry-van-transervice-logistics-tra-urce94e812e8",
+      "title": "CDL-A Company Driver - 1yr EXP Required - Regional - Dry Van - Transervice Logistics",
+      "employer": "Transervice Logistics",
+      "categories": [
+        "retail"
+      ],
+      "tags": [
+        "live-feed",
+        "adzuna",
+        "retail"
+      ],
+      "pay_min": 90791.48,
+      "pay_max": 90791.48,
+      "pay_type": "annual",
+      "pay_display": "$90,791\u2013$90,791",
+      "match_score": 65,
+      "match_tier": "medium",
+      "address": "US, Oregon, Linn County, Albany",
+      "lat": 44.637292,
+      "lng": -123.116872,
+      "south_salem": false,
+      "apply_url": "https://www.adzuna.com/details/5781194326?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-29",
+      "source": "adzuna",
+      "source_query": "retail",
+      "status": "open",
+      "priority_call": false,
+      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
+      "licenses_required": []
+    },
+    {
+      "id": "live-regional-truck-driver-company-1yr-exp-required-dry-van-transervice-logistics-tra-urce94e812e8",
       "title": "Regional Truck Driver Company - 1yr EXP Required - Dry Van - Transervice Logistics",
       "employer": "Transervice Logistics",
       "categories": [
@@ -1625,8 +1439,8 @@
       "lat": 44.637292,
       "lng": -123.116872,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5780336047?se=-j1DiARz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=12B8CBE03F4E6F08F16760FDD9DEDA4E903DFB1B",
-      "posted": "2026-06-28",
+      "apply_url": "https://www.adzuna.com/details/5781194332?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-29",
       "source": "adzuna",
       "source_query": "retail",
       "status": "open",
@@ -1635,7 +1449,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-regional-account-manager-brink-s-a9cf6580453d",
+      "id": "live-regional-account-manager-brink-s-urce94e812e8",
       "title": "Regional Account Manager",
       "employer": "Brink's",
       "categories": [
@@ -1656,7 +1470,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5779688893?se=-j1DiARz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=DEB52BD90447AE15B171E61A51ACA9CF6580453D",
+      "apply_url": "https://www.adzuna.com/details/5779688893?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-27",
       "source": "adzuna",
       "source_query": "retail",
@@ -1666,7 +1480,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-instacart-delivery-driver-flexible-hours-instacart-shoppers-urce94e812e8",
+      "id": "live-instacart-delivery-driver-flexible-hours-instacart-shoppers-ac0e575c0248",
       "title": "Instacart Delivery Driver - Flexible Hours",
       "employer": "Instacart Shoppers",
       "categories": [
@@ -1687,7 +1501,7 @@
       "lat": 45.1746,
       "lng": -123.06966,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5777647974?utm_medium=api&utm_source=94e812e8",
+      "apply_url": "https://www.adzuna.com/land/ad/5777647974?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=B0FC4B92E7BD67722D70EDD9810FAC0E575C0248",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -1728,38 +1542,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-truck-driver-cdl-a-regional-ryder-urce94e812e8",
-      "title": "Truck Driver CDL A Regional",
-      "employer": "Ryder",
-      "categories": [
-        "warehouse"
-      ],
-      "tags": [
-        "live-feed",
-        "adzuna",
-        "warehouse"
-      ],
-      "pay_min": 86139.86,
-      "pay_max": 86139.86,
-      "pay_type": "annual",
-      "pay_display": "$86,140\u2013$86,140",
-      "match_score": 65,
-      "match_tier": "medium",
-      "address": "US, Oregon, Marion County, Keizer",
-      "lat": 45.002516,
-      "lng": -123.023209,
-      "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5766669642?utm_medium=api&utm_source=94e812e8",
-      "posted": "2026-06-17",
-      "source": "adzuna",
-      "source_query": "forklift",
-      "status": "open",
-      "priority_call": false,
-      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
-      "licenses_required": []
-    },
-    {
-      "id": "live-informaticist-2-centerwell-bfdce5ad338f",
+      "id": "live-informaticist-2-centerwell-urce94e812e8",
       "title": "Informaticist 2",
       "employer": "CenterWell",
       "categories": [
@@ -1780,7 +1563,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5779689435?se=-j1DiARz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=3DA10F43D1463412FDE1E3ACB512BFDCE5AD338F",
+      "apply_url": "https://www.adzuna.com/details/5779689435?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-27",
       "source": "adzuna",
       "source_query": "retail",
@@ -1811,7 +1594,7 @@
       "lat": 45.002516,
       "lng": -123.023209,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5777662455?se=tP3AhgRz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=A4F95F3F09A51D9F75EB38E6860CA06C3BE304F6",
+      "apply_url": "https://www.adzuna.com/land/ad/5777662455?se=DMYi9tpz8RG5B_ZD6wKS8Q&utm_medium=api&utm_source=94e812e8&v=A4F95F3F09A51D9F75EB38E6860CA06C3BE304F6",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "forklift",
@@ -1821,7 +1604,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-instacart-shopper-delivery-driver-instacart-shoppers-urce94e812e8",
+      "id": "live-instacart-shopper-delivery-driver-instacart-shoppers-000cfc6c23e1",
       "title": "Instacart Shopper - Delivery Driver",
       "employer": "Instacart Shoppers",
       "categories": [
@@ -1842,7 +1625,7 @@
       "lat": 45.206592,
       "lng": -123.216711,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5777648073?utm_medium=api&utm_source=94e812e8",
+      "apply_url": "https://www.adzuna.com/land/ad/5777648073?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=E4F7ABD4C061246684CB3C71345B000CFC6C23E1",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -1852,7 +1635,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-class-a-cdl-company-driver-1yr-exp-required-regional-dry-van-transervice-logisti-bc4858c8b62c",
+      "id": "live-class-a-cdl-company-driver-1yr-exp-required-regional-dry-van-transervice-logisti-urce94e812e8",
       "title": "Class A CDL Company Driver - 1yr EXP Required - Regional - Dry Van - Transervice Logistics",
       "employer": "Transervice Logistics",
       "categories": [
@@ -1873,8 +1656,8 @@
       "lat": 44.947627,
       "lng": -123.001188,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5780336052?se=-j1DiARz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=83DC52E723F8430D23F768098A8BBC4858C8B62C",
-      "posted": "2026-06-28",
+      "apply_url": "https://www.adzuna.com/details/5781194334?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-29",
       "source": "adzuna",
       "source_query": "retail",
       "status": "open",
@@ -1883,7 +1666,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-regional-truck-driver-company-1yr-exp-required-dry-van-transervice-logistics-tra-6e0f9bae901d",
+      "id": "live-regional-truck-driver-company-1yr-exp-required-dry-van-transervice-logistics-tra-urce94e812e8",
       "title": "Regional Truck Driver Company - 1yr EXP Required - Dry Van - Transervice Logistics",
       "employer": "Transervice Logistics",
       "categories": [
@@ -1904,8 +1687,8 @@
       "lat": 44.947627,
       "lng": -123.001188,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5780336051?se=-j1DiARz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=1CE5FB44333EB42EDC4DE8D70E746E0F9BAE901D",
-      "posted": "2026-06-28",
+      "apply_url": "https://www.adzuna.com/details/5781194335?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-29",
       "source": "adzuna",
       "source_query": "retail",
       "status": "open",
@@ -1935,7 +1718,7 @@
       "lat": 45.206592,
       "lng": -123.216711,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5772417519?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=3A7DD591D02AF213609722F4006E699B8380B110",
+      "apply_url": "https://www.adzuna.com/land/ad/5772417519?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=3A7DD591D02AF213609722F4006E699B8380B110",
       "posted": "2026-06-22",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -1945,38 +1728,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-cdl-a-truck-driver-home-weekly-ryder-f78e92e29099",
-      "title": "CDL-A Truck Driver - Home Weekly",
-      "employer": "Ryder",
-      "categories": [
-        "retail"
-      ],
-      "tags": [
-        "live-feed",
-        "adzuna",
-        "retail"
-      ],
-      "pay_min": 82301.98,
-      "pay_max": 82301.98,
-      "pay_type": "annual",
-      "pay_display": "$82,302\u2013$82,302",
-      "match_score": 65,
-      "match_tier": "medium",
-      "address": "US, Oregon, Marion County, Aumsville",
-      "lat": 44.840955,
-      "lng": -122.870924,
-      "south_salem": true,
-      "apply_url": "https://www.adzuna.com/land/ad/5779221585?se=-j1DiARz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=767EC9998D5DCEB5A87896E17757F78E92E29099",
-      "posted": "2026-06-27",
-      "source": "adzuna",
-      "source_query": "retail",
-      "status": "open",
-      "priority_call": false,
-      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
-      "licenses_required": []
-    },
-    {
-      "id": "live-technical-trainer-copeland-fb34e08c7bb9",
+      "id": "live-technical-trainer-copeland-urce94e812e8",
       "title": "Technical Trainer",
       "employer": "Copeland",
       "categories": [
@@ -1997,7 +1749,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5779689987?se=-j1DiARz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=9B7BB86FA16257D5C90D291927C1FB34E08C7BB9",
+      "apply_url": "https://www.adzuna.com/details/5779689987?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-27",
       "source": "adzuna",
       "source_query": "retail",
@@ -2007,7 +1759,38 @@
       "licenses_required": []
     },
     {
-      "id": "live-dc-general-manager-2-home-depot-edc9d0e3c3f2",
+      "id": "live-construction-project-superintendent-alpha-construction-llc-urce94e812e8",
+      "title": "Construction Project Superintendent",
+      "employer": "Alpha Construction LLC",
+      "categories": [
+        "warehouse"
+      ],
+      "tags": [
+        "live-feed",
+        "adzuna",
+        "warehouse"
+      ],
+      "pay_min": 80104.48,
+      "pay_max": 80104.48,
+      "pay_type": "annual",
+      "pay_display": "$80,104\u2013$80,104",
+      "match_score": 65,
+      "match_tier": "medium",
+      "address": "US, Oregon, Marion County, Salem",
+      "lat": 44.946482,
+      "lng": -123.001894,
+      "south_salem": false,
+      "apply_url": "https://www.adzuna.com/details/5773398414?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-23",
+      "source": "adzuna",
+      "source_query": "forklift",
+      "status": "open",
+      "priority_call": false,
+      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
+      "licenses_required": []
+    },
+    {
+      "id": "live-dc-general-manager-2-home-depot-urce94e812e8",
       "title": "DC GENERAL MANAGER 2",
       "employer": "Home Depot",
       "categories": [
@@ -2028,41 +1811,10 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5779696292?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=B125FC9CCE4048A70235698C529BEDC9D0E3C3F2",
+      "apply_url": "https://www.adzuna.com/details/5779696292?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-27",
       "source": "adzuna",
       "source_query": "warehouse",
-      "status": "open",
-      "priority_call": false,
-      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
-      "licenses_required": []
-    },
-    {
-      "id": "live-dc-general-manager-2-home-depot-edc9d0e3c3f2",
-      "title": "DC GENERAL MANAGER 2",
-      "employer": "Home Depot",
-      "categories": [
-        "retail"
-      ],
-      "tags": [
-        "live-feed",
-        "adzuna",
-        "retail"
-      ],
-      "pay_min": 79332.76,
-      "pay_max": 79332.76,
-      "pay_type": "annual",
-      "pay_display": "$79,333\u2013$79,333",
-      "match_score": 65,
-      "match_tier": "medium",
-      "address": "US, Oregon, Marion County, Salem",
-      "lat": 44.94379,
-      "lng": -123.02826,
-      "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5779696292?se=-j1DiARz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=B125FC9CCE4048A70235698C529BEDC9D0E3C3F2",
-      "posted": "2026-06-27",
-      "source": "adzuna",
-      "source_query": "retail",
       "status": "open",
       "priority_call": false,
       "experience_pitch": "Live listing \u2014 confirm still open before applying.",
@@ -2100,7 +1852,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-instacart-delivery-driver-flexible-hours-instacart-shoppers-urce94e812e8",
+      "id": "live-instacart-delivery-driver-flexible-hours-instacart-shoppers-bf7c7da34279",
       "title": "Instacart Delivery Driver - Flexible Hours",
       "employer": "Instacart Shoppers",
       "categories": [
@@ -2121,7 +1873,7 @@
       "lat": 45.237399,
       "lng": -122.789191,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5777645776?utm_medium=api&utm_source=94e812e8",
+      "apply_url": "https://www.adzuna.com/land/ad/5777645776?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=6C8DFF6B74984E0CEFAE95333BEBBF7C7DA34279",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -2152,7 +1904,7 @@
       "lat": 45.002516,
       "lng": -123.023209,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5777662706?se=tP3AhgRz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=A2E264FF21A92CFFBF302C6039B85B9C22AD6734",
+      "apply_url": "https://www.adzuna.com/land/ad/5777662706?se=DMYi9tpz8RG5B_ZD6wKS8Q&utm_medium=api&utm_source=94e812e8&v=A2E264FF21A92CFFBF302C6039B85B9C22AD6734",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "forklift",
@@ -2183,7 +1935,7 @@
       "lat": 44.89876,
       "lng": -122.92704,
       "south_salem": true,
-      "apply_url": "https://www.adzuna.com/land/ad/5772328718?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=4A234ED3E0D6A4301A1C6F6E8A5853A6029E9FA3",
+      "apply_url": "https://www.adzuna.com/land/ad/5772328718?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=4A234ED3E0D6A4301A1C6F6E8A5853A6029E9FA3",
       "posted": "2026-06-22",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -2214,7 +1966,7 @@
       "lat": 45.000496,
       "lng": -122.770379,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5772414726?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=B9BA49E2AFFB18B761901C12A7DA498D6A45FD0A",
+      "apply_url": "https://www.adzuna.com/land/ad/5772414726?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=B9BA49E2AFFB18B761901C12A7DA498D6A45FD0A",
       "posted": "2026-06-22",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -2245,7 +1997,7 @@
       "lat": 45.185444,
       "lng": -122.804628,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5772153186?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=67DB346C9526450A7C8D1E99B51882C2EEA72560",
+      "apply_url": "https://www.adzuna.com/land/ad/5772153186?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=67DB346C9526450A7C8D1E99B51882C2EEA72560",
       "posted": "2026-06-21",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -2255,9 +2007,71 @@
       "licenses_required": []
     },
     {
-      "id": "live-mobile-associate-retail-sales-t-mobile-usa-inc-196d61d601c3",
-      "title": "Mobile Associate - Retail Sales",
-      "employer": "T-Mobile USA, Inc.",
+      "id": "live-producing-real-estate-agent-zillow-live-transfers-no-upfront-lead-cost-the-opera-c952f52874b1",
+      "title": "Producing Real Estate Agent | Zillow Live Transfers, No Upfront Lead Cost",
+      "employer": "The Operative Group",
+      "categories": [
+        "general"
+      ],
+      "tags": [
+        "live-feed",
+        "adzuna",
+        "general"
+      ],
+      "pay_min": 74463.71,
+      "pay_max": 74463.71,
+      "pay_type": "annual",
+      "pay_display": "$74,464\u2013$74,464",
+      "match_score": 65,
+      "match_tier": "medium",
+      "address": "US, Oregon, Benton County, Corvallis",
+      "lat": 44.642031,
+      "lng": -123.275878,
+      "south_salem": false,
+      "apply_url": "https://www.adzuna.com/land/ad/5781230975?se=9i1D99pz8RG1Ec3-_UvSsA&utm_medium=api&utm_source=94e812e8&v=3AACEC326EF3F1ACE1C3AD7CAFC4C952F52874B1",
+      "posted": "2026-06-29",
+      "source": "adzuna",
+      "source_query": "custodian",
+      "status": "open",
+      "priority_call": false,
+      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
+      "licenses_required": []
+    },
+    {
+      "id": "live-bilingual-multi-location-customer-service-specialist-spanish-sherwin-williams-c90226f23287",
+      "title": "Bilingual Multi-Location Customer Service Specialist (Spanish)",
+      "employer": "Sherwin-Williams",
+      "categories": [
+        "warehouse"
+      ],
+      "tags": [
+        "live-feed",
+        "adzuna",
+        "warehouse"
+      ],
+      "pay_min": 74407.06,
+      "pay_max": 74407.06,
+      "pay_type": "annual",
+      "pay_display": "$74,407\u2013$74,407",
+      "match_score": 65,
+      "match_tier": "medium",
+      "address": "US, Oregon, Marion County, Salem",
+      "lat": 44.947627,
+      "lng": -123.001188,
+      "south_salem": false,
+      "apply_url": "https://www.adzuna.com/land/ad/5780225471?se=bA2Q9dpz8RG5B_ZD6wKS8Q&utm_medium=api&utm_source=94e812e8&v=34DF8372ACDE971980D5051B17B9C90226F23287",
+      "posted": "2026-06-28",
+      "source": "adzuna",
+      "source_query": "warehouse",
+      "status": "open",
+      "priority_call": false,
+      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
+      "licenses_required": []
+    },
+    {
+      "id": "live-bilingual-multi-location-customer-service-specialist-spanish-sherwin-williams-c90226f23287",
+      "title": "Bilingual Multi-Location Customer Service Specialist (Spanish)",
+      "employer": "Sherwin-Williams",
       "categories": [
         "retail"
       ],
@@ -2266,18 +2080,18 @@
         "adzuna",
         "retail"
       ],
-      "pay_min": 75718.69,
-      "pay_max": 75718.69,
+      "pay_min": 74407.06,
+      "pay_max": 74407.06,
       "pay_type": "annual",
-      "pay_display": "$75,719\u2013$75,719",
+      "pay_display": "$74,407\u2013$74,407",
       "match_score": 65,
       "match_tier": "medium",
-      "address": "US, Oregon, Yamhill County, Newberg",
-      "lat": 45.300118,
-      "lng": -122.973157,
+      "address": "US, Oregon, Marion County, Salem",
+      "lat": 44.947627,
+      "lng": -123.001188,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5778798208?se=-j1DiARz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=083F1081BAEF00B30F2F4107ACDD196D61D601C3",
-      "posted": "2026-06-27",
+      "apply_url": "https://www.adzuna.com/land/ad/5780225471?se=ppfT99pz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=34DF8372ACDE971980D5051B17B9C90226F23287",
+      "posted": "2026-06-28",
       "source": "adzuna",
       "source_query": "retail",
       "status": "open",
@@ -2348,69 +2162,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-bilingual-multi-location-customer-service-specialist-spanish-sherwin-williams-e644ec0e16c1",
-      "title": "Bilingual Multi-Location Customer Service Specialist (Spanish)",
-      "employer": "Sherwin-Williams",
-      "categories": [
-        "warehouse"
-      ],
-      "tags": [
-        "live-feed",
-        "adzuna",
-        "warehouse"
-      ],
-      "pay_min": 72065.96,
-      "pay_max": 72065.96,
-      "pay_type": "annual",
-      "pay_display": "$72,066\u2013$72,066",
-      "match_score": 65,
-      "match_tier": "medium",
-      "address": "US, Oregon, Marion County, Salem",
-      "lat": 44.947627,
-      "lng": -123.001188,
-      "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5780225450?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=EFA0B743AF85D27B9C1B1CC2C6A6E644EC0E16C1",
-      "posted": "2026-06-28",
-      "source": "adzuna",
-      "source_query": "warehouse",
-      "status": "open",
-      "priority_call": false,
-      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
-      "licenses_required": []
-    },
-    {
-      "id": "live-bilingual-multi-location-customer-service-specialist-spanish-sherwin-williams-e644ec0e16c1",
-      "title": "Bilingual Multi-Location Customer Service Specialist (Spanish)",
-      "employer": "Sherwin-Williams",
-      "categories": [
-        "retail"
-      ],
-      "tags": [
-        "live-feed",
-        "adzuna",
-        "retail"
-      ],
-      "pay_min": 72065.96,
-      "pay_max": 72065.96,
-      "pay_type": "annual",
-      "pay_display": "$72,066\u2013$72,066",
-      "match_score": 65,
-      "match_tier": "medium",
-      "address": "US, Oregon, Marion County, Salem",
-      "lat": 44.947627,
-      "lng": -123.001188,
-      "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5780225450?se=-j1DiARz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=EFA0B743AF85D27B9C1B1CC2C6A6E644EC0E16C1",
-      "posted": "2026-06-28",
-      "source": "adzuna",
-      "source_query": "retail",
-      "status": "open",
-      "priority_call": false,
-      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
-      "licenses_required": []
-    },
-    {
-      "id": "live-compensation-analyst-fujifilm-f66e16c42c51",
+      "id": "live-compensation-analyst-fujifilm-urce94e812e8",
       "title": "Compensation Analyst",
       "employer": "Fujifilm",
       "categories": [
@@ -2431,7 +2183,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5778525713?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=55AEBD4FC436F002777487BABA60F66E16C42C51",
+      "apply_url": "https://www.adzuna.com/details/5778525713?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -2472,7 +2224,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-instacart-delivery-driver-flexible-hours-instacart-shoppers-urce94e812e8",
+      "id": "live-instacart-delivery-driver-flexible-hours-instacart-shoppers-faab7a75584f",
       "title": "Instacart Delivery Driver - Flexible Hours",
       "employer": "Instacart Shoppers",
       "categories": [
@@ -2493,7 +2245,7 @@
       "lat": 45.206592,
       "lng": -123.216711,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5777643903?utm_medium=api&utm_source=94e812e8",
+      "apply_url": "https://www.adzuna.com/land/ad/5777643903?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=B6F6EC357A338378F1930C7546ECFAAB7A75584F",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -2555,7 +2307,7 @@
       "lat": 44.947627,
       "lng": -123.001188,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5771370763?se=tP3AhgRz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=B75704D091D4395D85676E94F6A5594BE9D0D28A",
+      "apply_url": "https://www.adzuna.com/land/ad/5771370763?se=DMYi9tpz8RG5B_ZD6wKS8Q&utm_medium=api&utm_source=94e812e8&v=B75704D091D4395D85676E94F6A5594BE9D0D28A",
       "posted": "2026-06-21",
       "source": "adzuna",
       "source_query": "forklift",
@@ -2565,7 +2317,38 @@
       "licenses_required": []
     },
     {
-      "id": "live-instacart-shopper-delivery-driver-instacart-shoppers-urce94e812e8",
+      "id": "live-audio-technician-mcminnville-or-starkey-hearcare-urce94e812e8",
+      "title": "Audio Technician (McMinnville, OR)",
+      "employer": "Starkey HearCare",
+      "categories": [
+        "retail"
+      ],
+      "tags": [
+        "live-feed",
+        "adzuna",
+        "retail"
+      ],
+      "pay_min": 68288.55,
+      "pay_max": 68288.55,
+      "pay_type": "annual",
+      "pay_display": "$68,289\u2013$68,289",
+      "match_score": 65,
+      "match_tier": "medium",
+      "address": "US, Oregon, Yamhill County, Mcminnville",
+      "lat": 45.206592,
+      "lng": -123.216711,
+      "south_salem": false,
+      "apply_url": "https://www.adzuna.com/details/5781205943?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-29",
+      "source": "adzuna",
+      "source_query": "retail",
+      "status": "open",
+      "priority_call": false,
+      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
+      "licenses_required": []
+    },
+    {
+      "id": "live-instacart-shopper-delivery-driver-instacart-shoppers-28735317e4e3",
       "title": "Instacart Shopper - Delivery Driver",
       "employer": "Instacart Shoppers",
       "categories": [
@@ -2586,7 +2369,7 @@
       "lat": 45.221911,
       "lng": -122.838984,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5777649744?utm_medium=api&utm_source=94e812e8",
+      "apply_url": "https://www.adzuna.com/land/ad/5777649744?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=5C139AA89118ADA277147AFACFF828735317E4E3",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -2617,7 +2400,7 @@
       "lat": 44.6421,
       "lng": -123.2754,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5780225860?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=DBFE0D7DB3D7B61B9AC6A362EE6B41F0A64719A5",
+      "apply_url": "https://www.adzuna.com/land/ad/5780225860?se=bA2Q9dpz8RG5B_ZD6wKS8Q&utm_medium=api&utm_source=94e812e8&v=DBFE0D7DB3D7B61B9AC6A362EE6B41F0A64719A5",
       "posted": "2026-06-28",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -2648,7 +2431,7 @@
       "lat": 44.6421,
       "lng": -123.2754,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5780225860?se=-j1DiARz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=DBFE0D7DB3D7B61B9AC6A362EE6B41F0A64719A5",
+      "apply_url": "https://www.adzuna.com/land/ad/5780225860?se=ppfT99pz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=DBFE0D7DB3D7B61B9AC6A362EE6B41F0A64719A5",
       "posted": "2026-06-28",
       "source": "adzuna",
       "source_query": "retail",
@@ -2658,31 +2441,31 @@
       "licenses_required": []
     },
     {
-      "id": "live-class-a-cdl-truck-driver-north-west-handling-systems-urce94e812e8",
-      "title": "Class A CDL Truck Driver",
-      "employer": "North West Handling Systems",
+      "id": "live-retail-sales-associate-willamette-town-center-bath-body-works-urce94e812e8",
+      "title": "Retail Sales Associate-WILLAMETTE TOWN CENTER",
+      "employer": "Bath & Body Works",
       "categories": [
-        "warehouse"
+        "retail"
       ],
       "tags": [
         "live-feed",
         "adzuna",
-        "warehouse"
+        "retail"
       ],
-      "pay_min": 66560.0,
-      "pay_max": 72800.0,
+      "pay_min": 66507.89,
+      "pay_max": 66507.89,
       "pay_type": "annual",
-      "pay_display": "$66,560\u2013$72,800",
+      "pay_display": "$66,508\u2013$66,508",
       "match_score": 65,
       "match_tier": "medium",
-      "address": "US, Oregon, Linn County, Albany",
-      "lat": 44.633389,
-      "lng": -123.139563,
-      "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5766684175?utm_medium=api&utm_source=94e812e8",
-      "posted": "2026-06-17",
+      "address": "US, Oregon, Marion County, Turner",
+      "lat": 44.89876,
+      "lng": -122.92704,
+      "south_salem": true,
+      "apply_url": "https://www.adzuna.com/details/5781064376?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-29",
       "source": "adzuna",
-      "source_query": "forklift",
+      "source_query": "retail",
       "status": "open",
       "priority_call": false,
       "experience_pitch": "Live listing \u2014 confirm still open before applying.",
@@ -2710,7 +2493,7 @@
       "lat": 45.137092,
       "lng": -122.577431,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5772412930?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=AFDB12A22C633A5542A384E26CBE207E02F52AFB",
+      "apply_url": "https://www.adzuna.com/land/ad/5772412930?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=AFDB12A22C633A5542A384E26CBE207E02F52AFB",
       "posted": "2026-06-22",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -2741,7 +2524,7 @@
       "lat": 45.221911,
       "lng": -122.838984,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5772412778?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=B9A368F45200F0A8DF7307B5CD9C2704E72C0503",
+      "apply_url": "https://www.adzuna.com/land/ad/5772412778?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=B9A368F45200F0A8DF7307B5CD9C2704E72C0503",
       "posted": "2026-06-22",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -2751,38 +2534,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-producing-real-estate-agent-zillow-live-transfers-no-upfront-lead-cost-the-opera-408da98c5a25",
-      "title": "Producing Real Estate Agent | Zillow Live Transfers, No Upfront Lead Cost",
-      "employer": "The Operative Group",
-      "categories": [
-        "general"
-      ],
-      "tags": [
-        "live-feed",
-        "adzuna",
-        "general"
-      ],
-      "pay_min": 66031.87,
-      "pay_max": 66031.87,
-      "pay_type": "annual",
-      "pay_display": "$66,032\u2013$66,032",
-      "match_score": 65,
-      "match_tier": "medium",
-      "address": "US, Oregon, Linn County, Albany",
-      "lat": 44.633389,
-      "lng": -123.139563,
-      "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5777927669?se=MCHVhwRz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=8D3AAA56C043E66DD725D06EE04B408DA98C5A25",
-      "posted": "2026-06-26",
-      "source": "adzuna",
-      "source_query": "custodian",
-      "status": "open",
-      "priority_call": false,
-      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
-      "licenses_required": []
-    },
-    {
-      "id": "live-instacart-shopper-delivery-driver-instacart-shoppers-urce94e812e8",
+      "id": "live-instacart-shopper-delivery-driver-instacart-shoppers-95a5b6980df0",
       "title": "Instacart Shopper - Delivery Driver",
       "employer": "Instacart Shoppers",
       "categories": [
@@ -2803,7 +2555,7 @@
       "lat": 45.111015,
       "lng": -123.189615,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5777645124?utm_medium=api&utm_source=94e812e8",
+      "apply_url": "https://www.adzuna.com/land/ad/5777645124?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=37751753EDC5C2D07C7C82CE170B95A5B6980DF0",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -2813,7 +2565,38 @@
       "licenses_required": []
     },
     {
-      "id": "live-instacart-shopper-delivery-driver-instacart-shoppers-urce94e812e8",
+      "id": "live-audio-technician-mcminnville-or-audibel-urce94e812e8",
+      "title": "Audio Technician (McMinnville, OR)",
+      "employer": "Audibel",
+      "categories": [
+        "retail"
+      ],
+      "tags": [
+        "live-feed",
+        "adzuna",
+        "retail"
+      ],
+      "pay_min": 65609.04,
+      "pay_max": 65609.04,
+      "pay_type": "annual",
+      "pay_display": "$65,609\u2013$65,609",
+      "match_score": 65,
+      "match_tier": "medium",
+      "address": "US, Oregon, Yamhill County, Mcminnville",
+      "lat": 45.206592,
+      "lng": -123.216711,
+      "south_salem": false,
+      "apply_url": "https://www.adzuna.com/details/5781195963?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-29",
+      "source": "adzuna",
+      "source_query": "retail",
+      "status": "open",
+      "priority_call": false,
+      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
+      "licenses_required": []
+    },
+    {
+      "id": "live-instacart-shopper-delivery-driver-instacart-shoppers-cd35d8c401a1",
       "title": "Instacart Shopper - Delivery Driver",
       "employer": "Instacart Shoppers",
       "categories": [
@@ -2834,7 +2617,7 @@
       "lat": 45.246368,
       "lng": -123.112186,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5777646029?utm_medium=api&utm_source=94e812e8",
+      "apply_url": "https://www.adzuna.com/land/ad/5777646029?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=59D2C532D2E970E4E0CE10E4E3E0CD35D8C401A1",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -2844,7 +2627,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-dc-area-supervisor-home-depot-8ab5e7b7341e",
+      "id": "live-dc-area-supervisor-home-depot-urce94e812e8",
       "title": "DC AREA SUPERVISOR",
       "employer": "Home Depot",
       "categories": [
@@ -2865,7 +2648,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5779696279?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=B5DC192C8BCB93EBDD0ED0A498638AB5E7B7341E",
+      "apply_url": "https://www.adzuna.com/details/5779696279?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-27",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -2875,7 +2658,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-instacart-shopper-delivery-driver-instacart-shoppers-urce94e812e8",
+      "id": "live-instacart-shopper-delivery-driver-instacart-shoppers-4ee0ccfcb715",
       "title": "Instacart Shopper - Delivery Driver",
       "employer": "Instacart Shoppers",
       "categories": [
@@ -2896,7 +2679,7 @@
       "lat": 45.276261,
       "lng": -123.019386,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5777642330?utm_medium=api&utm_source=94e812e8",
+      "apply_url": "https://www.adzuna.com/land/ad/5777642330?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=A219653D215A8FEC2B15970D556C4EE0CCFCB715",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -2958,7 +2741,7 @@
       "lat": 45.246368,
       "lng": -123.112186,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5772412774?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=177F5E4D8A8198D1AC63CEBA03CE59D7D1FEB226",
+      "apply_url": "https://www.adzuna.com/land/ad/5772412774?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=177F5E4D8A8198D1AC63CEBA03CE59D7D1FEB226",
       "posted": "2026-06-22",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -2989,41 +2772,10 @@
       "lat": 45.220278,
       "lng": -122.952761,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5772415518?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=C0735EB28CDB034430C95EDE902AB358DEFDAD77",
+      "apply_url": "https://www.adzuna.com/land/ad/5772415518?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=C0735EB28CDB034430C95EDE902AB358DEFDAD77",
       "posted": "2026-06-22",
       "source": "adzuna",
       "source_query": "delivery driver",
-      "status": "open",
-      "priority_call": false,
-      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
-      "licenses_required": []
-    },
-    {
-      "id": "live-person-in-charge-molalla-oregon-albertsons-urce94e812e8",
-      "title": "Person In Charge Molalla Oregon",
-      "employer": "Albertsons",
-      "categories": [
-        "retail"
-      ],
-      "tags": [
-        "live-feed",
-        "adzuna",
-        "retail"
-      ],
-      "pay_min": 62794.19,
-      "pay_max": 62794.19,
-      "pay_type": "annual",
-      "pay_display": "$62,794\u2013$62,794",
-      "match_score": 65,
-      "match_tier": "medium",
-      "address": "US, Oregon, Clackamas County, Molalla",
-      "lat": 45.137092,
-      "lng": -122.577431,
-      "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5778858910?utm_medium=api&utm_source=94e812e8",
-      "posted": "2026-06-27",
-      "source": "adzuna",
-      "source_query": "retail",
       "status": "open",
       "priority_call": false,
       "experience_pitch": "Live listing \u2014 confirm still open before applying.",
@@ -3086,6 +2838,37 @@
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "forklift",
+      "status": "open",
+      "priority_call": false,
+      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
+      "licenses_required": []
+    },
+    {
+      "id": "live-warranty-auditor-ford-motor-company-urce94e812e8",
+      "title": "Warranty Auditor",
+      "employer": "Ford Motor Company",
+      "categories": [
+        "retail"
+      ],
+      "tags": [
+        "live-feed",
+        "adzuna",
+        "retail"
+      ],
+      "pay_min": 62119.46,
+      "pay_max": 62119.46,
+      "pay_type": "annual",
+      "pay_display": "$62,119\u2013$62,119",
+      "match_score": 65,
+      "match_tier": "medium",
+      "address": "US, Oregon, Marion County, Salem",
+      "lat": 44.94379,
+      "lng": -123.02826,
+      "south_salem": false,
+      "apply_url": "https://www.adzuna.com/details/5780727747?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-28",
+      "source": "adzuna",
+      "source_query": "retail",
       "status": "open",
       "priority_call": false,
       "experience_pitch": "Live listing \u2014 confirm still open before applying.",
@@ -3185,7 +2968,38 @@
       "licenses_required": []
     },
     {
-      "id": "live-instacart-delivery-driver-flexible-hours-instacart-shoppers-urce94e812e8",
+      "id": "live-outside-sales-representative-chs-inc-urce94e812e8",
+      "title": "Outside Sales Representative",
+      "employer": "CHS Inc.",
+      "categories": [
+        "retail"
+      ],
+      "tags": [
+        "live-feed",
+        "adzuna",
+        "retail"
+      ],
+      "pay_min": 57372.11,
+      "pay_max": 57372.11,
+      "pay_type": "annual",
+      "pay_display": "$57,372\u2013$57,372",
+      "match_score": 65,
+      "match_tier": "medium",
+      "address": "US, Oregon, Marion County, Salem",
+      "lat": 44.94379,
+      "lng": -123.02826,
+      "south_salem": false,
+      "apply_url": "https://www.adzuna.com/details/5780725822?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-28",
+      "source": "adzuna",
+      "source_query": "retail",
+      "status": "open",
+      "priority_call": false,
+      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
+      "licenses_required": []
+    },
+    {
+      "id": "live-instacart-delivery-driver-flexible-hours-instacart-shoppers-9046d06612b9",
       "title": "Instacart Delivery Driver - Flexible Hours",
       "employer": "Instacart Shoppers",
       "categories": [
@@ -3206,7 +3020,7 @@
       "lat": 45.221911,
       "lng": -122.838984,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5777649443?utm_medium=api&utm_source=94e812e8",
+      "apply_url": "https://www.adzuna.com/land/ad/5777649443?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=D37DE5FBDB7E1651129167140BB39046D06612B9",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -3237,7 +3051,7 @@
       "lat": 45.146589,
       "lng": -122.856931,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5773517653?se=tP3AhgRz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=D27FC6A77D383838C52B292FBF238898932EFE3A",
+      "apply_url": "https://www.adzuna.com/land/ad/5773517653?se=DMYi9tpz8RG5B_ZD6wKS8Q&utm_medium=api&utm_source=94e812e8&v=D27FC6A77D383838C52B292FBF238898932EFE3A",
       "posted": "2026-06-23",
       "source": "adzuna",
       "source_query": "forklift",
@@ -3247,7 +3061,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-compost-recycling-laborer-republic-services-507bc5a0464f",
+      "id": "live-compost-recycling-laborer-republic-services-urce94e812e8",
       "title": "Compost/Recycling Laborer",
       "employer": "Republic Services",
       "categories": [
@@ -3268,7 +3082,7 @@
       "lat": 44.837943,
       "lng": -123.247518,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5770046398?se=MCHVhwRz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=0A7AD7285BB2AF1ADF0165A55AD7507BC5A0464F",
+      "apply_url": "https://www.adzuna.com/details/5770046398?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-19",
       "source": "adzuna",
       "source_query": "custodian",
@@ -3278,9 +3092,9 @@
       "licenses_required": []
     },
     {
-      "id": "live-bilingual-customer-service-specialist-spanish-sherwin-williams-3f421770cee0",
-      "title": "Bilingual Customer Service Specialist (Spanish)",
-      "employer": "Sherwin-Williams",
+      "id": "live-warehouse-operations-home-depot-urce94e812e8",
+      "title": "Warehouse Operations",
+      "employer": "Home Depot",
       "categories": [
         "warehouse"
       ],
@@ -3289,17 +3103,17 @@
         "adzuna",
         "warehouse"
       ],
-      "pay_min": 55683.95,
-      "pay_max": 55683.95,
+      "pay_min": 55722.63,
+      "pay_max": 55722.63,
       "pay_type": "annual",
-      "pay_display": "$55,684\u2013$55,684",
+      "pay_display": "$55,723\u2013$55,723",
       "match_score": 65,
       "match_tier": "medium",
       "address": "US, Oregon, Marion County, Salem",
-      "lat": 44.947627,
-      "lng": -123.001188,
+      "lat": 44.94379,
+      "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5780226689?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=A42C7F384AA616039A9FC593E9EB3F421770CEE0",
+      "apply_url": "https://www.adzuna.com/details/5780731820?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-28",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -3309,38 +3123,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-bilingual-customer-service-specialist-spanish-sherwin-williams-3f421770cee0",
-      "title": "Bilingual Customer Service Specialist (Spanish)",
-      "employer": "Sherwin-Williams",
-      "categories": [
-        "retail"
-      ],
-      "tags": [
-        "live-feed",
-        "adzuna",
-        "retail"
-      ],
-      "pay_min": 55683.95,
-      "pay_max": 55683.95,
-      "pay_type": "annual",
-      "pay_display": "$55,684\u2013$55,684",
-      "match_score": 65,
-      "match_tier": "medium",
-      "address": "US, Oregon, Marion County, Salem",
-      "lat": 44.947627,
-      "lng": -123.001188,
-      "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5780226689?se=-j1DiARz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=A42C7F384AA616039A9FC593E9EB3F421770CEE0",
-      "posted": "2026-06-28",
-      "source": "adzuna",
-      "source_query": "retail",
-      "status": "open",
-      "priority_call": false,
-      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
-      "licenses_required": []
-    },
-    {
-      "id": "live-truck-driver-cdl-a-regional-ryder-system-d31ffe0260ce",
+      "id": "live-truck-driver-cdl-a-regional-ryder-system-urce94e812e8",
       "title": "Truck Driver CDL A Regional",
       "employer": "Ryder System",
       "categories": [
@@ -3361,7 +3144,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5767472589?se=tP3AhgRz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=56795EBA978AD137C032E33B16B0D31FFE0260CE",
+      "apply_url": "https://www.adzuna.com/details/5767472589?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-17",
       "source": "adzuna",
       "source_query": "forklift",
@@ -3371,7 +3154,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-instacart-delivery-driver-flexible-hours-instacart-shoppers-urce94e812e8",
+      "id": "live-instacart-delivery-driver-flexible-hours-instacart-shoppers-d7e486023000",
       "title": "Instacart Delivery Driver - Flexible Hours",
       "employer": "Instacart Shoppers",
       "categories": [
@@ -3392,7 +3175,7 @@
       "lat": 45.111015,
       "lng": -123.189615,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5777646172?utm_medium=api&utm_source=94e812e8",
+      "apply_url": "https://www.adzuna.com/land/ad/5777646172?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=1DCE100C542DA342881587F1FFC0D7E486023000",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -3402,7 +3185,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-instacart-delivery-driver-flexible-hours-instacart-shoppers-urce94e812e8",
+      "id": "live-instacart-delivery-driver-flexible-hours-instacart-shoppers-9f91046d9e99",
       "title": "Instacart Delivery Driver - Flexible Hours",
       "employer": "Instacart Shoppers",
       "categories": [
@@ -3423,7 +3206,7 @@
       "lat": 45.246368,
       "lng": -123.112186,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5777642717?utm_medium=api&utm_source=94e812e8",
+      "apply_url": "https://www.adzuna.com/land/ad/5777642717?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=2B437F4D8FB59E49031C97DE8E629F91046D9E99",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -3433,7 +3216,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-instacart-delivery-driver-flexible-hours-instacart-shoppers-urce94e812e8",
+      "id": "live-instacart-delivery-driver-flexible-hours-instacart-shoppers-167ef563461c",
       "title": "Instacart Delivery Driver - Flexible Hours",
       "employer": "Instacart Shoppers",
       "categories": [
@@ -3454,10 +3237,41 @@
       "lat": 45.276261,
       "lng": -123.019386,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5777642785?utm_medium=api&utm_source=94e812e8",
+      "apply_url": "https://www.adzuna.com/land/ad/5777642785?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=59EFE0C8A7BCD0495B12B93E60E3167EF563461C",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "delivery driver",
+      "status": "open",
+      "priority_call": false,
+      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
+      "licenses_required": []
+    },
+    {
+      "id": "live-winco-foods-winco-foods-urce94e812e8",
+      "title": "WinCo Foods",
+      "employer": "WinCo Foods",
+      "categories": [
+        "retail"
+      ],
+      "tags": [
+        "live-feed",
+        "adzuna",
+        "retail"
+      ],
+      "pay_min": 53801.77,
+      "pay_max": 53801.77,
+      "pay_type": "annual",
+      "pay_display": "$53,802\u2013$53,802",
+      "match_score": 65,
+      "match_tier": "medium",
+      "address": "US, Oregon, Polk County, Independence",
+      "lat": 44.850765,
+      "lng": -123.194321,
+      "south_salem": false,
+      "apply_url": "https://www.adzuna.com/details/5781045269?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-29",
+      "source": "adzuna",
+      "source_query": "retail",
       "status": "open",
       "priority_call": false,
       "experience_pitch": "Live listing \u2014 confirm still open before applying.",
@@ -3489,6 +3303,37 @@
       "posted": "2026-06-18",
       "source": "adzuna",
       "source_query": "custodian",
+      "status": "open",
+      "priority_call": false,
+      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
+      "licenses_required": []
+    },
+    {
+      "id": "live-retail-sales-and-store-support-albertsons-urce94e812e8",
+      "title": "Retail Sales and Store Support",
+      "employer": "Albertsons",
+      "categories": [
+        "retail"
+      ],
+      "tags": [
+        "live-feed",
+        "adzuna",
+        "retail"
+      ],
+      "pay_min": 53193.88,
+      "pay_max": 53193.88,
+      "pay_type": "annual",
+      "pay_display": "$53,194\u2013$53,194",
+      "match_score": 65,
+      "match_tier": "medium",
+      "address": "US, Oregon, Marion County, Stayton",
+      "lat": 44.801137,
+      "lng": -122.781229,
+      "south_salem": true,
+      "apply_url": "https://www.adzuna.com/details/5780778702?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-28",
+      "source": "adzuna",
+      "source_query": "retail",
       "status": "open",
       "priority_call": false,
       "experience_pitch": "Live listing \u2014 confirm still open before applying.",
@@ -3550,7 +3395,7 @@
       "apply_url": "https://www.adzuna.com/details/5774614976?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-24",
       "source": "adzuna",
-      "source_query": "warehouse",
+      "source_query": "forklift",
       "status": "open",
       "priority_call": false,
       "experience_pitch": "Live listing \u2014 confirm still open before applying.",
@@ -3581,7 +3426,7 @@
       "apply_url": "https://www.adzuna.com/details/5775576191?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-24",
       "source": "adzuna",
-      "source_query": "warehouse",
+      "source_query": "forklift",
       "status": "open",
       "priority_call": false,
       "experience_pitch": "Live listing \u2014 confirm still open before applying.",
@@ -3619,7 +3464,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-clean-team-lead-walmart-b4704ed7a56d",
+      "id": "live-clean-team-lead-walmart-urce94e812e8",
       "title": "Clean Team Lead",
       "employer": "Walmart",
       "categories": [
@@ -3640,7 +3485,7 @@
       "lat": 44.923977,
       "lng": -123.328263,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5767477290?se=MCHVhwRz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=10BD354BB499AE53215A119D8BB2B4704ED7A56D",
+      "apply_url": "https://www.adzuna.com/details/5767477290?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-17",
       "source": "adzuna",
       "source_query": "custodian",
@@ -3702,7 +3547,7 @@
       "lat": 44.866321,
       "lng": -123.44164,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5776176281?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=5D9012F6C04DCE254504188C268FC8B3258E6CAA",
+      "apply_url": "https://www.adzuna.com/land/ad/5776176281?se=bA2Q9dpz8RG5B_ZD6wKS8Q&utm_medium=api&utm_source=94e812e8&v=5D9012F6C04DCE254504188C268FC8B3258E6CAA",
       "posted": "2026-06-25",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -3733,7 +3578,7 @@
       "lat": 44.89876,
       "lng": -122.92704,
       "south_salem": true,
-      "apply_url": "https://www.adzuna.com/land/ad/5776172073?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=19AEFD0BFE97D4E32AAFBD18203F4950731AB078",
+      "apply_url": "https://www.adzuna.com/land/ad/5776172073?se=bA2Q9dpz8RG5B_ZD6wKS8Q&utm_medium=api&utm_source=94e812e8&v=19AEFD0BFE97D4E32AAFBD18203F4950731AB078",
       "posted": "2026-06-25",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -3764,7 +3609,7 @@
       "lat": 44.909016,
       "lng": -122.953888,
       "south_salem": true,
-      "apply_url": "https://www.adzuna.com/land/ad/5776172068?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=7A64F18724938D7FEAECBB09D3B225958A90A3FB",
+      "apply_url": "https://www.adzuna.com/land/ad/5776172068?se=bA2Q9dpz8RG5B_ZD6wKS8Q&utm_medium=api&utm_source=94e812e8&v=7A64F18724938D7FEAECBB09D3B225958A90A3FB",
       "posted": "2026-06-25",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -3774,7 +3619,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-truck-driver-cdl-class-a-regional-ryder-system-3cac40975b80",
+      "id": "live-truck-driver-cdl-class-a-regional-ryder-system-urce94e812e8",
       "title": "Truck Driver CDL Class A Regional",
       "employer": "Ryder System",
       "categories": [
@@ -3795,7 +3640,7 @@
       "lat": 44.94379,
       "lng": -123.02826,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5778533918?se=tP3AhgRz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=CD01B1652F8FA900C99989AF75D53CAC40975B80",
+      "apply_url": "https://www.adzuna.com/details/5778533918?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-26",
       "source": "adzuna",
       "source_query": "forklift",
@@ -3805,9 +3650,9 @@
       "licenses_required": []
     },
     {
-      "id": "live-specialty-beauty-advisor-clinique-ulta-beauty-urce94e812e8",
-      "title": "Specialty Beauty Advisor - Clinique",
-      "employer": "Ulta Beauty",
+      "id": "live-bodyworker-lmt-touchpoint-urce94e812e8",
+      "title": "Bodyworker (LMT)",
+      "employer": "TouchPoint",
       "categories": [
         "retail"
       ],
@@ -3816,18 +3661,18 @@
         "adzuna",
         "retail"
       ],
-      "pay_min": 50615.36,
-      "pay_max": 50615.36,
+      "pay_min": 49920.0,
+      "pay_max": 56160.0,
       "pay_type": "annual",
-      "pay_display": "$50,615\u2013$50,615",
+      "pay_display": "$49,920\u2013$56,160",
       "match_score": 65,
       "match_tier": "medium",
-      "address": "US, Oregon, Yamhill County, Mcminnville",
-      "lat": 45.206592,
-      "lng": -123.216711,
+      "address": "US, Oregon, Marion County, Keizer",
+      "lat": 45.002516,
+      "lng": -123.023209,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5780289921?utm_medium=api&utm_source=94e812e8",
-      "posted": "2026-06-28",
+      "apply_url": "https://www.adzuna.com/details/5781066108?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-29",
       "source": "adzuna",
       "source_query": "retail",
       "status": "open",
@@ -3857,7 +3702,7 @@
       "lat": 45.185444,
       "lng": -122.804628,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5773517722?se=tP3AhgRz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=35234260CADB51173C570040CED4A676721A2514",
+      "apply_url": "https://www.adzuna.com/land/ad/5773517722?se=DMYi9tpz8RG5B_ZD6wKS8Q&utm_medium=api&utm_source=94e812e8&v=35234260CADB51173C570040CED4A676721A2514",
       "posted": "2026-06-23",
       "source": "adzuna",
       "source_query": "forklift",
@@ -3867,7 +3712,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-night-selector-us-foods-f7d90b76b7a6",
+      "id": "live-night-selector-us-foods-urce94e812e8",
       "title": "Night Selector",
       "employer": "US Foods",
       "categories": [
@@ -3888,7 +3733,7 @@
       "lat": 45.146589,
       "lng": -122.856931,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5777162582?se=yuQyhgRz8RGe4ZwL0wNS6w&utm_medium=api&utm_source=94e812e8&v=4B0FB8762B3509CCDB46C4404735F7D90B76B7A6",
+      "apply_url": "https://www.adzuna.com/details/5777162582?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-25",
       "source": "adzuna",
       "source_query": "warehouse",
@@ -3898,7 +3743,7 @@
       "licenses_required": []
     },
     {
-      "id": "live-full-time-sales-specialist-appliances-day-lowe-s-0ea0c0f7c86e",
+      "id": "live-full-time-sales-specialist-appliances-day-lowe-s-urce94e812e8",
       "title": "Full Time - Sales Specialist - Appliances - Day",
       "employer": "Lowe's",
       "categories": [
@@ -3919,41 +3764,10 @@
       "lat": 44.637292,
       "lng": -123.116872,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5779699587?se=-j1DiARz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=169DF94B187D0C9E0EDB2BCEFA0B0EA0C0F7C86E",
+      "apply_url": "https://www.adzuna.com/details/5779699587?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-27",
       "source": "adzuna",
       "source_query": "retail",
-      "status": "open",
-      "priority_call": false,
-      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
-      "licenses_required": []
-    },
-    {
-      "id": "live-remote-sr-foreclosure-specialist-carrington-24d3e31036ca",
-      "title": "REMOTE Sr. Foreclosure Specialist",
-      "employer": "Carrington",
-      "categories": [
-        "general"
-      ],
-      "tags": [
-        "live-feed",
-        "adzuna",
-        "general"
-      ],
-      "pay_min": 48673.53,
-      "pay_max": 48673.53,
-      "pay_type": "annual",
-      "pay_display": "$48,674\u2013$48,674",
-      "match_score": 65,
-      "match_tier": "medium",
-      "address": "US, Oregon, Marion County, Salem",
-      "lat": 44.94379,
-      "lng": -123.02826,
-      "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5766249973?se=MCHVhwRz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=983EB9022DC51F92921C2DFCF4FA24D3E31036CA",
-      "posted": "2026-06-16",
-      "source": "adzuna",
-      "source_query": "custodian",
       "status": "open",
       "priority_call": false,
       "experience_pitch": "Live listing \u2014 confirm still open before applying.",
@@ -4012,7 +3826,7 @@
       "lat": 45.221911,
       "lng": -122.838984,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5772461989?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=C05C843A1D1AEF0D21974F263EF27259BA4F0F99",
+      "apply_url": "https://www.adzuna.com/land/ad/5772461989?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=C05C843A1D1AEF0D21974F263EF27259BA4F0F99",
       "posted": "2026-06-22",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -4043,7 +3857,7 @@
       "lat": 45.1746,
       "lng": -123.06966,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5772461982?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=3661DB7C66249CFA0A201C46D06E718C2D7AC6D0",
+      "apply_url": "https://www.adzuna.com/land/ad/5772461982?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=3661DB7C66249CFA0A201C46D06E718C2D7AC6D0",
       "posted": "2026-06-22",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -4074,7 +3888,7 @@
       "lat": 45.246368,
       "lng": -123.112186,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5772461984?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=27CB213CCB1A0311BDBEBCF54D90EC5A88110F17",
+      "apply_url": "https://www.adzuna.com/land/ad/5772461984?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=27CB213CCB1A0311BDBEBCF54D90EC5A88110F17",
       "posted": "2026-06-22",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -4105,7 +3919,7 @@
       "lat": 44.84106,
       "lng": -122.94804,
       "south_salem": true,
-      "apply_url": "https://www.adzuna.com/land/ad/5772461953?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=1D6C0BCFE507894A708788A72DC68F2DE4041EFA",
+      "apply_url": "https://www.adzuna.com/land/ad/5772461953?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=1D6C0BCFE507894A708788A72DC68F2DE4041EFA",
       "posted": "2026-06-22",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -4136,7 +3950,7 @@
       "lat": 45.185444,
       "lng": -122.804628,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5772461948?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=5B2C1AC29B661A3373C004D3A4E729016EE811B9",
+      "apply_url": "https://www.adzuna.com/land/ad/5772461948?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=5B2C1AC29B661A3373C004D3A4E729016EE811B9",
       "posted": "2026-06-22",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -4167,7 +3981,7 @@
       "lat": 45.111015,
       "lng": -123.189615,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5772461915?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=1E7A864A4B82A0B29E4ABCEEBC3DE87C52723995",
+      "apply_url": "https://www.adzuna.com/land/ad/5772461915?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=1E7A864A4B82A0B29E4ABCEEBC3DE87C52723995",
       "posted": "2026-06-22",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -4198,7 +4012,7 @@
       "lat": 44.91253,
       "lng": -123.00697,
       "south_salem": true,
-      "apply_url": "https://www.adzuna.com/land/ad/5772461921?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=871E7FF21900E26426CE89E5FA371F2D4673BBEC",
+      "apply_url": "https://www.adzuna.com/land/ad/5772461921?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=871E7FF21900E26426CE89E5FA371F2D4673BBEC",
       "posted": "2026-06-22",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -4229,7 +4043,7 @@
       "lat": 45.206592,
       "lng": -123.216711,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5772461976?se=GmpDhwRz8RG03p_b2NRIZw&utm_medium=api&utm_source=94e812e8&v=8E77F1C0F2A9D29F7AF1C34D731CAD35E31982E1",
+      "apply_url": "https://www.adzuna.com/land/ad/5772461976?se=TkCx9tpz8RG5wqNxUkLhAA&utm_medium=api&utm_source=94e812e8&v=8E77F1C0F2A9D29F7AF1C34D731CAD35E31982E1",
       "posted": "2026-06-22",
       "source": "adzuna",
       "source_query": "delivery driver",
@@ -4415,7 +4229,7 @@
       "lat": 45.221911,
       "lng": -122.838984,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5773517711?se=tP3AhgRz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=5883BC93F3EF8E4C82A24B5DC250508BDCED3184",
+      "apply_url": "https://www.adzuna.com/land/ad/5773517711?se=DMYi9tpz8RG5B_ZD6wKS8Q&utm_medium=api&utm_source=94e812e8&v=5883BC93F3EF8E4C82A24B5DC250508BDCED3184",
       "posted": "2026-06-23",
       "source": "adzuna",
       "source_query": "forklift",
@@ -4518,6 +4332,68 @@
       "licenses_required": []
     },
     {
+      "id": "live-warehouse-maintenance-associate-home-depot-urce94e812e8",
+      "title": "Warehouse Maintenance Associate",
+      "employer": "Home Depot",
+      "categories": [
+        "warehouse"
+      ],
+      "tags": [
+        "live-feed",
+        "adzuna",
+        "warehouse"
+      ],
+      "pay_min": 45514.63,
+      "pay_max": 45514.63,
+      "pay_type": "annual",
+      "pay_display": "$45,515\u2013$45,515",
+      "match_score": 65,
+      "match_tier": "medium",
+      "address": "US, Oregon, Marion County, Salem",
+      "lat": 44.94379,
+      "lng": -123.02826,
+      "south_salem": false,
+      "apply_url": "https://www.adzuna.com/details/5780731666?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-28",
+      "source": "adzuna",
+      "source_query": "warehouse",
+      "status": "open",
+      "priority_call": false,
+      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
+      "licenses_required": []
+    },
+    {
+      "id": "live-store-support-home-depot-urce94e812e8",
+      "title": "Store Support",
+      "employer": "Home Depot",
+      "categories": [
+        "warehouse"
+      ],
+      "tags": [
+        "live-feed",
+        "adzuna",
+        "warehouse"
+      ],
+      "pay_min": 45115.75,
+      "pay_max": 45115.75,
+      "pay_type": "annual",
+      "pay_display": "$45,116\u2013$45,116",
+      "match_score": 65,
+      "match_tier": "medium",
+      "address": "US, Oregon, Marion County, Salem",
+      "lat": 44.94379,
+      "lng": -123.02826,
+      "south_salem": false,
+      "apply_url": "https://www.adzuna.com/details/5780731798?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-28",
+      "source": "adzuna",
+      "source_query": "warehouse",
+      "status": "open",
+      "priority_call": false,
+      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
+      "licenses_required": []
+    },
+    {
       "id": "live-custodian-linn-benton-lincoln-esd-urce94e812e8",
       "title": "Custodian",
       "employer": "Linn Benton Lincoln ESD",
@@ -4580,38 +4456,38 @@
       "licenses_required": []
     },
     {
-      "id": "live-commercial-pest-control-technician-route-manager-sprague-pest-solutions-urce94e812e8",
-      "title": "Commercial Pest Control Technician (Route Manager)",
-      "employer": "Sprague Pest Solutions",
+      "id": "live-esthetician-touchpoint-urce94e812e8",
+      "title": "Esthetician",
+      "employer": "TouchPoint",
       "categories": [
-        "general"
+        "retail"
       ],
       "tags": [
         "live-feed",
         "adzuna",
-        "general"
+        "retail"
       ],
       "pay_min": 43680.0,
-      "pay_max": 54080.0,
+      "pay_max": 47840.0,
       "pay_type": "annual",
-      "pay_display": "$43,680\u2013$54,080",
+      "pay_display": "$43,680\u2013$47,840",
       "match_score": 65,
       "match_tier": "medium",
-      "address": "US, Oregon, Marion County, Salem",
-      "lat": 44.902118,
-      "lng": -123.04808,
+      "address": "US, Oregon, Marion County, Keizer",
+      "lat": 45.002516,
+      "lng": -123.023209,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/details/5774926027?utm_medium=api&utm_source=94e812e8",
-      "posted": "2026-06-24",
+      "apply_url": "https://www.adzuna.com/details/5781063193?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-29",
       "source": "adzuna",
-      "source_query": "custodian",
+      "source_query": "retail",
       "status": "open",
       "priority_call": false,
       "experience_pitch": "Live listing \u2014 confirm still open before applying.",
       "licenses_required": []
     },
     {
-      "id": "live-janitorial-associate-walmart-529d03c6847c",
+      "id": "live-janitorial-associate-walmart-urce94e812e8",
       "title": "Janitorial Associate",
       "employer": "Walmart",
       "categories": [
@@ -4632,8 +4508,39 @@
       "lat": 45.206592,
       "lng": -123.216711,
       "south_salem": false,
-      "apply_url": "https://www.adzuna.com/land/ad/5779710207?se=MCHVhwRz8RGiVqWJe_bADg&utm_medium=api&utm_source=94e812e8&v=C18E2BE8299323988369C446219A529D03C6847C",
+      "apply_url": "https://www.adzuna.com/details/5779710207?utm_medium=api&utm_source=94e812e8",
       "posted": "2026-06-27",
+      "source": "adzuna",
+      "source_query": "custodian",
+      "status": "open",
+      "priority_call": false,
+      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
+      "licenses_required": []
+    },
+    {
+      "id": "live-site-assistant-bilingual-required-arches-graveyard-woodburn-mid-willamette-valle-urce94e812e8",
+      "title": "Site Assistant - Bilingual Required - ARCHES - Graveyard - Woodburn",
+      "employer": "Mid-Willamette Valley Community Action Agency",
+      "categories": [
+        "general"
+      ],
+      "tags": [
+        "live-feed",
+        "adzuna",
+        "general"
+      ],
+      "pay_min": 43492.0,
+      "pay_max": 47195.0,
+      "pay_type": "annual",
+      "pay_display": "$43,492\u2013$47,195",
+      "match_score": 65,
+      "match_tier": "medium",
+      "address": "US, Oregon, Marion County, Woodburn",
+      "lat": 45.146589,
+      "lng": -122.856931,
+      "south_salem": false,
+      "apply_url": "https://www.adzuna.com/details/5780445845?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-28",
       "source": "adzuna",
       "source_query": "custodian",
       "status": "open",
@@ -4667,6 +4574,99 @@
       "posted": "2026-06-16",
       "source": "adzuna",
       "source_query": "custodian",
+      "status": "open",
+      "priority_call": false,
+      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
+      "licenses_required": []
+    },
+    {
+      "id": "live-default-claims-va-qa-analyst-i-carrington-urce94e812e8",
+      "title": "Default Claims VA QA Analyst, I",
+      "employer": "Carrington",
+      "categories": [
+        "retail"
+      ],
+      "tags": [
+        "live-feed",
+        "adzuna",
+        "retail"
+      ],
+      "pay_min": 43043.63,
+      "pay_max": 43043.63,
+      "pay_type": "annual",
+      "pay_display": "$43,044\u2013$43,044",
+      "match_score": 65,
+      "match_tier": "medium",
+      "address": "US, Oregon, Marion County, Salem",
+      "lat": 44.94379,
+      "lng": -123.02826,
+      "south_salem": false,
+      "apply_url": "https://www.adzuna.com/details/5779688996?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-27",
+      "source": "adzuna",
+      "source_query": "retail",
+      "status": "open",
+      "priority_call": false,
+      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
+      "licenses_required": []
+    },
+    {
+      "id": "live-site-assistant-i-arches-navigation-center-swing-mid-willamette-valley-community--urce94e812e8",
+      "title": "Site Assistant I - ARCHES Navigation Center - Swing",
+      "employer": "Mid-Willamette Valley Community Action Agency",
+      "categories": [
+        "general"
+      ],
+      "tags": [
+        "live-feed",
+        "adzuna",
+        "general"
+      ],
+      "pay_min": 42640.0,
+      "pay_max": 42640.0,
+      "pay_type": "annual",
+      "pay_display": "$42,640\u2013$42,640",
+      "match_score": 65,
+      "match_tier": "medium",
+      "address": "US, Oregon, Marion County, Salem",
+      "lat": 44.947627,
+      "lng": -123.001188,
+      "south_salem": false,
+      "apply_url": "https://www.adzuna.com/details/5775155940?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-24",
+      "source": "adzuna",
+      "source_query": "custodian",
+      "status": "open",
+      "priority_call": false,
+      "experience_pitch": "Live listing \u2014 confirm still open before applying.",
+      "licenses_required": []
+    },
+    {
+      "id": "live-warehouse-associate-home-depot-urce94e812e8",
+      "title": "Warehouse Associate",
+      "employer": "Home Depot",
+      "categories": [
+        "warehouse"
+      ],
+      "tags": [
+        "live-feed",
+        "adzuna",
+        "warehouse"
+      ],
+      "pay_min": 42632.93,
+      "pay_max": 42632.93,
+      "pay_type": "annual",
+      "pay_display": "$42,633\u2013$42,633",
+      "match_score": 65,
+      "match_tier": "medium",
+      "address": "US, Oregon, Marion County, Salem",
+      "lat": 44.94379,
+      "lng": -123.02826,
+      "south_salem": false,
+      "apply_url": "https://www.adzuna.com/details/5780731594?utm_medium=api&utm_source=94e812e8",
+      "posted": "2026-06-28",
+      "source": "adzuna",
+      "source_query": "warehouse",
       "status": "open",
       "priority_call": false,
       "experience_pitch": "Live listing \u2014 confirm still open before applying.",
